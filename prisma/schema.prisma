@@ -3,10 +3,68 @@ generator client {
 }
 
 datasource db {
-  provider     = "mysql"
-  url          = env("DATABASE_URL")
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
-// See docs/MITOS_AI_Platform_Implementation_Plan_REVISED.md for the full
-// data model rationale. Models are added sprint by sprint, starting empty.
+// Sprint 2 — AI Dictionary Generator
+// See docs/MITOS_AI_Platform_Implementation_Plan_REVISED.md for full context.
+// Models are added sprint by sprint rather than all at once.
+
+model ai_dictionary {
+  id                  Int      @id @default(autoincrement())
+  // Normalized (lowercased, trimmed) keyword — the dedup key extracted from
+  // questions across the whole bank, so "Mitochondria" and "mitochondria"
+  // collapse into one entry instead of being generated/stored twice.
+  term                String   @unique @db.VarChar(255)
+
+  meaning             String?  @db.LongText
+  simpleExplanation   String?  @db.LongText
+  eli5                String?  @db.LongText
+  detailedExplanation String?  @db.LongText
+  mnemonic            String?  @db.LongText
+  realLifeExample     String?  @db.LongText
+
+  // pending | generating | completed | failed — drives the admin
+  // "Generate Missing" / "Retry Failed" / "Progress" tools.
+  status              String   @default("pending") @db.VarChar(20)
+  failureReason       String?  @db.Text
+
+  // Which model actually produced the current content, for traceability
+  // when debugging a bad explanation.
+  generatedByProvider String?  @db.VarChar(20)
+  generatedByModel    String?  @db.VarChar(100)
+
+  // Set when an admin hand-edits an entry — bulk regeneration jobs must
+  // skip these instead of overwriting a human correction.
+  manuallyEdited       Boolean  @default(false)
+
+  createdAt            DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  mappings              ai_dictionary_mapping[]
+
+  @@index([status])
+}
+
+model ai_dictionary_mapping {
+  id           Int      @id @default(autoincrement())
+  dictionaryId Int
+
+  // Soft reference to backend's core `question.id` — NOT a Prisma relation
+  // and NOT a DB foreign key. That table lives in a different MySQL
+  // database (the core schema), which Prisma/MySQL can't enforce
+  // referential integrity across. Validity is the calling code's
+  // responsibility (ai-service reads question data via backend's internal
+  // read endpoint or the read-only bulk-job DB user — see the plan doc's
+  // "Data access note" under Sprint 2).
+  questionId   Int
+
+  createdAt    DateTime @default(now())
+
+  dictionary   ai_dictionary @relation(fields: [dictionaryId], references: [id], onDelete: Cascade)
+
+  @@unique([dictionaryId, questionId])
+  @@index([questionId])
+}

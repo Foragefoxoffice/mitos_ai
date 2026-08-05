@@ -169,8 +169,15 @@ const startDictionaryBatch = ({ batchSize } = {}) => {
 
   isRunning = true;
   runDictionaryBatch({ batchSize })
-    .catch((error) => {
+    .catch(async (error) => {
       logger.error(`[dictionaryBatchRunner] batch run crashed: ${error.message}`);
+      // Without this, a crash (e.g. bad DB credentials, network failure)
+      // leaves the job silently stuck at "running" forever — admin polling
+      // /progress would see no error and no further movement, with no way
+      // to tell the batch actually failed short of reading server logs.
+      await prisma.ai_job
+        .updateMany({ where: { type: JOB_TYPE }, data: { status: "failed", lastError: error.message } })
+        .catch(() => {});
     })
     .finally(() => {
       isRunning = false;

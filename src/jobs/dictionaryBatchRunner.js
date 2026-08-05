@@ -22,6 +22,12 @@ const AI_CALL_DELAY_MS = Number(process.env.AI_CALL_DELAY_MS) || 15000;
 // added to the bank — always continues instead of restarting or
 // reprocessing. Terms are deduped against ai_dictionary before any AI call,
 // so a term shared across many questions is only ever generated once.
+//
+// Progress (cursor, totalProcessed/Created/Skipped/Failed) is persisted
+// after every term and every question, not batched up for one write at the
+// end — with throttled calls this can run for minutes, so a crash mid-run
+// loses at most the current in-flight term, and admin polling /progress
+// sees live movement instead of one jump at completion.
 const runDictionaryBatch = async ({ batchSize } = {}) => {
   let job = await prisma.ai_job.findUnique({ where: { type: JOB_TYPE } });
 
@@ -29,6 +35,8 @@ const runDictionaryBatch = async ({ batchSize } = {}) => {
     job = await prisma.ai_job.create({
       data: { type: JOB_TYPE, status: "running", batchSize: batchSize || 20, startedAt: new Date() },
     });
+  } else {
+    job = await prisma.ai_job.update({ where: { id: job.id }, data: { status: "running" } });
   }
 
   const effectiveBatchSize = batchSize || job.batchSize;
@@ -45,12 +53,9 @@ const runDictionaryBatch = async ({ batchSize } = {}) => {
   let created = 0;
   let skipped = 0;
   let failed = 0;
-  let maxId = job.cursor;
   let hasCalledProvider = false;
 
   for (const question of questions) {
-    maxId = Math.max(maxId, question.id);
-
     const text = [question.question, question.optionA, question.optionB, question.optionC, question.optionD]
       .filter(Boolean)
       .join(" ");
@@ -102,6 +107,10 @@ const runDictionaryBatch = async ({ batchSize } = {}) => {
             },
           });
           created++;
+          await prisma.ai_job.update({
+            where: { id: job.id },
+            data: { totalCreated: { increment: 1 }, lastRunAt: new Date() },
+          });
         } catch (error) {
           logger.warn(`[dictionaryBatchRunner] generation failed for "${term}": ${error.message}`);
           await prisma.ai_dictionary
@@ -112,10 +121,15 @@ const runDictionaryBatch = async ({ batchSize } = {}) => {
             })
             .catch(() => {});
           failed++;
+          await prisma.ai_job.update({
+            where: { id: job.id },
+            data: { totalFailed: { increment: 1 }, lastRunAt: new Date() },
+          });
           continue;
         }
       } else {
         skipped++;
+        await prisma.ai_job.update({ where: { id: job.id }, data: { totalSkipped: { increment: 1 } } });
       }
 
       await prisma.ai_dictionary_mapping.upsert({
@@ -124,22 +138,45 @@ const runDictionaryBatch = async ({ batchSize } = {}) => {
         create: { dictionaryId: dictEntry.id, questionId: question.id },
       });
     }
+
+    await prisma.ai_job.update({
+      where: { id: job.id },
+      data: { cursor: question.id, totalProcessed: { increment: 1 } },
+    });
   }
 
-  const updatedJob = await prisma.ai_job.update({
-    where: { id: job.id },
-    data: {
-      cursor: maxId,
-      status: "running",
-      totalProcessed: { increment: questions.length },
-      totalCreated: { increment: created },
-      totalSkipped: { increment: skipped },
-      totalFailed: { increment: failed },
-      lastRunAt: new Date(),
-    },
-  });
+  const finalJob = await prisma.ai_job.findUnique({ where: { id: job.id } });
 
-  return { job: updatedJob, processed: questions.length, created, skipped, failed };
+  return { job: finalJob, processed: questions.length, created, skipped, failed };
 };
 
-module.exports = { runDictionaryBatch, JOB_TYPE };
+// In-memory guard against overlapping runs — ai-service is a single
+// process, so a plain flag is enough to stop a double-click (or a second
+// admin) from starting a second batch while one is already in flight.
+let isRunning = false;
+
+const getIsRunning = () => isRunning;
+
+// Fire-and-forget: starts a batch and returns immediately instead of
+// blocking the HTTP request for however long the (throttled, potentially
+// multi-minute) batch takes. Callers poll getDictionaryProgress-style reads
+// of the ai_job row (and isRunning, for "actively working right now" vs.
+// the job's persisted status) to watch it complete.
+const startDictionaryBatch = ({ batchSize } = {}) => {
+  if (isRunning) {
+    return { started: false, message: "A batch is already running" };
+  }
+
+  isRunning = true;
+  runDictionaryBatch({ batchSize })
+    .catch((error) => {
+      logger.error(`[dictionaryBatchRunner] batch run crashed: ${error.message}`);
+    })
+    .finally(() => {
+      isRunning = false;
+    });
+
+  return { started: true, message: "Batch started" };
+};
+
+module.exports = { runDictionaryBatch, startDictionaryBatch, getIsRunning, JOB_TYPE };

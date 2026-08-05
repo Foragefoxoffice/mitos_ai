@@ -29,3 +29,4 @@ src/
   utils/
 prisma/                 # mitos_ai schema + client
 ```
+# mitos_ai

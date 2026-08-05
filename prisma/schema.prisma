@@ -1,0 +1,12 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+// See docs/MITOS_AI_Platform_Implementation_Plan_REVISED.md for the full
+// data model rationale. Models are added sprint by sprint, starting empty.

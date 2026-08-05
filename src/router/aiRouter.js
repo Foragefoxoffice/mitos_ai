@@ -6,7 +6,7 @@ const logger = require("../utils/logger");
 // if the primary provider errors (rate limit, outage, bad response). Task
 // names match the AI Router section of
 // docs/MITOS_AI_Platform_Implementation_Plan_REVISED.md.
-const runTask = async (taskName, { system, prompt, maxTokens, temperature } = {}) => {
+const runTask = async (taskName, { system, prompt, maxTokens, temperature, jsonMode } = {}) => {
   const route = modelConfig[taskName];
   if (!route) {
     throw new Error(`Unknown AI task: ${taskName}`);
@@ -28,6 +28,7 @@ const runTask = async (taskName, { system, prompt, maxTokens, temperature } = {}
         prompt,
         maxTokens,
         temperature,
+        jsonMode,
       });
 
       return { ...result, provider: attempt.provider, model: attempt.model };

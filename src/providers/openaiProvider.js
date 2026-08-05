@@ -11,9 +11,9 @@ const getClient = () => {
   return client;
 };
 
-// Common provider interface: generate({ model, system, prompt, maxTokens, temperature })
+// Common provider interface: generate({ model, system, prompt, maxTokens, temperature, jsonMode })
 //   -> { text, inputTokens, outputTokens }
-const generate = async ({ model, system, prompt, maxTokens = 1024, temperature = 0.7 }) => {
+const generate = async ({ model, system, prompt, maxTokens = 1024, temperature = 0.7, jsonMode = false }) => {
   const response = await getClient().chat.completions.create({
     model,
     messages: [
@@ -22,6 +22,7 @@ const generate = async ({ model, system, prompt, maxTokens = 1024, temperature =
     ],
     max_completion_tokens: maxTokens,
     temperature,
+    ...(jsonMode ? { response_format: { type: "json_object" } } : {}),
   });
 
   const choice = response.choices[0];

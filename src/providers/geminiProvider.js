@@ -9,14 +9,21 @@ const getClient = () => {
   return genAI;
 };
 
-// Common provider interface: generate({ model, system, prompt, maxTokens, temperature })
+// Common provider interface: generate({ model, system, prompt, maxTokens, temperature, jsonMode })
 //   -> { text, inputTokens, outputTokens }
-const generate = async ({ model, system, prompt, maxTokens = 1024, temperature = 0.7 }) => {
+// jsonMode uses Gemini's actual structured-output mode (responseMimeType) —
+// asking nicely in the prompt alone is not reliable, it still returns
+// markdown-wrapped text often enough to matter.
+const generate = async ({ model, system, prompt, maxTokens = 1024, temperature = 0.7, jsonMode = false }) => {
   const genModel = getClient().getGenerativeModel({ model, systemInstruction: system });
 
   const result = await genModel.generateContent({
     contents: [{ role: "user", parts: [{ text: prompt }] }],
-    generationConfig: { maxOutputTokens: maxTokens, temperature },
+    generationConfig: {
+      maxOutputTokens: maxTokens,
+      temperature,
+      ...(jsonMode ? { responseMimeType: "application/json" } : {}),
+    },
   });
 
   const response = result.response;

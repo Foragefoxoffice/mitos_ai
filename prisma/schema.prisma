@@ -68,3 +68,33 @@ model ai_dictionary_mapping {
   @@unique([dictionaryId, questionId])
   @@index([questionId])
 }
+
+// One row per job type. Tracks a resumable cursor (the highest source
+// record id processed so far) so "run a batch" always continues from
+// where the last run stopped — whether that's the initial backlog or
+// questions added to the bank weeks later. Never processes everything
+// in one shot; batchSize + the caller's own cap bound each run.
+model ai_job {
+  id             Int       @id @default(autoincrement())
+  type           String    @unique @db.VarChar(50)
+
+  // pending | running | idle | failed — "idle" means the cursor caught up
+  // to the source as of the last run, not that the job is permanently done;
+  // it goes back to running the moment there's new data past the cursor.
+  status         String    @default("pending") @db.VarChar(20)
+
+  cursor         Int       @default(0)
+  batchSize      Int       @default(20)
+
+  totalProcessed Int       @default(0)
+  totalCreated   Int       @default(0)
+  totalSkipped   Int       @default(0)
+  totalFailed    Int       @default(0)
+
+  lastError      String?   @db.Text
+  startedAt      DateTime?
+  lastRunAt      DateTime?
+
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}

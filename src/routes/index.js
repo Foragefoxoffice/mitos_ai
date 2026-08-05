@@ -9,6 +9,7 @@ router.use("/health", require("./healthRoutes"));
 // get mounted here sprint by sprint.
 const internal = express.Router();
 internal.use(verifyInternalService);
+internal.use("/ai/dictionary", require("./dictionaryRoutes"));
 
 router.use("/internal", internal);
 

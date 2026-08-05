@@ -1,19 +1,54 @@
-// TEMPORARY: real integration with backend's core question table isn't
-// wired up yet — that needs either an internal backend read endpoint or a
-// read-only DB user against the core schema (see the "Data access note"
-// under Sprint 2 in docs/MITOS_AI_Platform_Implementation_Plan_REVISED.md,
-// a decision that still needs to be made). This fixture exists only to
-// prove the batch/cursor/resumability mechanism in dictionaryBatchRunner.js
-// before wiring it to real content. Swap the implementation, keep the
-// fetchQuestionBatch({ afterId, limit }) signature.
-const FIXTURE_QUESTIONS = [
-  { id: 1, question: "Which organelle is known as the powerhouse of the mitochondria containing cristae?", optionA: "Ribosome", optionB: "Mitochondria", optionC: "Nucleus", optionD: "Lysosome" },
-  { id: 2, question: "The process of photosynthesis occurs mainly in the chloroplast of plant cells.", optionA: "Chloroplast", optionB: "Mitochondria", optionC: "Vacuole", optionD: "Golgi" },
-  { id: 3, question: "Which structure regulates entry and exit of substances across the cell membrane?", optionA: "Cell membrane", optionB: "Cell wall", optionC: "Cytoplasm", optionD: "Nucleolus" },
-];
+const mysql = require("mysql2/promise");
+const logger = require("../utils/logger");
+
+// Read-only connection to the CORE backend's database (a completely
+// separate database from mitos_ai — see docs/MITOS_AI_Platform_Implementation_Plan_REVISED.md).
+// CORE_DB_READONLY_URL must point to a MySQL user that has been granted
+// SELECT only, on exactly the `question` table — nothing else, no writes.
+// See ai-service/README.md for how that user gets created.
+let pool;
+const getPool = () => {
+  if (!pool) {
+    pool = mysql.createPool({ uri: process.env.CORE_DB_READONLY_URL, connectionLimit: 3 });
+  }
+  return pool;
+};
+
+// Belt-and-braces on top of the DB grant itself: before ever issuing a
+// query, confirm the connected user genuinely has no write privileges.
+// This never attempts a write to check — SHOW GRANTS is a read — so a
+// misconfigured user (e.g. accidentally given INSERT/UPDATE/DELETE) fails
+// loudly here instead of silently being capable of mutating or deleting
+// real production content. Checked once per process, not per call.
+const DANGEROUS_PRIVILEGES = ["INSERT", "UPDATE", "DELETE", "DROP", "ALTER", "CREATE", "TRUNCATE", "ALL PRIVILEGES"];
+let readOnlyVerified = false;
+
+const assertReadOnly = async () => {
+  if (readOnlyVerified) return;
+
+  const [rows] = await getPool().query("SHOW GRANTS FOR CURRENT_USER()");
+  const grants = rows.map((row) => Object.values(row)[0]).join(" | ");
+
+  const hasDangerousGrant = DANGEROUS_PRIVILEGES.some((priv) => grants.toUpperCase().includes(priv));
+  if (hasDangerousGrant) {
+    throw new Error(
+      `CORE_DB_READONLY_URL user has write privileges on the core database — refusing to use it. Grants: ${grants}`
+    );
+  }
+
+  logger.info("[questionSource] confirmed read-only grants on core DB connection");
+  readOnlyVerified = true;
+};
 
 const fetchQuestionBatch = async ({ afterId, limit }) => {
-  return FIXTURE_QUESTIONS.filter((q) => q.id > afterId).slice(0, limit);
+  await assertReadOnly();
+
+  const [rows] = await getPool().query(
+    "SELECT id, question, optionA, optionB, optionC, optionD FROM question WHERE id > ? ORDER BY id ASC LIMIT ?",
+    [afterId, limit]
+  );
+
+  return rows;
 };
 
 module.exports = { fetchQuestionBatch };

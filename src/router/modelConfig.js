@@ -1,16 +1,17 @@
 // Model IDs are read from env so they can be updated without a code change.
-// Verify these against each provider's current model list before relying on
-// them in production — naming/availability changes over time. Defaults below
-// are best-guess placeholders for the task mapping described in
-// docs/MITOS_AI_Platform_Implementation_Plan_REVISED.md.
+// "gemini-flash-latest" is verified working (2026-08-05, live call against
+// gemini-2.5-flash directly 404'd for new API keys — the "-latest" alias
+// avoids hardcoding a version Google can deprecate under us). GPT-5/GPT-5-mini
+// and Claude Sonnet entries are unverified — no OpenAI/Anthropic key added
+// yet — confirm against provider docs once those keys are in .env.
 module.exports = {
   wordExplain: {
-    primary: { provider: "gemini", model: process.env.MODEL_WORD_PRIMARY || "gemini-2.5-flash" },
+    primary: { provider: "gemini", model: process.env.MODEL_WORD_PRIMARY || "gemini-flash-latest" },
     fallback: { provider: "openai", model: process.env.MODEL_WORD_FALLBACK || "gpt-5-mini" },
   },
   explainAndChat: {
     primary: { provider: "openai", model: process.env.MODEL_CHAT_PRIMARY || "gpt-5-mini" },
-    fallback: { provider: "gemini", model: process.env.MODEL_CHAT_FALLBACK || "gemini-2.5-flash" },
+    fallback: { provider: "gemini", model: process.env.MODEL_CHAT_FALLBACK || "gemini-flash-latest" },
   },
   performanceAnalysis: {
     primary: { provider: "claude", model: process.env.MODEL_ANALYSIS_PRIMARY || "claude-sonnet-5" },

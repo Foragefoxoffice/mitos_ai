@@ -24,4 +24,30 @@ const getProgress = async (req, res) => {
   res.json({ job, isProcessing: getIsRunning() });
 };
 
-module.exports = { runBatch, getProgress };
+const MAX_PAGE_SIZE = 100;
+
+const listEntries = async (req, res) => {
+  const page = Math.max(1, Number(req.query.page) || 1);
+  const pageSize = Math.min(MAX_PAGE_SIZE, Math.max(1, Number(req.query.pageSize) || 20));
+  const status = ["pending", "completed", "failed"].includes(req.query.status) ? req.query.status : undefined;
+  const search = req.query.search?.trim();
+
+  const where = {
+    ...(status ? { status } : {}),
+    ...(search ? { term: { contains: search } } : {}),
+  };
+
+  const [entries, total] = await Promise.all([
+    prisma.ai_dictionary.findMany({
+      where,
+      orderBy: { id: "desc" },
+      skip: (page - 1) * pageSize,
+      take: pageSize,
+    }),
+    prisma.ai_dictionary.count({ where }),
+  ]);
+
+  res.json({ entries, total, page, pageSize });
+};
+
+module.exports = { runBatch, getProgress, listEntries };

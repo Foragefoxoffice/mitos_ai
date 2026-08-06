@@ -5,6 +5,10 @@
 // and Claude Sonnet entries are unverified — no OpenAI/Anthropic key added
 // yet — confirm against provider docs once those keys are in .env.
 module.exports = {
+  keywordExtraction: {
+    primary: { provider: "gemini", model: process.env.MODEL_KEYWORDS_PRIMARY || "gemini-flash-latest" },
+    fallback: { provider: "openai", model: process.env.MODEL_KEYWORDS_FALLBACK || "gpt-5-mini" },
+  },
   wordExplain: {
     primary: { provider: "gemini", model: process.env.MODEL_WORD_PRIMARY || "gemini-flash-latest" },
     fallback: { provider: "openai", model: process.env.MODEL_WORD_FALLBACK || "gpt-5-mini" },

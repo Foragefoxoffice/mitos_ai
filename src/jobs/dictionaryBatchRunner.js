@@ -1,6 +1,6 @@
 const prisma = require("../utils/prismaClient");
 const logger = require("../utils/logger");
-const { extractKeywords } = require("../utils/extractKeywords");
+const { extractKeywordsWithAI } = require("../services/keywordExtractor");
 const { generateDictionaryEntry } = require("../services/dictionaryGenerator");
 const { fetchQuestionBatch } = require("../services/questionSource");
 const { sleep } = require("../utils/sleep");
@@ -56,12 +56,25 @@ const runDictionaryBatch = async ({ batchSize } = {}) => {
   let hasCalledProvider = false;
 
   for (const question of questions) {
-    // Question + hint only — hint text tends to carry a lot of the real
-    // domain vocabulary (it's the explanation), while options are usually
-    // short answer choices/numbers that don't add much and would mostly
-    // just inflate the keyword count with noise.
-    const text = [question.question, question.hint].filter(Boolean).join(" ");
-    const terms = extractKeywords(text);
+    // Extraction is now an AI call (per question, not per term) — an LLM
+    // can actually judge "technical term worth explaining" vs "everyday
+    // word", which a rule-based length/stopword filter never could. Same
+    // throttle applies to this call as to term generation below.
+    if (hasCalledProvider) {
+      await sleep(AI_CALL_DELAY_MS);
+    }
+    hasCalledProvider = true;
+
+    let terms;
+    try {
+      terms = await extractKeywordsWithAI(question.question, question.hint);
+    } catch (error) {
+      logger.warn(`[dictionaryBatchRunner] keyword extraction failed for question ${question.id}: ${error.message}`);
+      // Don't advance the cursor past a question we couldn't extract
+      // terms from — stop here so the next batch run retries this same
+      // question instead of silently skipping it forever.
+      break;
+    }
 
     for (const term of terms) {
       let dictEntry = await prisma.ai_dictionary.findUnique({ where: { term } });

@@ -4,6 +4,7 @@ const buildKeywordExtractionPrompt = (questionText, hintText) => ({
     'Return ONLY a JSON object — no markdown, no commentary — with one key "terms": an array of strings.',
     "Include ONLY words/short phrases a NEET student might NOT already understand: scientific terms, named structures, processes, named laws/principles, technical vocabulary specific to Biology/Chemistry/Physics.",
     'EXCLUDE: common everyday English words, question-boilerplate phrasing (e.g. "which of the following", "correct answer", "regarding"), generic verbs, and anything a student would already understand without explanation.',
+    "EXCLUDE, ALWAYS: mathematical formulas, equations, numbers, units, standalone symbols/variables, and any LaTeX/math markup or command names (e.g. dfrac, frac, theta, omega, or anything that looks like it came from a LaTeX expression rather than plain English prose). A formula fragment is never a valid term, even if it looks unfamiliar.",
     "Each term should be a single word or a short (2-3 word) technical phrase, in its base/singular form, lowercase.",
     "Return at most 10 terms. If there are no genuinely technical terms, return an empty array.",
   ].join(" "),

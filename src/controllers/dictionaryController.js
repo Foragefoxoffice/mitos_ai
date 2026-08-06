@@ -1,5 +1,12 @@
 const prisma = require("../utils/prismaClient");
-const { startDictionaryBatch, getIsRunning, JOB_TYPE } = require("../jobs/dictionaryBatchRunner");
+const {
+  startDictionaryBatch,
+  getIsRunning,
+  startAutoRun,
+  stopAutoRun,
+  getIsAutoLoopRunning,
+  JOB_TYPE,
+} = require("../jobs/dictionaryBatchRunner");
 
 // Hard server-side ceiling — independent of whatever the caller (admin UI)
 // requests. Protects against an accidental large run regardless of what the
@@ -21,7 +28,19 @@ const runBatch = (req, res) => {
 
 const getProgress = async (req, res) => {
   const job = await prisma.ai_job.findUnique({ where: { type: JOB_TYPE } });
-  res.json({ job, isProcessing: getIsRunning() });
+  res.json({ job, isProcessing: getIsRunning(), isAutoLoopRunning: getIsAutoLoopRunning() });
+};
+
+const startAuto = async (req, res) => {
+  const job = await startAutoRun();
+  res.status(202).json({ started: true, job });
+};
+
+// Only flips the flag — the current question (if any) still finishes
+// normally, the loop notices and exits after that, never mid-question.
+const stopAuto = async (req, res) => {
+  const job = await stopAutoRun();
+  res.json({ stopped: true, job });
 };
 
 const MAX_PAGE_SIZE = 100;
@@ -92,4 +111,12 @@ const getTermExplanation = async (req, res) => {
   });
 };
 
-module.exports = { runBatch, getProgress, listEntries, getTermsForQuestion, getTermExplanation };
+module.exports = {
+  runBatch,
+  getProgress,
+  listEntries,
+  getTermsForQuestion,
+  getTermExplanation,
+  startAuto,
+  stopAuto,
+};

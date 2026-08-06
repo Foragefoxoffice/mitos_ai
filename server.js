@@ -32,4 +32,12 @@ const PORT = process.env.PORT || 4001;
 
 app.listen(PORT, () => {
   console.log(`✅ ai-service running on port ${PORT}`);
+
+  // If auto-run was left enabled before this process last stopped (crash,
+  // redeploy, manual restart), resume it — "keep running until I stop it"
+  // is meant to survive the process bouncing, not just the browser tab
+  // staying open.
+  require("./src/jobs/dictionaryBatchRunner")
+    .resumeAutoRunIfEnabled()
+    .catch((error) => console.error("❌ Failed to check/resume auto-run on boot:", error.message));
 });

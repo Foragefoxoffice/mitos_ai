@@ -107,6 +107,13 @@ model ai_job {
   currentBatchTotal     Int?
   currentBatchProcessed Int?
 
+  // Persisted (not just in-memory) so "keep running until I stop it" is a
+  // durable intent — survives ai-service restarting, not just a flag that
+  // resets to off the moment the process bounces. The loop itself checks
+  // this after every single question, never mid-question, so Stop always
+  // takes effect at a clean boundary.
+  autoRunEnabled Boolean @default(false)
+
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
 }

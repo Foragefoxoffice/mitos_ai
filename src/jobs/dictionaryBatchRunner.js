@@ -236,4 +236,130 @@ const startDictionaryBatch = ({ batchSize } = {}) => {
   return { started: true, message: "Batch started" };
 };
 
-module.exports = { runDictionaryBatch, startDictionaryBatch, getIsRunning, JOB_TYPE };
+// How long to wait, when auto-run has caught up to the source (no new
+// questions right now), before checking again — new questions get added
+// over time and auto-run should pick them up without needing a manual
+// restart. Broken into small chunks (checkAutoRunEnabled below) rather
+// than one long sleep, so Stop takes effect quickly even during this idle
+// wait, not just between questions.
+const AUTO_IDLE_POLL_MS = 60000;
+const AUTO_IDLE_CHECK_EVERY_MS = 10000;
+
+let autoLoopRunning = false;
+
+const getIsAutoLoopRunning = () => autoLoopRunning;
+
+// Sleeps in small chunks, checking autoRunEnabled between each — returns
+// false the moment it sees the flag turned off, so an idle wait for new
+// questions doesn't delay Stop by the full AUTO_IDLE_POLL_MS.
+const sleepWhileAutoRunEnabled = async (totalMs) => {
+  let waited = 0;
+  while (waited < totalMs) {
+    const chunk = Math.min(AUTO_IDLE_CHECK_EVERY_MS, totalMs - waited);
+    await sleep(chunk);
+    waited += chunk;
+    const job = await prisma.ai_job.findUnique({ where: { type: JOB_TYPE } });
+    if (!job?.autoRunEnabled) return false;
+  }
+  return true;
+};
+
+// The actual continuous loop: processes one question at a time
+// (batchSize: 1, per the "one by one" requirement), checking
+// autoRunEnabled after every single question — never mid-question — so
+// Stop always takes effect at a clean boundary, with the cursor already
+// correctly past whatever was last completed. When caught up to the
+// source, waits and rechecks instead of exiting, so newly added questions
+// get picked up automatically without needing Start clicked again.
+const runAutoLoop = async () => {
+  if (autoLoopRunning) return;
+  autoLoopRunning = true;
+
+  try {
+    for (;;) {
+      const job = await prisma.ai_job.findUnique({ where: { type: JOB_TYPE } });
+      if (!job?.autoRunEnabled) break;
+
+      if (isRunning) {
+        // A manual "Run Batch" is currently in flight — wait rather than
+        // overlap two runs touching the same job row.
+        await sleep(2000);
+        continue;
+      }
+
+      isRunning = true;
+      let result;
+      try {
+        result = await runDictionaryBatch({ batchSize: 1 });
+      } catch (error) {
+        logger.error(`[autoRunLoop] batch crashed: ${error.message}`);
+        await prisma.ai_job
+          .updateMany({
+            where: { type: JOB_TYPE },
+            data: { status: "failed", lastError: error.message, currentActivity: null },
+          })
+          .catch(() => {});
+      } finally {
+        isRunning = false;
+      }
+
+      const stillEnabled = await prisma.ai_job.findUnique({ where: { type: JOB_TYPE } });
+      if (!stillEnabled?.autoRunEnabled) break;
+
+      if (result?.processed === 0) {
+        const keepGoing = await sleepWhileAutoRunEnabled(AUTO_IDLE_POLL_MS);
+        if (!keepGoing) break;
+      }
+    }
+  } finally {
+    autoLoopRunning = false;
+  }
+};
+
+const startAutoRun = async () => {
+  const job = await prisma.ai_job.upsert({
+    where: { type: JOB_TYPE },
+    update: { autoRunEnabled: true },
+    create: { type: JOB_TYPE, autoRunEnabled: true, status: "pending" },
+  });
+
+  runAutoLoop().catch((error) => {
+    logger.error(`[autoRunLoop] unexpected crash outside the loop body: ${error.message}`);
+  });
+
+  return job;
+};
+
+// Only flips the flag — the loop itself notices on its own next check
+// (after the current question finishes) and exits cleanly. Doesn't force
+// anything to stop mid-question.
+const stopAutoRun = async () => {
+  const job = await prisma.ai_job.update({ where: { type: JOB_TYPE }, data: { autoRunEnabled: false } });
+  return job;
+};
+
+// Called once at server boot — if autoRunEnabled was left on from before
+// a restart (crash, redeploy, manual restart during dev), resumes the loop
+// automatically instead of silently going quiet until someone notices and
+// clicks Start again. "Keep running until I stop it" should survive the
+// process bouncing, not just the browser tab staying open.
+const resumeAutoRunIfEnabled = async () => {
+  const job = await prisma.ai_job.findUnique({ where: { type: JOB_TYPE } });
+  if (job?.autoRunEnabled) {
+    logger.info("[autoRunLoop] resuming auto-run on boot (was left enabled before restart)");
+    runAutoLoop().catch((error) => {
+      logger.error(`[autoRunLoop] unexpected crash outside the loop body: ${error.message}`);
+    });
+  }
+};
+
+module.exports = {
+  runDictionaryBatch,
+  startDictionaryBatch,
+  getIsRunning,
+  startAutoRun,
+  stopAutoRun,
+  getIsAutoLoopRunning,
+  resumeAutoRunIfEnabled,
+  JOB_TYPE,
+};

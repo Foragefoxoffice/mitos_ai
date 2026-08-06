@@ -53,7 +53,11 @@ const sendMessage = async ({ userId, questionId, message, questionContext }) => 
     newMessage: message,
   });
 
-  const result = await runTask("explainAndChat", { system, prompt, maxTokens: 800 });
+  // 800 was truncating mid-sentence on requests that reasonably need more
+  // room (e.g. "explain each option" covering 4 options) — verified live
+  // against a real conversation, same class of bug as Dictionary
+  // generation's earlier 700-token truncation.
+  const result = await runTask("explainAndChat", { system, prompt, maxTokens: 1500 });
 
   const assistantMessage = await prisma.ai_chat_message.create({
     data: {

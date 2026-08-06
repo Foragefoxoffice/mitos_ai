@@ -23,6 +23,7 @@ const buildChatPrompt = ({ questionContext, historyMessages, newMessage }) => {
     "Answer only using the question context below plus ordinary subject knowledge — stay focused on this question, don't go on tangents.",
     "Keep replies concise (a few sentences to a short paragraph) unless the student explicitly asks for more detail.",
     "If you write any math, use LaTeX delimited with $...$ for inline or $$...$$ for display — the app renders it properly.",
+    "Do NOT use markdown formatting (no **bold**, no _italic_, no bullet/numbered lists with - or 1.) — the app displays your reply as plain text, so markdown syntax would show up as literal asterisks/underscores/etc. Write in plain prose sentences instead.",
     "",
     `Subject: ${subject || "unknown"} | Chapter: ${chapter || "unknown"} | Topic: ${topic || "unknown"}`,
     `Question: ${question || ""}`,

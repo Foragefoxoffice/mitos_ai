@@ -95,6 +95,18 @@ model ai_job {
   startedAt      DateTime?
   lastRunAt      DateTime?
 
+  // What the batch is doing right this second, e.g. "Question 542 (3/5):
+  // generating explanation for 'refraction'" — so admin polling sees real
+  // activity, not just totals that jump occasionally. Cleared (null) once
+  // a run finishes or the job is otherwise idle.
+  currentActivity      String? @db.VarChar(255)
+  // Progress within THIS run specifically (resets every run), separate
+  // from the lifetime totalProcessed/etc above — "2 of 5 questions in
+  // this batch" is a different, more immediately useful number than
+  // "13 processed ever".
+  currentBatchTotal     Int?
+  currentBatchProcessed Int?
+
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
 }

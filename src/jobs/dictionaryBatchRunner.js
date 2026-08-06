@@ -16,6 +16,12 @@ const JOB_TYPE = "dictionary_generation";
 // known.
 const AI_CALL_DELAY_MS = Number(process.env.AI_CALL_DELAY_MS) || 15000;
 
+// Small helper: updates what the batch is doing RIGHT NOW, so admin
+// polling /progress sees real activity instead of just totals that jump
+// occasionally every ~15s. Cheap write, called often on purpose.
+const setActivity = (jobId, text) =>
+  prisma.ai_job.update({ where: { id: jobId }, data: { currentActivity: text } }).catch(() => {});
+
 // Runs ONE batch and stops — never the whole question bank in one call.
 // Resumable: picks up from job.cursor (the highest question id processed so
 // far), so calling this again later — including after new questions get
@@ -45,25 +51,45 @@ const runDictionaryBatch = async ({ batchSize } = {}) => {
   if (questions.length === 0) {
     const idleJob = await prisma.ai_job.update({
       where: { id: job.id },
-      data: { status: "idle", lastRunAt: new Date() },
+      data: {
+        status: "idle",
+        lastRunAt: new Date(),
+        currentActivity: null,
+        currentBatchTotal: null,
+        currentBatchProcessed: null,
+      },
     });
     return { job: idleJob, processed: 0, created: 0, skipped: 0, failed: 0, message: "No new questions to process" };
   }
+
+  await prisma.ai_job.update({
+    where: { id: job.id },
+    data: {
+      currentBatchTotal: questions.length,
+      currentBatchProcessed: 0,
+      currentActivity: `Starting batch of ${questions.length} question${questions.length === 1 ? "" : "s"}…`,
+    },
+  });
 
   let created = 0;
   let skipped = 0;
   let failed = 0;
   let hasCalledProvider = false;
 
-  for (const question of questions) {
+  for (const [index, question] of questions.entries()) {
+    const position = `${index + 1}/${questions.length}`;
+
     // Extraction is now an AI call (per question, not per term) — an LLM
     // can actually judge "technical term worth explaining" vs "everyday
     // word", which a rule-based length/stopword filter never could. Same
     // throttle applies to this call as to term generation below.
     if (hasCalledProvider) {
+      await setActivity(job.id, `Question ${question.id} (${position}): waiting to respect rate limit…`);
       await sleep(AI_CALL_DELAY_MS);
     }
     hasCalledProvider = true;
+
+    await setActivity(job.id, `Question ${question.id} (${position}): extracting keywords…`);
 
     let terms;
     try {
@@ -88,9 +114,12 @@ const runDictionaryBatch = async ({ batchSize } = {}) => {
 
       if (needsGeneration) {
         if (hasCalledProvider) {
+          await setActivity(job.id, `Question ${question.id} (${position}): waiting to respect rate limit…`);
           await sleep(AI_CALL_DELAY_MS);
         }
         hasCalledProvider = true;
+
+        await setActivity(job.id, `Question ${question.id} (${position}): generating explanation for "${term}"…`);
 
         try {
           const generated = await generateDictionaryEntry(term);
@@ -156,11 +185,14 @@ const runDictionaryBatch = async ({ batchSize } = {}) => {
 
     await prisma.ai_job.update({
       where: { id: job.id },
-      data: { cursor: question.id, totalProcessed: { increment: 1 } },
+      data: { cursor: question.id, totalProcessed: { increment: 1 }, currentBatchProcessed: index + 1 },
     });
   }
 
-  const finalJob = await prisma.ai_job.findUnique({ where: { id: job.id } });
+  const finalJob = await prisma.ai_job.update({
+    where: { id: job.id },
+    data: { currentActivity: null },
+  });
 
   return { job: finalJob, processed: questions.length, created, skipped, failed };
 };
@@ -191,7 +223,10 @@ const startDictionaryBatch = ({ batchSize } = {}) => {
       // /progress would see no error and no further movement, with no way
       // to tell the batch actually failed short of reading server logs.
       await prisma.ai_job
-        .updateMany({ where: { type: JOB_TYPE }, data: { status: "failed", lastError: error.message } })
+        .updateMany({
+          where: { type: JOB_TYPE },
+          data: { status: "failed", lastError: error.message, currentActivity: null },
+        })
         .catch(() => {});
     })
     .finally(() => {

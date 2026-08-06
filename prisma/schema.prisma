@@ -117,3 +117,32 @@ model ai_job {
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
 }
+
+model ai_chat_session {
+  id         Int      @id @default(autoincrement())
+  userId     Int
+  questionId Int
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  messages ai_chat_message[]
+
+  @@unique([userId, questionId])
+  @@index([userId])
+}
+
+model ai_chat_message {
+  id                  Int      @id @default(autoincrement())
+  sessionId           Int
+  // "user" | "assistant"
+  role                String   @db.VarChar(10)
+  content             String   @db.LongText
+  generatedByProvider String?  @db.VarChar(20)
+  generatedByModel    String?  @db.VarChar(100)
+  createdAt           DateTime @default(now())
+
+  session ai_chat_session @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@index([sessionId])
+  @@index([createdAt])
+}

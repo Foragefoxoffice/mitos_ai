@@ -14,7 +14,16 @@ const STOPWORDS = new Set([
   "figure", "table", "given", "based",
 ]);
 
-const extractKeywords = (text, { max = 5, minLength = 5 } = {}) => {
+// Default raised from 5 to 15 — a single question realistically contains
+// several distinct meaningful terms (e.g. "mitochondria", "cristae", "ATP
+// synthase" all in one question), and capping too low was cutting off
+// real terms before ever reaching them, not just filtering noise.
+// Configurable since a higher cap means more genuinely-new terms surface
+// per question, which means more throttled AI calls per batch (more cost,
+// slower runs) — tune via env once real coverage/cost tradeoffs are known.
+const DEFAULT_MAX = Number(process.env.KEYWORD_MAX_PER_QUESTION) || 15;
+
+const extractKeywords = (text, { max = DEFAULT_MAX, minLength = 5 } = {}) => {
   if (!text) return [];
 
   const words = text

@@ -56,9 +56,11 @@ const runDictionaryBatch = async ({ batchSize } = {}) => {
   let hasCalledProvider = false;
 
   for (const question of questions) {
-    const text = [question.question, question.optionA, question.optionB, question.optionC, question.optionD]
-      .filter(Boolean)
-      .join(" ");
+    // Question + hint only — hint text tends to carry a lot of the real
+    // domain vocabulary (it's the explanation), while options are usually
+    // short answer choices/numbers that don't add much and would mostly
+    // just inflate the keyword count with noise.
+    const text = [question.question, question.hint].filter(Boolean).join(" ");
     const terms = extractKeywords(text);
 
     for (const term of terms) {

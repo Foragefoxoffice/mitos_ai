@@ -43,8 +43,11 @@ const assertReadOnly = async () => {
 const fetchQuestionBatch = async ({ afterId, limit }) => {
   await assertReadOnly();
 
+  // Only question + hint — options are deliberately excluded (see
+  // dictionaryBatchRunner.js), so there's no reason to read or hold that
+  // data here either.
   const [rows] = await getPool().query(
-    "SELECT id, question, optionA, optionB, optionC, optionD FROM question WHERE id > ? ORDER BY id ASC LIMIT ?",
+    "SELECT id, question, hint FROM question WHERE id > ? ORDER BY id ASC LIMIT ?",
     [afterId, limit]
   );
 

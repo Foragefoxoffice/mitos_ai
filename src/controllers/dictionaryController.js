@@ -50,4 +50,46 @@ const listEntries = async (req, res) => {
   res.json({ entries, total, page, pageSize });
 };
 
-module.exports = { runBatch, getProgress, listEntries };
+// Student-facing reads (via backend's proxy) — deliberately NEVER trigger
+// generation. If a term hasn't been processed by a batch yet, it's just
+// not returned/found; there is no live AI fallback here, on purpose (that
+// would reintroduce the per-question AI cost this whole design avoids).
+
+const getTermsForQuestion = async (req, res) => {
+  const questionId = Number(req.params.questionId);
+  if (!Number.isInteger(questionId)) {
+    return res.status(400).json({ message: "Invalid questionId" });
+  }
+
+  const mappings = await prisma.ai_dictionary_mapping.findMany({
+    where: { questionId, dictionary: { status: "completed" } },
+    select: { dictionary: { select: { id: true, term: true } } },
+  });
+
+  res.json({ questionId, terms: mappings.map((m) => m.dictionary) });
+};
+
+const getTermExplanation = async (req, res) => {
+  const term = req.params.term?.toLowerCase().trim();
+  if (!term) {
+    return res.status(400).json({ message: "Missing term" });
+  }
+
+  const entry = await prisma.ai_dictionary.findUnique({ where: { term } });
+
+  if (!entry || entry.status !== "completed") {
+    return res.status(404).json({ message: "Term not found" });
+  }
+
+  res.json({
+    term: entry.term,
+    meaning: entry.meaning,
+    simpleExplanation: entry.simpleExplanation,
+    eli5: entry.eli5,
+    detailedExplanation: entry.detailedExplanation,
+    mnemonic: entry.mnemonic,
+    realLifeExample: entry.realLifeExample,
+  });
+};
+
+module.exports = { runBatch, getProgress, listEntries, getTermsForQuestion, getTermExplanation };

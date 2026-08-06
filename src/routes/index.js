@@ -10,6 +10,7 @@ router.use("/health", require("./healthRoutes"));
 const internal = express.Router();
 internal.use(verifyInternalService);
 internal.use("/ai/dictionary", require("./dictionaryRoutes"));
+internal.use("/ai/chat", require("./chatRoutes"));
 
 router.use("/internal", internal);
 

@@ -14,8 +14,8 @@ module.exports = {
     fallback: { provider: "openai", model: process.env.MODEL_WORD_FALLBACK || "gpt-5-mini" },
   },
   explainAndChat: {
-    primary: { provider: "openai", model: process.env.MODEL_CHAT_PRIMARY || "gpt-5-mini" },
-    fallback: { provider: "gemini", model: process.env.MODEL_CHAT_FALLBACK || "gemini-flash-latest" },
+    primary: { provider: "gemini", model: process.env.MODEL_CHAT_PRIMARY || "gemini-flash-latest" },
+    fallback: { provider: "openai", model: process.env.MODEL_CHAT_FALLBACK || "gpt-5-mini" },
   },
   performanceAnalysis: {
     primary: { provider: "claude", model: process.env.MODEL_ANALYSIS_PRIMARY || "claude-sonnet-5" },

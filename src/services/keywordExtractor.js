@@ -24,7 +24,11 @@ const extractKeywordsWithAI = async (questionText, hintText) => {
   const cleanHint = stripLatex(stripHtml(hintText));
 
   const { system, prompt } = buildKeywordExtractionPrompt(cleanQuestion, cleanHint);
-  const result = await runTask("keywordExtraction", { system, prompt, maxTokens: 400, jsonMode: true });
+  // Bumped from 400 — the prompt now allows up to 12 terms (was 10) plus
+  // few-shot examples in the system prompt push the model toward longer,
+  // more thorough completions; same class of truncation risk already hit
+  // and fixed for chat (700 -> 1500).
+  const result = await runTask("keywordExtraction", { system, prompt, maxTokens: 600, jsonMode: true });
   const parsed = parseJsonResponse(result.text);
 
   const terms = Array.isArray(parsed.terms) ? parsed.terms : [];

@@ -24,6 +24,7 @@ const buildChatPrompt = ({ questionContext, historyMessages, newMessage }) => {
     "Keep replies concise (a few sentences to a short paragraph) unless the student explicitly asks for more detail.",
     "If you write any math, use LaTeX delimited with $...$ for inline or $$...$$ for display — the app renders it properly.",
     "Do NOT use markdown formatting (no **bold**, no _italic_, no bullet/numbered lists with - or 1.) — the app displays your reply as plain text, so markdown syntax would show up as literal asterisks/underscores/etc. Write in plain prose sentences instead.",
+    "If your answer is more than 2-3 sentences, break it into short paragraphs (2-4 sentences each) separated by a blank line — never write one long unbroken block of text.",
     "",
     `Subject: ${subject || "unknown"} | Chapter: ${chapter || "unknown"} | Topic: ${topic || "unknown"}`,
     `Question: ${question || ""}`,

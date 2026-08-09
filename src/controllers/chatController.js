@@ -1,7 +1,8 @@
 const { sendMessage, getHistory, ChatCapExceededError } = require("../services/chatService");
+const { getUsageAnalytics } = require("../services/chatUsageService");
 
 const postMessage = async (req, res) => {
-  const { userId, questionId, message, questionContext } = req.body || {};
+  const { userId, questionId, message, questionContext, isTrial } = req.body || {};
 
   if (!userId || !questionId || !message) {
     return res.status(400).json({ message: "userId, questionId, and message are required" });
@@ -13,6 +14,7 @@ const postMessage = async (req, res) => {
       questionId: Number(questionId),
       message,
       questionContext: questionContext || {},
+      isTrial: !!isTrial,
     });
     res.json(result);
   } catch (error) {
@@ -35,4 +37,13 @@ const getHistoryHandler = async (req, res) => {
   res.json(result);
 };
 
-module.exports = { postMessage, getHistoryHandler };
+const getUsage = async (req, res) => {
+  try {
+    const result = await getUsageAnalytics();
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+module.exports = { postMessage, getHistoryHandler, getUsage };

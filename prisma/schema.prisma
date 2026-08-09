@@ -139,6 +139,13 @@ model ai_chat_message {
   content             String   @db.LongText
   generatedByProvider String?  @db.VarChar(20)
   generatedByModel    String?  @db.VarChar(100)
+  // Only ever set on assistant rows — a user message doesn't independently
+  // consume tokens, the LLM call that answers it does. Used for admin usage
+  // analytics (per-user token/cost totals); nothing before this field was
+  // added has values here, so historical cost data starts from when this
+  // shipped, not from the beginning of the chat feature.
+  inputTokens         Int?     @default(0)
+  outputTokens        Int?     @default(0)
   createdAt           DateTime @default(now())
 
   session ai_chat_session @relation(fields: [sessionId], references: [id], onDelete: Cascade)

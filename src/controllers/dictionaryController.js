@@ -7,6 +7,7 @@ const {
   getIsAutoLoopRunning,
   JOB_TYPE,
 } = require("../jobs/dictionaryBatchRunner");
+const { retryTerm, startRetryFailedBatch, getIsRetrying } = require("../services/dictionaryRetryService");
 
 // Hard server-side ceiling — independent of whatever the caller (admin UI)
 // requests. Protects against an accidental large run regardless of what the
@@ -28,7 +29,12 @@ const runBatch = (req, res) => {
 
 const getProgress = async (req, res) => {
   const job = await prisma.ai_job.findUnique({ where: { type: JOB_TYPE } });
-  res.json({ job, isProcessing: getIsRunning(), isAutoLoopRunning: getIsAutoLoopRunning() });
+  res.json({
+    job,
+    isProcessing: getIsRunning(),
+    isAutoLoopRunning: getIsAutoLoopRunning(),
+    isRetrying: getIsRetrying(),
+  });
 };
 
 const startAuto = async (req, res) => {
@@ -111,12 +117,51 @@ const getTermExplanation = async (req, res) => {
   });
 };
 
+// Single term, synchronous — works for both an existing "failed" row and a
+// brand-new term the extractor never picked up (an admin manually adding
+// an important keyword). Runs inline (not fire-and-forget) since it's one
+// provider call, same latency class as a single chat reply, which already
+// completes within backend's 15s proxy timeout.
+const retryOne = async (req, res) => {
+  const term = req.body?.term;
+  if (!term || !String(term).trim()) {
+    return res.status(400).json({ message: "term is required" });
+  }
+
+  try {
+    const entry = await retryTerm(term);
+    res.json({ entry });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// Bounded sweep of failed rows — fire-and-forget, same shape as runBatch
+// (202 + started flag; admin polls /progress for currentActivity and
+// totalCreated/totalFailed movement).
+const MAX_RETRY_BATCH_SIZE = Number(process.env.DICTIONARY_MAX_RETRY_BATCH_SIZE) || 20;
+
+const retryFailed = (req, res) => {
+  const requested = Number(req.body?.limit) || 5;
+  const limit = Math.min(requested, MAX_RETRY_BATCH_SIZE);
+
+  const result = startRetryFailedBatch({ limit });
+
+  if (!result.started) {
+    return res.status(409).json(result);
+  }
+
+  res.status(202).json(result);
+};
+
 module.exports = {
   runBatch,
   getProgress,
   listEntries,
   getTermsForQuestion,
   getTermExplanation,
+  retryOne,
+  retryFailed,
   startAuto,
   stopAuto,
 };

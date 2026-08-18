@@ -46,7 +46,15 @@ const getOrCreateSession = (userId, questionId) =>
     create: { userId, questionId },
   });
 
-const sendMessage = async ({ userId, questionId, message, questionContext, isTrial }) => {
+// General (non-question) chats — reached from the Home screen, with no
+// specific question in view — share one persistent session per user, keyed
+// by this sentinel. Safe against collision with real question sessions
+// since `question.id` is an autoincrement PK starting at 1.
+const GENERAL_CHAT_QUESTION_ID = 0;
+
+const sendMessage = async ({ userId, questionId, message, questionContext, userContext, isTrial }) => {
+  const effectiveQuestionId = questionId || GENERAL_CHAT_QUESTION_ID;
+
   if (isTrial) {
     const totalCount = await countAllMessages(userId);
     if (totalCount >= TRIAL_MESSAGE_CAP) {
@@ -61,7 +69,7 @@ const sendMessage = async ({ userId, questionId, message, questionContext, isTri
     }
   }
 
-  const session = await getOrCreateSession(userId, questionId);
+  const session = await getOrCreateSession(userId, effectiveQuestionId);
 
   const priorMessages = await prisma.ai_chat_message.findMany({
     where: { sessionId: session.id },
@@ -74,6 +82,7 @@ const sendMessage = async ({ userId, questionId, message, questionContext, isTri
 
   const { system, prompt } = buildChatPrompt({
     questionContext,
+    userContext,
     historyMessages: priorMessages,
     newMessage: message,
   });
@@ -99,6 +108,22 @@ const sendMessage = async ({ userId, questionId, message, questionContext, isTri
   return { reply: assistantMessage.content, sessionId: session.id };
 };
 
+// Read-only lookup for the app to show "X left today" / "X of N used"
+// without needing to send a message — reuses the exact same counting
+// functions sendMessage's cap check uses, so this can never drift out of
+// sync with what actually gets enforced.
+const getQuota = async ({ userId, isTrial }) => {
+  const limit = isTrial ? TRIAL_MESSAGE_CAP : DAILY_MESSAGE_CAP;
+  const used = isTrial ? await countAllMessages(userId) : await countTodayMessages(userId);
+
+  return {
+    used,
+    limit,
+    remaining: Math.max(0, limit - used),
+    resets: isTrial ? "never" : "daily",
+  };
+};
+
 const getHistory = async (userId, questionId) => {
   const session = await prisma.ai_chat_session.findUnique({
     where: { userId_questionId: { userId, questionId } },
@@ -113,4 +138,4 @@ const getHistory = async (userId, questionId) => {
   return { messages };
 };
 
-module.exports = { sendMessage, getHistory, ChatCapExceededError, DAILY_MESSAGE_CAP, TRIAL_MESSAGE_CAP };
+module.exports = { sendMessage, getHistory, getQuota, ChatCapExceededError, DAILY_MESSAGE_CAP, TRIAL_MESSAGE_CAP };

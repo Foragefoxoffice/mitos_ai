@@ -11,6 +11,7 @@ const buildDictionaryPrompt = (term) => ({
     '"detailedExplanation" (a thorough NEET-syllabus-level paragraph),',
     '"mnemonic" (a short memory aid, or null if none fits naturally),',
     '"realLifeExample" (a relatable real-world example, or null if none fits naturally).',
+    "Whenever any field includes a formula, equation, ratio, unit exponent, or Greek letter, write it as real LaTeX delimited with $...$ for inline or $$...$$ for display — never as a plain-text approximation like \"theta = s / r\" or \"M^0 L^0 T^0\" or \"F/A\". Use proper LaTeX commands (\\theta, \\frac{}{}, ^{...}, _{...}) so the app renders an actual formula instead of literal text.",
   ].join(" "),
   prompt: `Term: "${term}"`,
 });

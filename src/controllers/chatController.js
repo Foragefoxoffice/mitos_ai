@@ -1,19 +1,23 @@
-const { sendMessage, getHistory, ChatCapExceededError } = require("../services/chatService");
+const { sendMessage, getHistory, getQuota, ChatCapExceededError } = require("../services/chatService");
 const { getUsageAnalytics } = require("../services/chatUsageService");
 
+// questionId is optional — omitted (or 0) means the "general" Home-screen
+// chat mode with no specific question in view; see chatService's
+// GENERAL_CHAT_QUESTION_ID sentinel.
 const postMessage = async (req, res) => {
-  const { userId, questionId, message, questionContext, isTrial } = req.body || {};
+  const { userId, questionId, message, questionContext, userContext, isTrial } = req.body || {};
 
-  if (!userId || !questionId || !message) {
-    return res.status(400).json({ message: "userId, questionId, and message are required" });
+  if (!userId || !message) {
+    return res.status(400).json({ message: "userId and message are required" });
   }
 
   try {
     const result = await sendMessage({
       userId: Number(userId),
-      questionId: Number(questionId),
+      questionId: questionId ? Number(questionId) : 0,
       message,
       questionContext: questionContext || {},
+      userContext: userContext || {},
       isTrial: !!isTrial,
     });
     res.json(result);
@@ -46,4 +50,18 @@ const getUsage = async (req, res) => {
   }
 };
 
-module.exports = { postMessage, getHistoryHandler, getUsage };
+const getQuotaHandler = async (req, res) => {
+  const userId = Number(req.query.userId);
+  if (!Number.isInteger(userId)) {
+    return res.status(400).json({ message: "Invalid userId" });
+  }
+
+  try {
+    const result = await getQuota({ userId, isTrial: req.query.isTrial === "true" });
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+module.exports = { postMessage, getHistoryHandler, getUsage, getQuotaHandler };

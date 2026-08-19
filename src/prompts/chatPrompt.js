@@ -12,7 +12,7 @@ const SHARED_RULES = [
 ];
 
 const buildQuestionSystemPrompt = (questionContext) => {
-  const { question, optionA, optionB, optionC, optionD, hint, subject, chapter, topic, correctOption } =
+  const { question, optionA, optionB, optionC, optionD, hint, portion, subject, chapter, topic, questionType, correctOption } =
     questionContext || {};
 
   return [
@@ -20,7 +20,7 @@ const buildQuestionSystemPrompt = (questionContext) => {
     "Answer only using the question context below plus ordinary subject knowledge — stay focused on this question, don't go on tangents.",
     ...SHARED_RULES,
     "",
-    `Subject: ${subject || "unknown"} | Chapter: ${chapter || "unknown"} | Topic: ${topic || "unknown"}`,
+    `${portion ? `Portion: ${portion} | ` : ""}Subject: ${subject || "unknown"} | Chapter: ${chapter || "unknown"} | Topic: ${topic || "unknown"}${questionType ? ` | Question type: ${questionType}` : ""}`,
     `Question: ${question || ""}`,
     `Options: A) ${optionA || ""}  B) ${optionB || ""}  C) ${optionC || ""}  D) ${optionD || ""}`,
     hint ? `Hint/Explanation on file: ${hint}` : null,

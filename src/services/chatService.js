@@ -79,8 +79,24 @@ const getOrCreateSession = (userId, questionId) =>
 // since `question.id` is an autoincrement PK starting at 1.
 const GENERAL_CHAT_QUESTION_ID = 0;
 
-const sendMessage = async ({ userId, questionId, message, questionContext, userContext, isTrial }) => {
-  const effectiveQuestionId = questionId || GENERAL_CHAT_QUESTION_ID;
+// `ai_chat_session.questionId` is a single int column, but backend has TWO
+// separate question tables with their own independent autoincrement PKs —
+// the main `question` bank ("mock") and `testseriesquestionbank` ("test-series")
+// — so the same numeric id can point at two completely unrelated questions.
+// Without namespacing, a Test Series question and a mock question that
+// happen to share an id would silently share one session AND its history,
+// which is exactly how a student reviewing a Biology Test Series question
+// once got an answer about an unrelated Physics mock question (confirmed
+// live 2026-08-19). Real ids are always positive, so negating test-series
+// ids keeps them in a disjoint range from mock ids and from the `0`
+// GENERAL_CHAT_QUESTION_ID sentinel, with no schema migration needed.
+const resolveEffectiveQuestionId = (questionId, source) => {
+  if (!questionId) return GENERAL_CHAT_QUESTION_ID;
+  return source === "test-series" ? -Number(questionId) : Number(questionId);
+};
+
+const sendMessage = async ({ userId, questionId, message, questionContext, userContext, isTrial, source }) => {
+  const effectiveQuestionId = resolveEffectiveQuestionId(questionId, source);
 
   if (isTrial) {
     const totalCount = await countAllMessages(userId);
@@ -152,9 +168,10 @@ const getQuota = async ({ userId, isTrial }) => {
   };
 };
 
-const getHistory = async (userId, questionId) => {
+const getHistory = async (userId, questionId, source) => {
+  const effectiveQuestionId = resolveEffectiveQuestionId(questionId, source);
   const session = await prisma.ai_chat_session.findUnique({
-    where: { userId_questionId: { userId, questionId } },
+    where: { userId_questionId: { userId, questionId: effectiveQuestionId } },
   });
   if (!session) return { messages: [] };
 

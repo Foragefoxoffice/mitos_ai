@@ -5,7 +5,7 @@ const { getUsageAnalytics } = require("../services/chatUsageService");
 // chat mode with no specific question in view; see chatService's
 // GENERAL_CHAT_QUESTION_ID sentinel.
 const postMessage = async (req, res) => {
-  const { userId, questionId, message, questionContext, userContext, isTrial } = req.body || {};
+  const { userId, questionId, message, questionContext, userContext, isTrial, source } = req.body || {};
 
   if (!userId || !message) {
     return res.status(400).json({ message: "userId and message are required" });
@@ -19,6 +19,7 @@ const postMessage = async (req, res) => {
       questionContext: questionContext || {},
       userContext: userContext || {},
       isTrial: !!isTrial,
+      source,
     });
     res.json(result);
   } catch (error) {
@@ -42,7 +43,7 @@ const getHistoryHandler = async (req, res) => {
     return res.status(400).json({ message: "Invalid questionId or userId" });
   }
 
-  const result = await getHistory(userId, questionId);
+  const result = await getHistory(userId, questionId, req.query.source);
   res.json(result);
 };
 

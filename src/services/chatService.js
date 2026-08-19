@@ -14,7 +14,7 @@ const { buildChatPrompt } = require("../prompts/chatPrompt");
 // day for free, which isn't the intended trial value. backend determines
 // trial vs premium (it owns user.status/trialEndsAt/premiumExpiry; this
 // service doesn't have that data) and passes isTrial through.
-const DAILY_MESSAGE_CAP = Number(process.env.CHAT_DAILY_MESSAGE_CAP) || 20;
+const DAILY_MESSAGE_CAP = Number(process.env.CHAT_DAILY_MESSAGE_CAP) || 100;
 const TRIAL_MESSAGE_CAP = Number(process.env.CHAT_TRIAL_MESSAGE_CAP) || 10;
 
 class ChatCapExceededError extends Error {}

@@ -1,17 +1,31 @@
 // Model IDs are read from env so they can be updated without a code change.
-// "gemini-3.6-flash" (verified working 2026-08-05) started 503'ing
-// ("experiencing high demand") as of 2026-08-19 — the "-latest" alias is
-// evidently not a stable escape from Google's model churn after all.
-// gemini-2.0-flash and gemini-1.5-flash both now 404 as fully retired;
-// Google's own 404 response for 2.0-flash points at gemini-3.6-flash as
-// the replacement, and that's what's live-verified working now (2026-08-19,
-// real API call, real key). GPT-5/GPT-5-mini and Claude Sonnet entries are
-// unverified — no OpenAI/Anthropic key added yet — confirm against
-// provider docs once those keys are in .env.
+// Each task is an ORDERED LIST of attempts — aiRouter.js walks it and only
+// fails once every entry has failed, so a task genuinely erroring out to a
+// user requires every single model in its chain to be down at once.
 //
-// AI_LOCAL_ONLY=true routes every task's primary AND fallback to a local
-// Ollama model, with no third-party provider anywhere in the chain — for
-// local dev machines that don't have (and shouldn't need) real
+// Live-verified 2026-08-19, real API calls against real keys:
+//   - gemini-3.6-flash: works (fast, cheap — used for straightforward asks).
+//   - gemini-pro-latest (resolves to gemini-3.1-pro-preview): works, gives
+//     noticeably more thorough/careful answers — used for complex asks.
+//   - gemini-flash-latest: 503 "experiencing high demand" right now — the
+//     "-latest" alias isn't a stable escape from Google's model churn, so
+//     pinned versions are used instead everywhere below.
+//   - gemini-2.0-flash / gemini-1.5-flash: fully retired, 404. Google's own
+//     404 for 2.0-flash names gemini-3.6-flash as the replacement.
+//   - OpenAI (gpt-5-mini/gpt-5): key is present but the account is over
+//     quota (429) — kept as a later fallback attempt for when billing is
+//     fixed, but it will NOT rescue a request today.
+//   - Claude: no ANTHROPIC_API_KEY set at all — same story, kept as a
+//     fallback for when a key is added, not currently functional.
+// Net effect: Gemini is the only provider actually carrying traffic right
+// now, so every task below tries a second, different Gemini model before
+// falling through to the other providers — real resilience against one
+// specific Gemini model being overloaded, not just paper resilience against
+// providers that can't currently serve a request anyway.
+//
+// AI_LOCAL_ONLY=true routes every task to a local Ollama model only, with
+// no third-party provider anywhere in the chain — for local dev machines
+// that don't have (and shouldn't need) real
 // OPENAI_API_KEY/GEMINI_API_KEY/ANTHROPIC_API_KEY set. Deliberately not
 // inferred from NODE_ENV — this needs to be an explicit opt-in per
 // machine, not something that flips silently. Leave unset in production;
@@ -20,36 +34,35 @@
 const LOCAL_ONLY = process.env.AI_LOCAL_ONLY === "true";
 
 if (LOCAL_ONLY) {
-  const localRoute = { provider: "ollama", model: process.env.OLLAMA_MODEL || "qwen2.5:14b" };
+  const localRoute = [{ provider: "ollama", model: process.env.OLLAMA_MODEL || "qwen2.5:14b" }];
 
   module.exports = {
-    keywordExtraction: { primary: localRoute, fallback: localRoute },
-    wordExplain: { primary: localRoute, fallback: localRoute },
-    explainAndChat: { primary: localRoute, fallback: localRoute },
-    performanceAnalysis: { primary: localRoute, fallback: localRoute },
-    studyPlan: { primary: localRoute, fallback: localRoute },
+    keywordExtraction: localRoute,
+    wordExplain: localRoute,
+    explainAndChat: { simple: localRoute, complex: localRoute },
+    performanceAnalysis: localRoute,
+    studyPlan: localRoute,
   };
 } else {
+  const geminiFlash = { provider: "gemini", model: process.env.MODEL_GEMINI_FLASH || "gemini-3.6-flash" };
+  const geminiPro = { provider: "gemini", model: process.env.MODEL_GEMINI_PRO || "gemini-pro-latest" };
+  const openaiMini = { provider: "openai", model: process.env.MODEL_OPENAI_FALLBACK || "gpt-5-mini" };
+  const claudeFallback = { provider: "claude", model: process.env.MODEL_CLAUDE_FALLBACK || "claude-sonnet-5" };
+
   module.exports = {
-    keywordExtraction: {
-      primary: { provider: "gemini", model: process.env.MODEL_KEYWORDS_PRIMARY || "gemini-3.6-flash" },
-      fallback: { provider: "openai", model: process.env.MODEL_KEYWORDS_FALLBACK || "gpt-5-mini" },
-    },
-    wordExplain: {
-      primary: { provider: "gemini", model: process.env.MODEL_WORD_PRIMARY || "gemini-3.6-flash" },
-      fallback: { provider: "openai", model: process.env.MODEL_WORD_FALLBACK || "gpt-5-mini" },
-    },
+    keywordExtraction: [geminiFlash, geminiPro, openaiMini],
+    wordExplain: [geminiFlash, geminiPro, openaiMini],
+    // Chat picks its tier by question complexity — see chatService.js's
+    // classifyComplexity. "simple" leads with the fast/cheap model and
+    // only reaches for the heavier one if that fails; "complex" is the
+    // reverse, since a shallow answer on a question that asked for real
+    // depth (e.g. "explain each option and why the others are wrong") is
+    // itself a quality failure even when it technically "succeeds".
     explainAndChat: {
-      primary: { provider: "gemini", model: process.env.MODEL_CHAT_PRIMARY || "gemini-3.6-flash" },
-      fallback: { provider: "openai", model: process.env.MODEL_CHAT_FALLBACK || "gpt-5-mini" },
+      simple: [geminiFlash, geminiPro, openaiMini],
+      complex: [geminiPro, geminiFlash, openaiMini],
     },
-    performanceAnalysis: {
-      primary: { provider: "claude", model: process.env.MODEL_ANALYSIS_PRIMARY || "claude-sonnet-5" },
-      fallback: { provider: "openai", model: process.env.MODEL_ANALYSIS_FALLBACK || "gpt-5-mini" },
-    },
-    studyPlan: {
-      primary: { provider: "openai", model: process.env.MODEL_STUDYPLAN_PRIMARY || "gpt-5" },
-      fallback: { provider: "claude", model: process.env.MODEL_STUDYPLAN_FALLBACK || "claude-sonnet-5" },
-    },
+    performanceAnalysis: [geminiPro, geminiFlash, claudeFallback, openaiMini],
+    studyPlan: [geminiPro, geminiFlash, openaiMini, claudeFallback],
   };
 }

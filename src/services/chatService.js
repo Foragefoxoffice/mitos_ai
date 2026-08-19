@@ -19,6 +19,33 @@ const TRIAL_MESSAGE_CAP = Number(process.env.CHAT_TRIAL_MESSAGE_CAP) || 10;
 
 class ChatCapExceededError extends Error {}
 
+// Deterministic (no extra AI call, so no added latency/cost/failure surface)
+// — mirrors the app's own prompt-chip vocabulary (AiChatScreen.jsx's
+// PROMPTS_AFTER_ANSWER has "Explain each option", "Why are the other
+// options wrong?", "Explain this question step by step"), which are
+// exactly the asks that read shallow from a fast model and warrant the
+// stronger one. A long free-typed question is treated the same way even
+// without matching a fixed phrase.
+const COMPLEX_MESSAGE_PATTERNS = [
+  /step.?by.?step/i,
+  /explain (each|all|every) option/i,
+  /why (are|is|were).{0,20}(wrong|correct|right|incorrect)/i,
+  /in detail/i,
+  /\bcompare\b/i,
+  /difference between/i,
+  /\bderive\b/i,
+  /\bprove\b/i,
+  /pros and cons/i,
+];
+const COMPLEX_WORD_COUNT_THRESHOLD = 25;
+
+const classifyComplexity = (message) => {
+  if (!message) return "simple";
+  const wordCount = message.trim().split(/\s+/).filter(Boolean).length;
+  if (wordCount > COMPLEX_WORD_COUNT_THRESHOLD) return "complex";
+  return COMPLEX_MESSAGE_PATTERNS.some((re) => re.test(message)) ? "complex" : "simple";
+};
+
 const countTodayMessages = async (userId) => {
   const startOfToday = new Date();
   startOfToday.setHours(0, 0, 0, 0);
@@ -91,7 +118,8 @@ const sendMessage = async ({ userId, questionId, message, questionContext, userC
   // room (e.g. "explain each option" covering 4 options) — verified live
   // against a real conversation, same class of bug as Dictionary
   // generation's earlier 700-token truncation.
-  const result = await runTask("explainAndChat", { system, prompt, maxTokens: 1500 });
+  const complexity = classifyComplexity(message);
+  const result = await runTask("explainAndChat", { system, prompt, maxTokens: 1500, complexity });
 
   const assistantMessage = await prisma.ai_chat_message.create({
     data: {

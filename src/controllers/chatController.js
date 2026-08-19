@@ -25,7 +25,12 @@ const postMessage = async (req, res) => {
     if (error instanceof ChatCapExceededError) {
       return res.status(429).json({ message: error.message });
     }
-    res.status(500).json({ message: error.message });
+    // error.message here can be a raw provider error (e.g. OpenAI's "You
+    // didn't provide an API key" 401, or a network/timeout message) —
+    // never send that straight to a student. Log the real cause server-side
+    // and return a generic message instead.
+    console.error("[chatController] postMessage failed:", error);
+    res.status(500).json({ message: "Mitos AI is temporarily unavailable. Please try again in a moment." });
   }
 };
 

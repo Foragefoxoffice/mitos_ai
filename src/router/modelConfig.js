@@ -1,9 +1,13 @@
 // Model IDs are read from env so they can be updated without a code change.
-// "gemini-flash-latest" is verified working (2026-08-05, live call against
-// gemini-2.5-flash directly 404'd for new API keys — the "-latest" alias
-// avoids hardcoding a version Google can deprecate under us). GPT-5/GPT-5-mini
-// and Claude Sonnet entries are unverified — no OpenAI/Anthropic key added
-// yet — confirm against provider docs once those keys are in .env.
+// "gemini-3.6-flash" (verified working 2026-08-05) started 503'ing
+// ("experiencing high demand") as of 2026-08-19 — the "-latest" alias is
+// evidently not a stable escape from Google's model churn after all.
+// gemini-2.0-flash and gemini-1.5-flash both now 404 as fully retired;
+// Google's own 404 response for 2.0-flash points at gemini-3.6-flash as
+// the replacement, and that's what's live-verified working now (2026-08-19,
+// real API call, real key). GPT-5/GPT-5-mini and Claude Sonnet entries are
+// unverified — no OpenAI/Anthropic key added yet — confirm against
+// provider docs once those keys are in .env.
 //
 // AI_LOCAL_ONLY=true routes every task's primary AND fallback to a local
 // Ollama model, with no third-party provider anywhere in the chain — for
@@ -28,15 +32,15 @@ if (LOCAL_ONLY) {
 } else {
   module.exports = {
     keywordExtraction: {
-      primary: { provider: "gemini", model: process.env.MODEL_KEYWORDS_PRIMARY || "gemini-flash-latest" },
+      primary: { provider: "gemini", model: process.env.MODEL_KEYWORDS_PRIMARY || "gemini-3.6-flash" },
       fallback: { provider: "openai", model: process.env.MODEL_KEYWORDS_FALLBACK || "gpt-5-mini" },
     },
     wordExplain: {
-      primary: { provider: "gemini", model: process.env.MODEL_WORD_PRIMARY || "gemini-flash-latest" },
+      primary: { provider: "gemini", model: process.env.MODEL_WORD_PRIMARY || "gemini-3.6-flash" },
       fallback: { provider: "openai", model: process.env.MODEL_WORD_FALLBACK || "gpt-5-mini" },
     },
     explainAndChat: {
-      primary: { provider: "gemini", model: process.env.MODEL_CHAT_PRIMARY || "gemini-flash-latest" },
+      primary: { provider: "gemini", model: process.env.MODEL_CHAT_PRIMARY || "gemini-3.6-flash" },
       fallback: { provider: "openai", model: process.env.MODEL_CHAT_FALLBACK || "gpt-5-mini" },
     },
     performanceAnalysis: {

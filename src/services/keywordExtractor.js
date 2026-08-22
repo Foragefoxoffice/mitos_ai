@@ -245,6 +245,15 @@ const GENERIC_NOUNS = new Set([
   "deposition",
   "adherence",
   "non-membranous",
+  // Bare generic pH/reaction-state adjectives (procedural, matching the
+  // "reduced"/"oxidised" pattern) and an overly-broad bare category noun
+  // (matching the "particles"/"particle" pattern) — verified live on
+  // DeepSeek from a colligative-properties/d-block chemistry batch.
+  "acidified",
+  "basic",
+  "acidic",
+  "acids",
+  "acid",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

@@ -33,6 +33,16 @@
 // always uses the real provider config below regardless of this file.
 const LOCAL_ONLY = process.env.AI_LOCAL_ONLY === "true";
 
+// Same idea as AI_LOCAL_ONLY, for isolating a real cost/speed measurement of
+// OpenAI alone (2026-08-21) — no Gemini fallback muddying the numbers.
+// Temporary/manual toggle for benchmarking a real batch, not meant to be
+// left on for production routing.
+const OPENAI_ONLY = process.env.AI_OPENAI_ONLY === "true";
+
+// Same idea, for isolating a real cost/speed/quality measurement of
+// DeepSeek alone (2026-08-22).
+const DEEPSEEK_ONLY = process.env.AI_DEEPSEEK_ONLY === "true";
+
 if (LOCAL_ONLY) {
   const localRoute = [{ provider: "ollama", model: process.env.OLLAMA_MODEL || "qwen2.5:14b" }];
 
@@ -42,6 +52,26 @@ if (LOCAL_ONLY) {
     explainAndChat: { simple: localRoute, complex: localRoute },
     performanceAnalysis: localRoute,
     studyPlan: localRoute,
+  };
+} else if (OPENAI_ONLY) {
+  const openaiRoute = [{ provider: "openai", model: process.env.MODEL_OPENAI_FALLBACK || "gpt-5-mini" }];
+
+  module.exports = {
+    keywordExtraction: openaiRoute,
+    wordExplain: openaiRoute,
+    explainAndChat: { simple: openaiRoute, complex: openaiRoute },
+    performanceAnalysis: openaiRoute,
+    studyPlan: openaiRoute,
+  };
+} else if (DEEPSEEK_ONLY) {
+  const deepseekRoute = [{ provider: "deepseek", model: process.env.MODEL_DEEPSEEK || "deepseek-v4-flash" }];
+
+  module.exports = {
+    keywordExtraction: deepseekRoute,
+    wordExplain: deepseekRoute,
+    explainAndChat: { simple: deepseekRoute, complex: deepseekRoute },
+    performanceAnalysis: deepseekRoute,
+    studyPlan: deepseekRoute,
   };
 } else {
   const geminiFlash = { provider: "gemini", model: process.env.MODEL_GEMINI_FLASH || "gemini-3.6-flash" };

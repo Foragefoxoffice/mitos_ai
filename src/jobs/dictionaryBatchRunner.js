@@ -13,14 +13,150 @@ const JOB_TYPE = "dictionary_generation";
 // hit a 429 when stacked with other manual calls in the same minute); only
 // applied before calls that actually hit a provider, never on the
 // dedup-skip path. Raise/lower via env once real quota (or a paid tier) is
-// known.
+// known. With DICTIONARY_CONCURRENCY > 1, this delay applies independently
+// within each concurrent lane (see processQuestion) rather than globally —
+// several lanes pacing themselves this way is still a real, if soft, rate
+// limiter without needing a shared cross-lane clock.
 const AI_CALL_DELAY_MS = Number(process.env.AI_CALL_DELAY_MS) || 15000;
 
-// Small helper: updates what the batch is doing RIGHT NOW, so admin
-// polling /progress sees real activity instead of just totals that jump
-// occasionally every ~15s. Cheap write, called often on purpose.
-const setActivity = (jobId, text) =>
-  prisma.ai_job.update({ where: { id: jobId }, data: { currentActivity: text } }).catch(() => {});
+// How many questions to process at once (2026-08-21). Most of a call's
+// wall-clock time is spent waiting on the AI provider's response, not local
+// work — the old one-at-a-time loop left that time completely idle. Running
+// several questions concurrently multiplies throughput roughly linearly
+// instead. Kept modest by default so a first run stays comfortably under
+// Gemini's paid-tier rate limits without needing to know the exact number;
+// raise via env once headroom at the current value is confirmed live.
+const DICTIONARY_CONCURRENCY = Number(process.env.DICTIONARY_CONCURRENCY) || 5;
+
+// Runs `worker` over `items` with at most `limit` running at once. Each of
+// `limit` lanes pulls the next unclaimed item from a shared index as soon as
+// it finishes its current one (rather than waiting on fixed-size groups with
+// a barrier between them), so a few slow items never stall the other lanes.
+// Results come back in the SAME order as `items`, regardless of which
+// finished first — callers that need ordered semantics (cursor advancement
+// below) can rely on that without re-sorting.
+const runWithConcurrency = async (items, limit, worker) => {
+  const results = new Array(items.length);
+  let nextIndex = 0;
+
+  const runLane = async () => {
+    while (nextIndex < items.length) {
+      const currentIndex = nextIndex++;
+      results[currentIndex] = await worker(items[currentIndex], currentIndex);
+    }
+  };
+
+  const lanes = Array.from({ length: Math.min(limit, items.length) }, () => runLane());
+  await Promise.all(lanes);
+  return results;
+};
+
+// Processes ONE question end-to-end: extract its terms, generate any that
+// are new, map them to the question. Deliberately doesn't touch job.cursor
+// or currentBatchProcessed directly — under concurrency, questions finish in
+// whatever order their AI calls happen to complete, so only the caller (see
+// runDictionaryBatch), after seeing every question's outcome, can safely
+// decide how far the cursor is allowed to move.
+//
+// totalCreated/totalSkipped/totalFailed ARE still updated live here (as
+// before) rather than batched up — Prisma's `{ increment: 1 }` compiles to
+// an atomic `UPDATE ... SET x = x + 1`, so concurrent lanes writing the same
+// counter is safe with no lost updates, unlike the cursor field.
+const processQuestion = async (question, jobId) => {
+  let terms;
+  try {
+    terms = await extractKeywordsWithAI(question.question, question.hint);
+  } catch (error) {
+    logger.warn(`[dictionaryBatchRunner] keyword extraction failed for question ${question.id}: ${error.message}`);
+    return { question, extractionFailed: true, created: 0, skipped: 0, failed: 0 };
+  }
+
+  let created = 0;
+  let skipped = 0;
+  let failed = 0;
+
+  for (const term of terms) {
+    await sleep(AI_CALL_DELAY_MS);
+
+    let dictEntry = await prisma.ai_dictionary.findUnique({ where: { term } });
+
+    // A term with no entry needs generating. A term stuck in "failed"
+    // ALSO needs (re)generating — a previous failure isn't a completed
+    // result, and without this check a failed term would be skipped
+    // forever, silently counted as "already have it". Only a completed
+    // or manually-edited entry is actually reused.
+    const needsGeneration = !dictEntry || (dictEntry.status === "failed" && !dictEntry.manuallyEdited);
+
+    if (needsGeneration) {
+      try {
+        const generated = await generateDictionaryEntry(term);
+        dictEntry = await prisma.ai_dictionary.upsert({
+          where: { term },
+          update: {
+            meaning: generated.meaning,
+            simpleExplanation: generated.simpleExplanation,
+            eli5: generated.eli5,
+            detailedExplanation: generated.detailedExplanation,
+            mnemonic: generated.mnemonic,
+            realLifeExample: generated.realLifeExample,
+            status: "completed",
+            failureReason: null,
+            generatedByProvider: generated.provider,
+            generatedByModel: generated.model,
+          },
+          create: {
+            term,
+            meaning: generated.meaning,
+            simpleExplanation: generated.simpleExplanation,
+            eli5: generated.eli5,
+            detailedExplanation: generated.detailedExplanation,
+            mnemonic: generated.mnemonic,
+            realLifeExample: generated.realLifeExample,
+            status: "completed",
+            generatedByProvider: generated.provider,
+            generatedByModel: generated.model,
+          },
+        });
+        created++;
+        await prisma.ai_job.update({
+          where: { id: jobId },
+          data: { totalCreated: { increment: 1 }, lastRunAt: new Date() },
+        });
+      } catch (error) {
+        logger.warn(`[dictionaryBatchRunner] generation failed for "${term}": ${error.message}`);
+        await prisma.ai_dictionary
+          .upsert({
+            where: { term },
+            update: { status: "failed", failureReason: error.message },
+            create: { term, status: "failed", failureReason: error.message },
+          })
+          .catch(() => {});
+        failed++;
+        await prisma.ai_job.update({
+          where: { id: jobId },
+          data: { totalFailed: { increment: 1 }, lastRunAt: new Date() },
+        });
+        continue;
+      }
+    } else {
+      skipped++;
+      await prisma.ai_job.update({ where: { id: jobId }, data: { totalSkipped: { increment: 1 } } });
+    }
+
+    // Two concurrent lanes can occasionally discover the same brand-new term
+    // at the same time and both attempt to generate it — harmless: the
+    // unique constraint on `term` means the upsert above resolves to one
+    // row either way, the worst case is one wasted duplicate AI call, never
+    // a duplicate/corrupt dictionary entry.
+    await prisma.ai_dictionary_mapping.upsert({
+      where: { dictionaryId_questionId: { dictionaryId: dictEntry.id, questionId: question.id } },
+      update: {},
+      create: { dictionaryId: dictEntry.id, questionId: question.id },
+    });
+  }
+
+  return { question, extractionFailed: false, created, skipped, failed };
+};
 
 // Runs ONE batch and stops — never the whole question bank in one call.
 // Resumable: picks up from job.cursor (the highest question id processed so
@@ -28,12 +164,6 @@ const setActivity = (jobId, text) =>
 // added to the bank — always continues instead of restarting or
 // reprocessing. Terms are deduped against ai_dictionary before any AI call,
 // so a term shared across many questions is only ever generated once.
-//
-// Progress (cursor, totalProcessed/Created/Skipped/Failed) is persisted
-// after every term and every question, not batched up for one write at the
-// end — with throttled calls this can run for minutes, so a crash mid-run
-// loses at most the current in-flight term, and admin polling /progress
-// sees live movement instead of one jump at completion.
 const runDictionaryBatch = async ({ batchSize } = {}) => {
   let job = await prisma.ai_job.findUnique({ where: { type: JOB_TYPE } });
 
@@ -62,136 +192,61 @@ const runDictionaryBatch = async ({ batchSize } = {}) => {
     return { job: idleJob, processed: 0, created: 0, skipped: 0, failed: 0, message: "No new questions to process" };
   }
 
+  const lanes = Math.min(DICTIONARY_CONCURRENCY, questions.length);
   await prisma.ai_job.update({
     where: { id: job.id },
     data: {
       currentBatchTotal: questions.length,
       currentBatchProcessed: 0,
-      currentActivity: `Starting batch of ${questions.length} question${questions.length === 1 ? "" : "s"}…`,
+      currentActivity: `Processing ${questions.length} question${questions.length === 1 ? "" : "s"} (${lanes} at a time)…`,
     },
   });
 
+  // A single "currentActivity" string can't meaningfully describe several
+  // questions' individual steps at once without flickering between lanes,
+  // so per-question step text (extracting/generating "term") is intentionally
+  // not surfaced during concurrent runs — currentBatchProcessed below is the
+  // real-time signal admin polling relies on instead.
+  const results = await runWithConcurrency(questions, lanes, async (question) => {
+    const result = await processQuestion(question, job.id);
+    await prisma.ai_job
+      .update({ where: { id: job.id }, data: { currentBatchProcessed: { increment: 1 } } })
+      .catch(() => {});
+    return result;
+  });
+
+  // Concurrent questions finish in whatever order their AI calls settle,
+  // but the resumable cursor must never skip past a question that failed
+  // extraction — same guarantee the old sequential version got from
+  // stopping its loop on the first failure. `results` is in the ORIGINAL
+  // (ascending question-id) order (guaranteed by runWithConcurrency), so
+  // walking it from the start and stopping at the first extraction failure
+  // reproduces that guarantee exactly. Anything after that point is real,
+  // valid work already saved (its dictionary entries + mappings exist) —
+  // just not reflected in the cursor yet, so it gets harmlessly redone
+  // (fast: dedup skips already-generated terms) whenever this resumes.
   let created = 0;
   let skipped = 0;
   let failed = 0;
-  let hasCalledProvider = false;
+  let cursorAdvanceTo = job.cursor;
+  let processedCount = 0;
 
-  for (const [index, question] of questions.entries()) {
-    const position = `${index + 1}/${questions.length}`;
-
-    // Extraction is now an AI call (per question, not per term) — an LLM
-    // can actually judge "technical term worth explaining" vs "everyday
-    // word", which a rule-based length/stopword filter never could. Same
-    // throttle applies to this call as to term generation below.
-    if (hasCalledProvider) {
-      await setActivity(job.id, `Question ${question.id} (${position}): waiting to respect rate limit…`);
-      await sleep(AI_CALL_DELAY_MS);
-    }
-    hasCalledProvider = true;
-
-    await setActivity(job.id, `Question ${question.id} (${position}): extracting keywords…`);
-
-    let terms;
-    try {
-      terms = await extractKeywordsWithAI(question.question, question.hint);
-    } catch (error) {
-      logger.warn(`[dictionaryBatchRunner] keyword extraction failed for question ${question.id}: ${error.message}`);
-      // Don't advance the cursor past a question we couldn't extract
-      // terms from — stop here so the next batch run retries this same
-      // question instead of silently skipping it forever.
-      break;
-    }
-
-    for (const term of terms) {
-      let dictEntry = await prisma.ai_dictionary.findUnique({ where: { term } });
-
-      // A term with no entry needs generating. A term stuck in "failed"
-      // ALSO needs (re)generating — a previous failure isn't a completed
-      // result, and without this check a failed term would be skipped
-      // forever, silently counted as "already have it". Only a completed
-      // or manually-edited entry is actually reused.
-      const needsGeneration = !dictEntry || (dictEntry.status === "failed" && !dictEntry.manuallyEdited);
-
-      if (needsGeneration) {
-        if (hasCalledProvider) {
-          await setActivity(job.id, `Question ${question.id} (${position}): waiting to respect rate limit…`);
-          await sleep(AI_CALL_DELAY_MS);
-        }
-        hasCalledProvider = true;
-
-        await setActivity(job.id, `Question ${question.id} (${position}): generating explanation for "${term}"…`);
-
-        try {
-          const generated = await generateDictionaryEntry(term);
-          dictEntry = await prisma.ai_dictionary.upsert({
-            where: { term },
-            update: {
-              meaning: generated.meaning,
-              simpleExplanation: generated.simpleExplanation,
-              eli5: generated.eli5,
-              detailedExplanation: generated.detailedExplanation,
-              mnemonic: generated.mnemonic,
-              realLifeExample: generated.realLifeExample,
-              status: "completed",
-              failureReason: null,
-              generatedByProvider: generated.provider,
-              generatedByModel: generated.model,
-            },
-            create: {
-              term,
-              meaning: generated.meaning,
-              simpleExplanation: generated.simpleExplanation,
-              eli5: generated.eli5,
-              detailedExplanation: generated.detailedExplanation,
-              mnemonic: generated.mnemonic,
-              realLifeExample: generated.realLifeExample,
-              status: "completed",
-              generatedByProvider: generated.provider,
-              generatedByModel: generated.model,
-            },
-          });
-          created++;
-          await prisma.ai_job.update({
-            where: { id: job.id },
-            data: { totalCreated: { increment: 1 }, lastRunAt: new Date() },
-          });
-        } catch (error) {
-          logger.warn(`[dictionaryBatchRunner] generation failed for "${term}": ${error.message}`);
-          await prisma.ai_dictionary
-            .upsert({
-              where: { term },
-              update: { status: "failed", failureReason: error.message },
-              create: { term, status: "failed", failureReason: error.message },
-            })
-            .catch(() => {});
-          failed++;
-          await prisma.ai_job.update({
-            where: { id: job.id },
-            data: { totalFailed: { increment: 1 }, lastRunAt: new Date() },
-          });
-          continue;
-        }
-      } else {
-        skipped++;
-        await prisma.ai_job.update({ where: { id: job.id }, data: { totalSkipped: { increment: 1 } } });
-      }
-
-      await prisma.ai_dictionary_mapping.upsert({
-        where: { dictionaryId_questionId: { dictionaryId: dictEntry.id, questionId: question.id } },
-        update: {},
-        create: { dictionaryId: dictEntry.id, questionId: question.id },
-      });
-    }
-
-    await prisma.ai_job.update({
-      where: { id: job.id },
-      data: { cursor: question.id, totalProcessed: { increment: 1 }, currentBatchProcessed: index + 1 },
-    });
+  for (const result of results) {
+    if (result.extractionFailed) break;
+    created += result.created;
+    skipped += result.skipped;
+    failed += result.failed;
+    cursorAdvanceTo = result.question.id;
+    processedCount++;
   }
 
   const finalJob = await prisma.ai_job.update({
     where: { id: job.id },
-    data: { currentActivity: null },
+    data: {
+      cursor: cursorAdvanceTo,
+      totalProcessed: { increment: processedCount },
+      currentActivity: null,
+    },
   });
 
   return { job: finalJob, processed: questions.length, created, skipped, failed };
@@ -238,8 +293,8 @@ const startDictionaryBatch = ({ batchSize } = {}) => {
 
 // How long to wait, when auto-run has caught up to the source (no new
 // questions right now), before checking again — new questions get added
-// over time and auto-run should pick them up without needing a manual
-// restart. Broken into small chunks (checkAutoRunEnabled below) rather
+// over time and auto-run should pick them up without needing Start clicked
+// again. Broken into small chunks (checkAutoRunEnabled below) rather
 // than one long sleep, so Stop takes effect quickly even during this idle
 // wait, not just between questions.
 const AUTO_IDLE_POLL_MS = 60000;

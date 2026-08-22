@@ -63,6 +63,7 @@ const isFormulaFragment = (term) => {
 const GENERIC_NOUNS = new Set([
   "distance",
   "time",
+  "mass",
   "length",
   "area",
   "volume",
@@ -74,6 +75,91 @@ const GENERIC_NOUNS = new Set([
   "unit",
   "differentiate",
   "differentiating",
+  // Compass directions leaking from word-problem scenario setup (verified
+  // live on DeepSeek: "northwest", "eastwards" extracted from a navigation
+  // question) — same failure class already seen on the local Ollama model
+  // ("north"/"south"/"east").
+  "north",
+  "south",
+  "east",
+  "west",
+  "northeast",
+  "northwest",
+  "southeast",
+  "southwest",
+  "northward",
+  "southward",
+  "eastward",
+  "westward",
+  "northwards",
+  "southwards",
+  "eastwards",
+  "westwards",
+  // The exam subject name itself — verified live on DeepSeek ("physics"
+  // extracted as a standalone term from an SHM question).
+  "physics",
+  "chemistry",
+  "biology",
+  // Sub-field names, same failure class as the top-level subject names
+  // above — verified live on DeepSeek from a Katherine Esau question
+  // ("zoology"/"animal physiology" extracted from a FALSE statement being
+  // corrected, instead of her name and her real, correct field). The
+  // prompt now explicitly instructs excluding these, but that instruction
+  // isn't followed 100% of the time ("botany" still leaked from a
+  // statement-evaluation question in the same re-test that motivated this
+  // filter), so this is the backup.
+  "zoology",
+  "botany",
+  "genetics",
+  "ecology",
+  "biochemistry",
+  "evolutionary biology",
+  "plant biology",
+  "animal physiology",
+  "experimental biology",
+  "natural history",
+  // Vague category/description phrases that describe something without
+  // naming one specific thing — fail the prompt's own "glossary headword"
+  // test, verified live to still leak on DeepSeek even when used as the
+  // prompt's explicit negative example ("structural organization" is
+  // named directly in the prompt as what NOT to extract, and still showed
+  // up in a re-test on the exact question that motivated adding it there).
+  "structural organization",
+  "structural organisation",
+  "morphological features",
+  "physiological functions",
+  "cellular level",
+  "gross morphological features",
+  // Bare generic words/vague scenario fragments, verified live on DeepSeek
+  // across the same 250-question batch: "maximum", "string", "particles",
+  // "cosine" as standalone terms, and multi-word fragments that only make
+  // sense embedded in one specific question's sentence rather than as an
+  // independent glossary headword.
+  "maximum",
+  "minimum",
+  "string",
+  "particles",
+  "particle",
+  "cosine",
+  "sine",
+  "tangent",
+  "end point",
+  "finishing point",
+  "cut-off",
+  "cutoff",
+  // Solution-narration words — the prompt already instructs excluding these
+  // ("simplifying", "hence", "therefore", "final answer"), but verified
+  // live on gpt-5-mini that the instruction isn't followed 100% of the
+  // time ("simplifying" still leaked on a re-test of question 553, the
+  // exact question that motivated the prompt rule in the first place) —
+  // same story as every other prompt-only rule in this file, needs an
+  // output-side backup.
+  "simplifying",
+  "hence",
+  "therefore",
+  "final answer",
+  "successive order",
+  "perpendicular directions",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

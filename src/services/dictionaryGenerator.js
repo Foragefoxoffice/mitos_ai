@@ -3,9 +3,13 @@ const { buildDictionaryPrompt } = require("../prompts/dictionaryPrompt");
 const { parseJsonResponse } = require("../utils/parseJson");
 
 // Exactly one AI call per term — called only for terms that don't already
-// exist in ai_dictionary (see dictionaryBatchRunner.js for the dedup check).
-const generateDictionaryEntry = async (term) => {
-  const { system, prompt } = buildDictionaryPrompt(term);
+// exist in ai_dictionary for this subject (see dictionaryBatchRunner.js for
+// the dedup check). `subject` disambiguates a word that means something
+// different per subject — e.g. "cell" (biology) vs. "cell" (an
+// electrochemical cell, physics/chemistry), "horn" (an animal structure)
+// vs. "horn" (a sound-producing instrument in a physics wave question).
+const generateDictionaryEntry = async (term, subject) => {
+  const { system, prompt } = buildDictionaryPrompt(term, subject);
   // 6 explanation fields as JSON needs more headroom than a single answer —
   // 700 was truncating mid-response (verified: cut off mid-string, not a
   // formatting issue). 1500 was still occasionally truncating too — live

@@ -4,6 +4,7 @@ const { extractKeywordsWithAI } = require("../services/keywordExtractor");
 const { generateDictionaryEntry } = require("../services/dictionaryGenerator");
 const { fetchQuestionBatch } = require("../services/questionSource");
 const { sleep } = require("../utils/sleep");
+const { subjectForId } = require("../utils/subjectMap");
 
 const JOB_TYPE = "dictionary_generation";
 
@@ -71,6 +72,13 @@ const processQuestion = async (question, jobId) => {
     return { question, extractionFailed: true, created: 0, skipped: 0, failed: 0 };
   }
 
+  // Scopes dedup/generation per subject — "cell" in a Biology question and
+  // "cell" in a Physics/Chemistry question are different words that happen
+  // to share spelling, so each subject gets its own ai_dictionary row (see
+  // the (term, subject) unique constraint) rather than one global
+  // definition winning for every subject that uses the word.
+  const subject = subjectForId(question.subjectId);
+
   let created = 0;
   let skipped = 0;
   let failed = 0;
@@ -78,7 +86,7 @@ const processQuestion = async (question, jobId) => {
   for (const term of terms) {
     await sleep(AI_CALL_DELAY_MS);
 
-    let dictEntry = await prisma.ai_dictionary.findUnique({ where: { term } });
+    let dictEntry = await prisma.ai_dictionary.findUnique({ where: { term_subject: { term, subject } } });
 
     // A term with no entry needs generating. A term stuck in "failed"
     // ALSO needs (re)generating — a previous failure isn't a completed
@@ -89,9 +97,9 @@ const processQuestion = async (question, jobId) => {
 
     if (needsGeneration) {
       try {
-        const generated = await generateDictionaryEntry(term);
+        const generated = await generateDictionaryEntry(term, subject);
         dictEntry = await prisma.ai_dictionary.upsert({
-          where: { term },
+          where: { term_subject: { term, subject } },
           update: {
             meaning: generated.meaning,
             simpleExplanation: generated.simpleExplanation,
@@ -106,6 +114,7 @@ const processQuestion = async (question, jobId) => {
           },
           create: {
             term,
+            subject,
             meaning: generated.meaning,
             simpleExplanation: generated.simpleExplanation,
             eli5: generated.eli5,
@@ -123,12 +132,12 @@ const processQuestion = async (question, jobId) => {
           data: { totalCreated: { increment: 1 }, lastRunAt: new Date() },
         });
       } catch (error) {
-        logger.warn(`[dictionaryBatchRunner] generation failed for "${term}": ${error.message}`);
+        logger.warn(`[dictionaryBatchRunner] generation failed for "${term}" (${subject}): ${error.message}`);
         await prisma.ai_dictionary
           .upsert({
-            where: { term },
+            where: { term_subject: { term, subject } },
             update: { status: "failed", failureReason: error.message },
-            create: { term, status: "failed", failureReason: error.message },
+            create: { term, subject, status: "failed", failureReason: error.message },
           })
           .catch(() => {});
         failed++;
@@ -143,11 +152,11 @@ const processQuestion = async (question, jobId) => {
       await prisma.ai_job.update({ where: { id: jobId }, data: { totalSkipped: { increment: 1 } } });
     }
 
-    // Two concurrent lanes can occasionally discover the same brand-new term
-    // at the same time and both attempt to generate it — harmless: the
-    // unique constraint on `term` means the upsert above resolves to one
-    // row either way, the worst case is one wasted duplicate AI call, never
-    // a duplicate/corrupt dictionary entry.
+    // Two concurrent lanes can occasionally discover the same brand-new
+    // (term, subject) pair at the same time and both attempt to generate
+    // it — harmless: the unique constraint means the upsert above resolves
+    // to one row either way, the worst case is one wasted duplicate AI
+    // call, never a duplicate/corrupt dictionary entry.
     await prisma.ai_dictionary_mapping.upsert({
       where: { dictionaryId_questionId: { dictionaryId: dictEntry.id, questionId: question.id } },
       update: {},

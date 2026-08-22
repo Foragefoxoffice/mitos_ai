@@ -14,10 +14,25 @@ datasource db {
 
 model ai_dictionary {
   id                  Int      @id @default(autoincrement())
-  // Normalized (lowercased, trimmed) keyword — the dedup key extracted from
-  // questions across the whole bank, so "Mitochondria" and "mitochondria"
-  // collapse into one entry instead of being generated/stored twice.
-  term                String   @unique @db.VarChar(255)
+  // Normalized (lowercased, trimmed) keyword — extracted from questions
+  // across the whole bank, so "Mitochondria" and "mitochondria" collapse
+  // into one entry instead of being generated/stored twice. Deduped
+  // together with `subject` below (NOT unique on its own) — the same term
+  // string can mean something different per subject (e.g. "cell" in
+  // Biology vs. "cell" as in an electrochemical cell in Physics/
+  // Chemistry; "horn" as an animal structure vs. a sound-producing
+  // instrument), so each subject gets its own scoped entry rather than
+  // one global definition winning for every subject that happens to use
+  // the same word.
+  term                String   @db.VarChar(255)
+
+  // "physics" | "chemistry" | "biology" | "general" — see subjectMap.js
+  // for how a question's subjectId resolves to this. "general" is the
+  // fallback for a subjectId not yet in that map, and is also what every
+  // entry created before this column existed carries (via the column
+  // default on migration) — those stay as unscoped legacy entries rather
+  // than being retroactively (and unreliably) reassigned a guessed subject.
+  subject             String   @default("general") @db.VarChar(20)
 
   meaning             String?  @db.LongText
   simpleExplanation   String?  @db.LongText
@@ -45,6 +60,7 @@ model ai_dictionary {
 
   mappings              ai_dictionary_mapping[]
 
+  @@unique([term, subject])
   @@index([status])
 }
 

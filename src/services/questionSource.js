@@ -43,11 +43,13 @@ const assertReadOnly = async () => {
 const fetchQuestionBatch = async ({ afterId, limit }) => {
   await assertReadOnly();
 
-  // Only question + hint — options are deliberately excluded (see
+  // question + hint + subjectId — options are deliberately excluded (see
   // dictionaryBatchRunner.js), so there's no reason to read or hold that
-  // data here either.
+  // data here either. subjectId feeds subjectMap.js so dictionary entries
+  // can be scoped per subject (a term like "cell" or "horn" means
+  // something different in Biology than in Physics/Chemistry).
   const [rows] = await getPool().query(
-    "SELECT id, question, hint FROM question WHERE id > ? ORDER BY id ASC LIMIT ?",
+    "SELECT id, question, hint, subjectId FROM question WHERE id > ? ORDER BY id ASC LIMIT ?",
     [afterId, limit]
   );
 

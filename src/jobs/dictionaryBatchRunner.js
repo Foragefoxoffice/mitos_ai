@@ -63,21 +63,21 @@ const runWithConcurrency = async (items, limit, worker) => {
 // before) rather than batched up — Prisma's `{ increment: 1 }` compiles to
 // an atomic `UPDATE ... SET x = x + 1`, so concurrent lanes writing the same
 // counter is safe with no lost updates, unlike the cursor field.
-const processQuestion = async (question, jobId) => {
-  let terms;
-  try {
-    terms = await extractKeywordsWithAI(question.question, question.hint);
-  } catch (error) {
-    logger.warn(`[dictionaryBatchRunner] keyword extraction failed for question ${question.id}: ${error.message}`);
-    return { question, extractionFailed: true, created: 0, skipped: 0, failed: 0 };
-  }
-
+const processQuestion = async (question, jobId, knownTermsBySubject) => {
   // Scopes dedup/generation per subject — "cell" in a Biology question and
   // "cell" in a Physics/Chemistry question are different words that happen
   // to share spelling, so each subject gets its own ai_dictionary row (see
   // the (term, subject) unique constraint) rather than one global
   // definition winning for every subject that uses the word.
   const subject = subjectForId(question.subjectId);
+
+  let terms;
+  try {
+    terms = await extractKeywordsWithAI(question.question, question.hint, knownTermsBySubject[subject] || []);
+  } catch (error) {
+    logger.warn(`[dictionaryBatchRunner] keyword extraction failed for question ${question.id}: ${error.message}`);
+    return { question, extractionFailed: true, created: 0, skipped: 0, failed: 0 };
+  }
 
   let created = 0;
   let skipped = 0;
@@ -211,13 +211,30 @@ const runDictionaryBatch = async ({ batchSize } = {}) => {
     },
   });
 
+  // Fetched once per batch (not per question) — feeds the consistency pass
+  // in keywordExtractor.js: an already-established term for a subject
+  // always gets included in any future question in that subject where it
+  // literally appears, so the same word/meaning doesn't end up tappable in
+  // one question and silently missing in another purely because the AI's
+  // fresh per-question judgment varied (reported directly as an issue:
+  // "velocity" showing up in one question's extraction but not another
+  // near-identical one).
+  const knownTermRows = await prisma.ai_dictionary.findMany({
+    where: { status: "completed" },
+    select: { term: true, subject: true },
+  });
+  const knownTermsBySubject = {};
+  for (const row of knownTermRows) {
+    (knownTermsBySubject[row.subject] ??= []).push(row.term);
+  }
+
   // A single "currentActivity" string can't meaningfully describe several
   // questions' individual steps at once without flickering between lanes,
   // so per-question step text (extracting/generating "term") is intentionally
   // not surfaced during concurrent runs — currentBatchProcessed below is the
   // real-time signal admin polling relies on instead.
   const results = await runWithConcurrency(questions, lanes, async (question) => {
-    const result = await processQuestion(question, job.id);
+    const result = await processQuestion(question, job.id, knownTermsBySubject);
     await prisma.ai_job
       .update({ where: { id: job.id }, data: { currentBatchProcessed: { increment: 1 } } })
       .catch(() => {});

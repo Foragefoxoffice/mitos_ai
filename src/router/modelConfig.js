@@ -78,10 +78,22 @@ if (LOCAL_ONLY) {
   const geminiPro = { provider: "gemini", model: process.env.MODEL_GEMINI_PRO || "gemini-pro-latest" };
   const openaiMini = { provider: "openai", model: process.env.MODEL_OPENAI_FALLBACK || "gpt-5-mini" };
   const claudeFallback = { provider: "claude", model: process.env.MODEL_CLAUDE_FALLBACK || "claude-sonnet-5" };
+  const deepseekFlash = { provider: "deepseek", model: process.env.MODEL_DEEPSEEK || "deepseek-v4-flash" };
 
   module.exports = {
-    keywordExtraction: [geminiFlash, geminiPro, openaiMini],
-    wordExplain: [geminiFlash, geminiPro, openaiMini],
+    // DeepSeek leads for these two tasks specifically (2026-08-22) —
+    // validated at real scale (150+ real questions across all three
+    // subjects, plus a dedicated 150-question quality audit spanning
+    // physics/chemistry/biology) as cheaper and comparably clean to
+    // gpt-5-mini after prompt/filter hardening. Falls through to the
+    // previously-proven Gemini/mini chain if DeepSeek has an outage or
+    // hits a limit — a multi-hour bulk run needs that safety net; the
+    // AI_DEEPSEEK_ONLY=true toggle (no fallback at all) is for isolated
+    // benchmarking only, never for the real run. Other tasks below
+    // (chat, performance analysis, study plan) haven't been validated on
+    // DeepSeek at all, so they keep the existing Gemini-led chain.
+    keywordExtraction: [deepseekFlash, geminiFlash, geminiPro, openaiMini],
+    wordExplain: [deepseekFlash, geminiFlash, geminiPro, openaiMini],
     // Chat picks its tier by question complexity — see chatService.js's
     // classifyComplexity. "simple" leads with the fast/cheap model and
     // only reaches for the heavier one if that fails; "complex" is the

@@ -179,11 +179,35 @@ const GENERIC_NOUNS = new Set([
 const CITATION_LIKE = /ncert/i;
 const isCitationLeak = (term) => CITATION_LIKE.test(term) || term === "neet";
 
+// Consistency pass: the AI's own per-question judgment about which terms
+// are "worth extracting" isn't perfectly deterministic — the same word,
+// meaning the same thing, can get extracted in one question and skipped in
+// a near-identical one (verified live: question 631's bullet/wooden-block
+// problem extracted "initial velocity"/"final velocity" but not bare
+// "velocity", even though the question literally introduces "velocity u"
+// as a variable). Once a term is an ESTABLISHED dictionary entry for a
+// subject, any future question in that same subject containing that exact
+// word/phrase should reliably get it too — otherwise the same concept ends
+// up tappable in one question and not another for no principled reason,
+// which is confusing for a student and was reported directly as an issue.
+// `\b` word-boundary matching (not a bare substring check) so a short known
+// term like "cell" doesn't spuriously match inside an unrelated word.
+const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+const findKnownTermsInText = (text, knownTerms) => {
+  if (!knownTerms || knownTerms.length === 0) return [];
+  return knownTerms.filter((term) => new RegExp(`\\b${escapeRegExp(term)}\\b`, "i").test(text));
+};
+
 // One AI call per question — replaces the old rule-based extraction, which
 // could only filter by word length/a fixed stopword list and had no way to
 // tell "mitochondria" (worth explaining) apart from "containing" (not).
 // An LLM can actually judge technical-vs-everyday, which is the point.
-const extractKeywordsWithAI = async (questionText, hintText) => {
+//
+// `knownTerms` (optional): already-established dictionary terms for this
+// question's subject — see the consistency-pass comment above. Callers
+// (dictionaryBatchRunner.js) fetch this once per batch, not per question.
+const extractKeywordsWithAI = async (questionText, hintText, knownTerms = []) => {
   const cleanQuestion = stripCitations(stripLatex(stripHtml(questionText)));
   const cleanHint = stripCitations(stripLatex(stripHtml(hintText)));
 
@@ -195,8 +219,8 @@ const extractKeywordsWithAI = async (questionText, hintText) => {
   const result = await runTask("keywordExtraction", { system, prompt, maxTokens: 600, jsonMode: true });
   const parsed = parseJsonResponse(result.text);
 
-  const terms = Array.isArray(parsed.terms) ? parsed.terms : [];
-  return terms
+  const rawTerms = Array.isArray(parsed.terms) ? parsed.terms : [];
+  const aiTerms = rawTerms
     .map((t) => String(t).toLowerCase().trim())
     .filter(Boolean)
     .filter((t) => !LATEX_LIKE.test(t))
@@ -205,6 +229,10 @@ const extractKeywordsWithAI = async (questionText, hintText) => {
     .filter((t) => !isFormulaFragment(t))
     .filter((t) => !GENERIC_NOUNS.has(t))
     .filter((t) => !isCitationLeak(t));
+
+  const consistencyTerms = findKnownTermsInText(`${cleanQuestion} ${cleanHint}`, knownTerms);
+
+  return [...new Set([...aiTerms, ...consistencyTerms])];
 };
 
 module.exports = { extractKeywordsWithAI };

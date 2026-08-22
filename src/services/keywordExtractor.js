@@ -287,6 +287,23 @@ const GENERIC_NOUNS = new Set([
   "drugs",
   "immune",
   "catalyze",
+  // From a photosynthesis/chemiosmosis + meiosis biology batch: modifier +
+  // generic-tail-noun descriptive phrases lifted straight from the hint's
+  // own explanatory prose ("photosynthesis is a physico-chemical process",
+  // "CF1, the catalytic part of the enzyme", "this energy is utilized in
+  // various metabolic reactions") — same failure class as "biochemical
+  // reactions" above, not itself a named headword.
+  "physico-chemical process",
+  "catalytic part",
+  "metabolic reactions",
+  // Bare adjective/gerund forms of a concept that already has a more
+  // specific compound term extracted from the SAME source question in this
+  // batch ("chemiosmotic" alongside "chemiosmosis"/"chemiosmotic
+  // mechanism"/"chemiosmotic hypothesis"; "pairing" alongside "chromosome
+  // pairing"/"homologous pair") — a redundant weaker duplicate, not a
+  // distinct concept worth its own entry.
+  "chemiosmotic",
+  "pairing",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

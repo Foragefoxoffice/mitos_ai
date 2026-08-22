@@ -230,6 +230,21 @@ const GENERIC_NOUNS = new Set([
   "parallel",
   "contract",
   "regenerate",
+  // Same "structures"/"structure" generic-tail-noun pattern again, verified
+  // live on DeepSeek from a cell-membrane/bacterial-ultrastructure biology
+  // batch, plus bare generic words with no specific standalone meaning here.
+  "cytoskeletal structures",
+  "cytoplasmic structures",
+  "locomotory structures",
+  "bacterial surface structures",
+  "photosynthetic structure",
+  "membranous extension",
+  "membranous extensions",
+  "arrangement",
+  "infection",
+  "deposition",
+  "adherence",
+  "non-membranous",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

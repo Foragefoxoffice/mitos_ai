@@ -160,6 +160,32 @@ const GENERIC_NOUNS = new Set([
   "final answer",
   "successive order",
   "perpendicular directions",
+  // Bare generic nouns that slipped past the existing list — verified live
+  // on DeepSeek from a Pteridophyta/Bryophyta batch ("water", "root",
+  // "roots" extracted as standalone terms).
+  "water",
+  "root",
+  "roots",
+  // Vague descriptive phrases (adjective/modifier + generic category noun)
+  // from the same batch — the same failure class as "structural
+  // organization"/"morphological features" above, recurring with fresh
+  // wording. Exact-match backstop for these specific instances; the
+  // prompt's core test has been strengthened to generalize against the
+  // whole pattern, but whack-a-mole on the exact phrases already seen
+  // costs nothing and catches anything the prompt still misses.
+  "structural adaptation",
+  "terrestrial adaptation",
+  "dominant plant body",
+  "dominant life cycle stage",
+  "reproductive mechanism",
+  "evolutionary significance",
+  "leafy members",
+  "leafy shoots",
+  "leaf-like appendages",
+  "stem-like structures",
+  "female organs",
+  "water dependency",
+  "water availability",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

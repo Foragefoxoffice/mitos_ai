@@ -254,6 +254,15 @@ const GENERIC_NOUNS = new Set([
   "acidic",
   "acids",
   "acid",
+  // Bare generic words with no specific standalone meaning, and word-
+  // problem scenario-example objects (not vocabulary) — verified live on
+  // DeepSeek from a thermodynamics/kinetic-theory-of-gases physics batch.
+  "transfer",
+  "point",
+  "coiling",
+  "deviation",
+  "car engine",
+  "tyre bursting",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

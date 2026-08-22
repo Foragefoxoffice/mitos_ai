@@ -186,6 +186,31 @@ const GENERIC_NOUNS = new Set([
   "female organs",
   "water dependency",
   "water availability",
+  // More bare generic nouns/verb-forms and modifier+generic-noun phrases,
+  // same two established failure classes, verified live on DeepSeek from a
+  // redox/qualitative-analysis chemistry batch: "percentage", "separation",
+  // "cooling", "heating", "priority" are generic lab-procedure/measurement
+  // words with no subject-specific meaning on their own; "reduced"/
+  // "oxidised" are the bare adjective form of a redox concept whose
+  // genuinely useful compound forms ("reducing agent", "oxidising agent")
+  // already exist separately; bare "fission" is dangerously ambiguous in a
+  // chemistry context specifically (could mean either homolytic or
+  // heterolytic bond fission, or get confused with nuclear fission) without
+  // the qualifier that makes it a real specific term; "ionic charge",
+  // "negative charge", "dispersal of charge" are the modifier+generic-noun
+  // pattern with "charge" as the generic tail this time.
+  "percentage",
+  "separation",
+  "cooling",
+  "heating",
+  "priority",
+  "reduced",
+  "oxidised",
+  "oxidized",
+  "fission",
+  "ionic charge",
+  "negative charge",
+  "dispersal of charge",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

@@ -211,6 +211,25 @@ const GENERIC_NOUNS = new Set([
   "ionic charge",
   "negative charge",
   "dispersal of charge",
+  // Same two patterns again, verified live on DeepSeek from a leaf-anatomy/
+  // muscle-tissue biology batch: modifier+generic-noun phrases
+  // ("anatomical feature", "anatomical variation", "epidermal adaptations",
+  // "protective adaptations", "epidermal structures", "compact
+  // arrangement"), and bare generic words that have better, more specific
+  // compound forms already present in the SAME batch ("spongy" alongside
+  // "spongy tissue"/"spongy parenchyma"/"spongy cells", "contract"
+  // alongside "contraction", plus bare "parallel" and "regenerate" which
+  // have no specific standalone meaning here).
+  "anatomical feature",
+  "anatomical variation",
+  "epidermal adaptations",
+  "protective adaptations",
+  "epidermal structures",
+  "compact arrangement",
+  "spongy",
+  "parallel",
+  "contract",
+  "regenerate",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

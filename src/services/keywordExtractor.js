@@ -276,6 +276,17 @@ const GENERIC_NOUNS = new Set([
   "filter",
   "repelled",
   "energetic",
+  // Same modifier+generic-noun pattern again, verified live on DeepSeek
+  // from a biomolecules biology batch, plus bare generic words/verb-forms.
+  "destructive process",
+  "physiological processes",
+  "physiological role",
+  "biochemical reactions",
+  "ecological interactions",
+  "cellular mass",
+  "drugs",
+  "immune",
+  "catalyze",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

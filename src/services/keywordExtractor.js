@@ -263,6 +263,19 @@ const GENERIC_NOUNS = new Set([
   "deviation",
   "car engine",
   "tyre bursting",
+  // Coordinate-axis direction references, same pattern as compass
+  // directions (setup/orientation detail, not vocabulary) — verified live
+  // on DeepSeek from an EM-waves physics batch ("z-direction"; "x-direction"
+  // and "y-direction" seen as the same pattern in earlier batches, added
+  // now for consistency). Plus a bare generic word ("filter") and a bare
+  // verb-form with a better existing compound already present in the same
+  // batch ("repelled" alongside "repulsion"/"repulsive force").
+  "x-direction",
+  "y-direction",
+  "z-direction",
+  "filter",
+  "repelled",
+  "energetic",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

@@ -355,6 +355,35 @@ const GENERIC_NOUNS = new Set([
   // the everyday fruit example used to illustrate cell-size-driven growth,
   // same class as train/swimmer/ball props already excluded for physics.
   "watermelon",
+  // From a plant-hormones biology batch (auxins/gibberellins/cytokinins/
+  // ethylene/ABA, ids ~13860-14005) + an AC-circuits physics batch mixed
+  // into the same run. Modifier + generic-tail-noun descriptive fragments
+  // lifted from the hint's own scenario/outcome narration, not named
+  // headwords — same failure class as "hormone/quantitative growth"
+  // batches above: "in breeding programs", "what does this imply about
+  // the hormone balance", "maintaining hormonal balance", "enhanced stem
+  // bending", "enhancing sugar yield", "seed formation" (one item in a
+  // plain list of processes, unlike the genuinely named "hook formation"
+  // that's part of ethylene's canonical triple response, which stays):
+  "breeding programs",
+  "hormone balance",
+  "hormonal balance",
+  "hormonal imbalance",
+  "stem bending",
+  "sugar yield",
+  "seed formation",
+  // "current in circuit" is formula-derivation narration ("current in
+  // circuit, I=V/Z"), not vocabulary — same class as the existing
+  // solution-narration exclusions (simplifying/hence/therefore) above.
+  // "mains"/"lamp" are word-problem apparatus/scenario props (the
+  // household supply and the bulb in a transformer-efficiency problem),
+  // same class as train/swimmer/ball/watermelon. "sharp" is a bare
+  // descriptive adjective from the hint's own narration ("peak of current
+  // growth must be sharp"), not a technical term.
+  "current in circuit",
+  "mains",
+  "lamp",
+  "sharp",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

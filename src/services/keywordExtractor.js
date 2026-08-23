@@ -384,6 +384,17 @@ const GENERIC_NOUNS = new Set([
   "mains",
   "lamp",
   "sharp",
+  // From a semiconductor-electronics physics batch (transistors/diodes/
+  // logic gates) — this chapter is unusually vocabulary-dense with
+  // genuinely specific terms (verified "base"/"collector" bare ARE valid:
+  // they're the actual named transistor terminals, not generic duplicates
+  // of "base region"/"collector current" — left unblocked). Two real
+  // leaks: "circuit diagram" is a generic modifier+noun reference to the
+  // question's own attached figure ("the circuit diagram drawn"), not a
+  // named concept; "led bulb" bolts the generic everyday word "bulb" onto
+  // the already-valid technical term "led", adding no specificity.
+  "circuit diagram",
+  "led bulb",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

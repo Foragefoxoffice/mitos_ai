@@ -395,6 +395,55 @@ const GENERIC_NOUNS = new Set([
   // the already-valid technical term "led", adding no specificity.
   "circuit diagram",
   "led bulb",
+  // From a cardiovascular-regulation biology batch + a nuclear-physics
+  // batch (ids ~19192-19291). Modifier + generic-tail-noun descriptive
+  // fragments, not headwords: "circulatory problems", "cardiovascular
+  // stability", "cardiac activity", "autonomous function", "intrinsic
+  // regulation", "nervous control", "cardiac regulation", "four chambers".
+  "circulatory problems",
+  "cardiovascular stability",
+  "cardiac activity",
+  "autonomous function",
+  "intrinsic regulation",
+  "nervous control",
+  "cardiac regulation",
+  "four chambers",
+  // Redundant duplicates of a more specific compound already established
+  // in the same subject ("neural signal"/"sympathetic signals"/
+  // "parasympathetic neural signals" alongside "sympathetic nerve(s)"/
+  // "parasympathetic nerve(s)"; bare "sympathetic"/"parasympathetic"
+  // alongside "sympathetic system"/those same nerve compounds; "human
+  // heart" alongside plain "heart"; bare "oxygenated" alongside
+  // "oxygenated blood"/"deoxygenated blood"):
+  "neural signal",
+  "sympathetic signals",
+  "parasympathetic signals",
+  "parasympathetic neural signals",
+  "sympathetic",
+  "parasympathetic",
+  "human heart",
+  "oxygenated",
+  // Plain English adverb, zero subject-specificity:
+  "synergistically",
+  // Nuclear-physics formula/problem narration, not vocabulary — same
+  // class as "current in circuit" above: "fraction remaining" restates
+  // the problem's own phrasing ("the fraction... that would remain"),
+  // "energy liberated" and "gain in binding energy" restate the specific
+  // numeric problem's setup rather than naming a distinct concept (the
+  // real headword, "binding energy", is already a separate established
+  // term). Bare "atoms" is the same generic-measurement-noun category
+  // already excluded (particles/etc.), used here as a formula-narration
+  // variable ("number of atoms left after n half-lives").
+  "fraction remaining",
+  "fraction",
+  "energy liberated",
+  "gain in binding energy",
+  "atoms",
+  // Incomplete/ambiguous: doesn't name WHICH conservation law (of charge,
+  // mass number, momentum, energy...), so it fails the "one stable
+  // definition" test even though the underlying named laws are valid
+  // terms in their own right.
+  "law of conservation",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

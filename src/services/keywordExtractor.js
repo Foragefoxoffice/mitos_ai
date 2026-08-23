@@ -486,6 +486,47 @@ const GENERIC_NOUNS = new Set([
   // extractions converge on the one canonical spelling.
   "ten percent law",
   "10 percent law",
+  // From a plant-histology/cell-organelle biology batch + a
+  // biomolecules/photosynthesis biochemistry batch, ids ~26076-26137.
+  // Modifier + generic-tail-noun descriptive phrases and formula/question
+  // narration, not headwords: "cell organelles" (describing what
+  // ribosomes categorically are, not a distinct concept), "cell
+  // mobility", "acid soluble"/"acid solution"/"alkaline solution" (basic
+  // chemistry properties, not headwords), "flow of electrons" (the
+  // question's own phrasing; the real term, "electron transport chain",
+  // is already separate), "first stable product" (circular question
+  // narration — describes oxaloacetate without naming it), "reduced
+  // co-enzyme" (generic reference to NADH/FADH2 without naming them),
+  // "fixation of co2"/"primary fixation" (paraphrase of the established
+  // "co2 fixation"/"carbon fixation"), "photosynthetic cycle" (vague
+  // paraphrase — the real named cycles are "calvin cycle"/"c3 cycle"/
+  // "c4 cycle").
+  "cell organelles",
+  "cell mobility",
+  "acid soluble",
+  "acid solution",
+  "alkaline solution",
+  "flow of electrons",
+  "first stable product",
+  "reduced co-enzyme",
+  "fixation of co2",
+  "primary fixation",
+  "photosynthetic cycle",
+  // Verb-phrase function descriptions, not named concepts (same class as
+  // the bare-verb exclusions above):
+  "synthesize proteins",
+  "secrete proteins",
+  // Generic descriptive phrase, not a single stable-definition concept:
+  "exchange of genetic material",
+  // Common-knowledge phrases/words needing no dictionary definition (same
+  // class as "sun" above):
+  "inanimate objects",
+  "living organisms",
+  "water molecule",
+  // Bare "acceptor" is too polysemous/generic standalone across biology
+  // (electron acceptor, CO2 acceptor, hydrogen acceptor, oxygen
+  // acceptor...) — only meaningful with a qualifier.
+  "acceptor",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

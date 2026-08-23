@@ -444,6 +444,48 @@ const GENERIC_NOUNS = new Set([
   // definition" test even though the underlying named laws are valid
   // terms in their own right.
   "law of conservation",
+  // From an organic-chemistry batch (haloalkanes/alcohols/SN1-SN2/EAS
+  // directing effects) + an ecology/energy-flow biology batch, ids
+  // ~24900-24980. Redundant duplicates of a more specific compound
+  // already established in the same subject: bare "covalent" (alongside
+  // "covalent bond"), "ortho and para positions" (alongside the real
+  // named effect "ortho-para directing"), "nutrient movement" (alongside
+  // "nutrient cycling"), and three separate paraphrases of the same
+  // already-established "energy flow" concept — "flow of energy",
+  // "energy flow in ecosystems", "transfer of energy":
+  "covalent",
+  "ortho and para positions",
+  "nutrient movement",
+  "flow of energy",
+  "energy flow in ecosystems",
+  "transfer of energy",
+  // Modifier + generic-tail-noun / generic-category-noun descriptive
+  // phrases, not headwords: "one-step process" (restates a property of
+  // SN2 mechanism, itself a separate established term), "isomeric
+  // alcohol"/"isomeric haloalkanes" (purely relational — "isomeric" can
+  // combine with any compound class, not a distinct named concept),
+  // "energy loss" (restates the 10% law's effect, itself a separate term):
+  "one-step process",
+  "isomeric alcohol",
+  "isomeric alcohols",
+  "isomeric haloalkanes",
+  "energy loss",
+  // Bare generic words — basic English, not subject vocabulary a NEET
+  // student would need defined: "recycle", "cyclic" (both from a hint
+  // explaining energy flow is NOT cyclic, contrasted with nutrient
+  // cycling), "sun" (the literal answer to a question, but the word
+  // itself needs no dictionary definition — same "common-knowledge word"
+  // exclusion the prompt already applies elsewhere).
+  "recycle",
+  "cyclic",
+  "sun",
+  // Three spelled-out variants of the same well-known ecological law
+  // (Lindeman's 10% law) fragmenting one concept across near-duplicate
+  // entries — standardized on the concise "10% law" form already
+  // established; blocking the verbose spelled-out duplicates so future
+  // extractions converge on the one canonical spelling.
+  "ten percent law",
+  "10 percent law",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

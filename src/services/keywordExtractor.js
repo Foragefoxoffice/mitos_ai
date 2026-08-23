@@ -304,6 +304,57 @@ const GENERIC_NOUNS = new Set([
   // distinct concept worth its own entry.
   "chemiosmotic",
   "pairing",
+  // From an NCERT "Plant Growth and Development" biology batch — an
+  // unusually definition-dense chapter (lots of "which statement is
+  // correct/incorrect", "odd one out w.r.t X" questions that restate the
+  // textbook's own definitional prose almost verbatim). Modifier +
+  // generic-tail-noun descriptive/definitional fragments, not headwords —
+  // same failure class as "biochemical reactions"/"physico-chemical
+  // process" above:
+  "protoplasmic modifications",
+  "protoplasmic modification",
+  "protoplasmic changes",
+  "growth measures",
+  "dense cytoplasm",
+  "cell type",
+  "specialized roles",
+  "irreversible increase",
+  "irreversible increase in size and mass",
+  "physiological trait",
+  "quantitative increase",
+  "permanent increase",
+  "growth parameters",
+  "zones of growth",
+  "cell size",
+  "cell number",
+  "growth phases",
+  "quantitative aspects of growth",
+  // Bare generic words/adjectives from the same batch — some duplicate a
+  // more specific compound already extracted from the same source question
+  // ("differentiated" alongside "differentiated cells"/"cell
+  // differentiation"; "meristematic" alongside "meristematic cells"/
+  // "meristematic tissues"/"meristematic zone"; "quantitative" alongside
+  // "quantitative growth"), others are the same generic-measurement-noun
+  // category the prompt already excludes (distance/length/mass/etc.),
+  // just with fresh wording ("weight", "height", "meter" as a bare unit
+  // name alongside "decibel"/"gram"/"micrometer" in an odd-one-out
+  // question).
+  "division",
+  "increase",
+  "parameters",
+  "quantitative",
+  "measurable",
+  "colour",
+  "meter",
+  "weight",
+  "height",
+  "self-perpetuate",
+  "differentiated",
+  "meristematic",
+  // Scenario-prop (word-problem setting, not a concept) — "watermelon" is
+  // the everyday fruit example used to illustrate cell-size-driven growth,
+  // same class as train/swimmer/ball props already excluded for physics.
+  "watermelon",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

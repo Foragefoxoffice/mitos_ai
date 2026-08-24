@@ -591,6 +591,80 @@ const GENERIC_NOUNS = new Set([
   // recombinant DNA technology pioneers).
   "classical genetics",
   "molecular genetics",
+  // From a redox-titration/equivalent-weight chemistry batch + an IUPAC-
+  // nomenclature batch + an electronic-effects batch (hyperconjugation,
+  // resonance, nucleophile/electrophile), ids ~37229-37392. Modifier +
+  // generic-tail-noun descriptive phrases and question/formula narration,
+  // not headwords: "acid medium"/"alkaline condition" (same class as the
+  // already-blocked "acid solution"/"alkaline solution"), "metal
+  // reactivity" (paraphrase of the already-established "reactivity
+  // series"), "electrons transferred"/"electron loss" (narration
+  // restating what n-factor/valence factor already covers), "oxidizing
+  // behaviour" (paraphrase of "oxidizing agent"), "arrangement of
+  // atoms"/"energy content" (two items from the same textbook list of
+  // resonance-structure criteria, generic descriptive fragments),
+  // "temporary effect" (a defining characteristic of "electromeric
+  // effect", already a separate established term), "stability order"
+  // (generic ranking-comparison framing, not a stable concept — could
+  // apply to any set of structures), "unsaturated group" (generic
+  // category reference, "benzene or unsaturated group").
+  "acid medium",
+  "alkaline condition",
+  "metal reactivity",
+  "electrons transferred",
+  "electron loss",
+  "oxidizing behaviour",
+  "arrangement of atoms",
+  "identical arrangement of atoms",
+  "energy content",
+  "same energy content",
+  "temporary effect",
+  "stability order",
+  "unsaturated group",
+  // Bare generic word/verb-form duplicates of an already-established more
+  // specific term: "oxidise" (alongside "oxidation"/"oxidizing agent"),
+  // "stabilization" (vague without a qualifier — the real mechanisms are
+  // "hyperconjugation"/"resonance", both separate established terms).
+  "oxidise",
+  "stabilization",
+  // Etymological glosses of the real established terms, not headwords in
+  // their own right: "nucleus seeking" and "electron seeking" are the
+  // literal English meanings of "nucleophile"/"electrophile" (already
+  // established), lifted from an analogy-question's explanatory hint.
+  "nucleus seeking",
+  "electron seeking",
+  // Ambiguous/incomplete phrase — a garbled fragment of the real named
+  // IUPAC concept (seniority/priority order of functional groups), not
+  // independently meaningful (same class as "law of conservation" above).
+  "prior group",
+  // Spelling/synonym-variant consolidation (same pattern as "10% law"):
+  // four different names for the exact same redox-chemistry concept
+  // fragmented the dictionary across near-duplicate entries. Standardized
+  // on the hyphenated "n-factor" form (the standard NCERT/JEE-NEET term);
+  // blocking the unhyphenated and synonym duplicates.
+  "n factor",
+  "valence factor",
+  "valency factor",
+  // Word-order duplicate of the same IUPAC nomenclature concept —
+  // standardized on "word root" (NCERT's own phrasing).
+  "root word",
+  // "Balancing chemical equations" turned out to be genuine whack-a-mole
+  // rather than a stable headword: verification alone surfaced 5
+  // different grammatical variants across a handful of redox-titration
+  // questions ("balance chemical equation", "balancing chemical
+  // equations", "balancing of chemical equations", "balanced chemical
+  // equation", "balancing chemical equation") — it's boilerplate
+  // narration for how the hint arrives at its answer ("we will balance
+  // each half-reaction..."), not a specific concept with one stable
+  // definition the way "n-factor" is. Blocking every variant seen rather
+  // than picking one canonical form.
+  "balance chemical equation",
+  "balancing chemical equations",
+  "balancing of chemical equations",
+  "balanced chemical equation",
+  "balancing chemical equation",
+  "balancing",
+  "balanced chemical reaction",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

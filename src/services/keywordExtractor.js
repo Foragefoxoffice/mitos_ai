@@ -527,6 +527,70 @@ const GENERIC_NOUNS = new Set([
   // (electron acceptor, CO2 acceptor, hydrogen acceptor, oxygen
   // acceptor...) — only meaningful with a qualifier.
   "acceptor",
+  // From a biotechnology batch (sewage/biogas treatment, biofertilizers/
+  // biopesticides, and genetic-engineering lab techniques — restriction
+  // enzymes, transformation, cloning vectors, bioreactors), ids
+  // ~34980-35194. Common-knowledge phrase (same class as "sun"/"living
+  // organisms" above):
+  "living systems",
+  // Modifier + generic-tail-noun descriptive phrases, not headwords, most
+  // lifted from question-stem or hint narration: "inlet" (a biogas
+  // plant's dung-slurry inlet — too generic standalone, any tank has an
+  // inlet), "microbial origin" ("enzymes of microbial origin" is the
+  // question's own framing), "sustainable ecosystems"/"ecosystem
+  // sustainability" (generic descriptive outcome of organic farming),
+  // "molecular analogues" (one descriptive fragment lifted from the EFB's
+  // formal definition of biotechnology, not itself a distinct concept),
+  // "dna entry"/"gene recovery"/"temperature shift"/"membrane pores"
+  // (generic descriptions of steps already covered by the real specific
+  // terms — competent cells, heat shock, copy number, origin of
+  // replication), "buffer conditions" ("optimal buffer conditions" is a
+  // generic lab-procedure descriptor), "genetic manipulation" (generic
+  // descriptive framing of what modern biotech "involves", not the
+  // question's actual tested concept).
+  "inlet",
+  "microbial origin",
+  "sustainable ecosystems",
+  "ecosystem sustainability",
+  "sustainability",
+  "molecular analogues",
+  "dna entry",
+  "gene recovery",
+  "temperature shift",
+  "membrane pores",
+  "buffer conditions",
+  "genetic manipulation",
+  // Bare generic word, and bare adjective/noun-form duplicates of a more
+  // specific compound already established in the same batch: "fragments"
+  // (DNA fragments, too vague standalone), "competent"/"competency"
+  // (alongside "competent cells"/"competent host cell preparation"),
+  // "disarmed" (alongside "disarmed pathogen"/"disarmed vector"),
+  // "precipitate" (alongside "precipitate purified DNA" — DNA
+  // precipitation is the specific step; bare "precipitate" is a generic
+  // chemistry verb/noun), bare "uv" (too terse an abbreviation to stand
+  // alone as a headword).
+  "fragments",
+  "competent",
+  "competency",
+  "disarmed",
+  "precipitate",
+  "uv",
+  // Sub-details of restriction-enzyme nomenclature that only make sense
+  // in the context of the umbrella concept already established as its
+  // own term ("nomenclature of restriction enzymes") — not independently
+  // meaningful headwords on their own.
+  "sequence of isolation",
+  "isolation order",
+  "strain letter",
+  // Field names mentioned only in passing as context/contrast, not the
+  // question's actual tested concept — same exclusion the prompt already
+  // applies (e.g. the Katherine Esau zoology/plant-biology example):
+  // Mendel's "classical genetics" is contrasted against biotechnology,
+  // and "molecular genetics" is the field a discovery "revolutionised",
+  // neither is what either question actually tests (Hind II /
+  // recombinant DNA technology pioneers).
+  "classical genetics",
+  "molecular genetics",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

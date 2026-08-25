@@ -699,6 +699,38 @@ const GENERIC_NOUNS = new Set([
   // concept — "central atom" in Lewis structures is the real general
   // VSEPR concept.
   "central oxygen atom",
+  // From a DC-circuits physics batch (Kirchhoff's laws, Wheatstone
+  // bridge, meter bridge, cells in series/parallel, resistivity
+  // temperature dependence, power transmission), ids ~51009-51072.
+  // Modifier + generic-tail-noun descriptive phrases and narration, not
+  // headwords: "orientation alignment" (redundant combo, question-stem
+  // paraphrase), "unbalanced resistance distribution" (paraphrase of
+  // Wheatstone-bridge sensitivity, no established meaning of its own),
+  // "high-voltage power systems" (redundant with "high-voltage
+  // transmission"/"power transmission"), "battery arrangement" (redundant
+  // with "mixed grouping"), "electrical load" (redundant with the more
+  // specific "external load resistor"), "reversed polarity" (self-
+  // explanatory English, needs no dictionary definition — same class as
+  // "sun" above).
+  "orientation alignment",
+  "unbalanced resistance distribution",
+  "high-voltage power systems",
+  "battery arrangement",
+  "electrical load",
+  "reversed polarity",
+  // Physical apparatus/hardware mentioned only as the cause of "end
+  // errors" (the real, established concept) in a meter-bridge
+  // experiment — concrete real-world components, not conceptual
+  // vocabulary, same class as scenario-props like train/lamp/watermelon:
+  "metallic brackets",
+  "copper strips",
+  "contact joints",
+  "gap resistances",
+  "resistance gaps",
+  "geyser",
+  // Garbled/malformed extraction (literal typo artifact, "box/box") —
+  // duplicates the clean "post office box" already established.
+  "resistance post office box/box",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

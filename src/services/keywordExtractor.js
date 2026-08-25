@@ -731,6 +731,29 @@ const GENERIC_NOUNS = new Set([
   // Garbled/malformed extraction (literal typo artifact, "box/box") —
   // duplicates the clean "post office box" already established.
   "resistance post office box/box",
+  // Discovered via a post-run mapping-backfill spot check (2026-08-25):
+  // bare English function words extracted as "terms" from a Boolean-logic
+  // question ("NAND/NOR gates realize the NOT, AND, and OR operations")
+  // — defensible in that ONE question (they ARE naming the three logic
+  // operations), but as bare lowercase words they collide with ordinary
+  // English grammar and get mass-mismatched against completely unrelated
+  // questions by both the AI's own fresh judgment AND any future
+  // consistency-pass/backfill matching (verified: deleting these 8 entries
+  // removed 17,563 contaminated mappings — 17% of everything the backfill
+  // had just added). The real, safe way to capture "AND gate"/"OR gate"/
+  // "NOT gate"/"boolean operation" is via those actual compound forms,
+  // never the bare word. Also includes two abbreviation collisions found
+  // in the same sweep — "no" (meant NO/nitric oxide) and "who" (meant
+  // WHO/World Health Organization) — same problem, bare lowercase form
+  // is indistinguishable from the common English word.
+  "and",
+  "or",
+  "not",
+  "high",
+  "low",
+  "who",
+  "do",
+  "no",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

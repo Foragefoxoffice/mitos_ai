@@ -95,14 +95,17 @@ if (LOCAL_ONLY) {
     keywordExtraction: [deepseekFlash, geminiFlash, geminiPro, openaiMini],
     wordExplain: [deepseekFlash, geminiFlash, geminiPro, openaiMini],
     // Chat picks its tier by question complexity — see chatService.js's
-    // classifyComplexity. "simple" leads with the fast/cheap model and
-    // only reaches for the heavier one if that fails; "complex" is the
-    // reverse, since a shallow answer on a question that asked for real
-    // depth (e.g. "explain each option and why the others are wrong") is
-    // itself a quality failure even when it technically "succeeds".
+    // classifyComplexity. Both tiers now lead with DeepSeek (2026-08-25),
+    // matching keywordExtraction/wordExplain above — same cost/quality
+    // rationale, not independently re-validated on real chat traffic yet.
+    // "simple" then falls through to the fast/cheap Gemini model before
+    // the heavier one; "complex" reverses that (Pro before Flash), since
+    // a shallow answer on a question that asked for real depth (e.g.
+    // "explain each option and why the others are wrong") is itself a
+    // quality failure even when it technically "succeeds".
     explainAndChat: {
-      simple: [geminiFlash, geminiPro, openaiMini],
-      complex: [geminiPro, geminiFlash, openaiMini],
+      simple: [deepseekFlash, geminiFlash, geminiPro, openaiMini],
+      complex: [deepseekFlash, geminiPro, geminiFlash, openaiMini],
     },
     performanceAnalysis: [geminiPro, geminiFlash, claudeFallback, openaiMini],
     studyPlan: [geminiPro, geminiFlash, openaiMini, claudeFallback],

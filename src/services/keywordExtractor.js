@@ -665,6 +665,40 @@ const GENERIC_NOUNS = new Set([
   "balancing chemical equation",
   "balancing",
   "balanced chemical reaction",
+  // From a chemical-bonding chemistry batch (VSEPR/hybridization, valence
+  // bond theory, molecular orbital theory, ionic bonding/lattice energy),
+  // ids ~50168-50241 — an extremely vocabulary-dense chapter where most
+  // terms are genuinely specific and correctly kept. Modifier +
+  // generic-tail-noun descriptive phrases and narration, not headwords:
+  // "transfer of electrons" (paraphrase of ionic bond formation),
+  // "attractive forces" (too vague standalone — many specific force
+  // types exist), "intramolecular attraction" (generic, real terms are
+  // "intramolecular/intermolecular hydrogen bonding"), "vector
+  // cancellation" (generic vector-math description, real term is "net
+  // dipole moment"), "region of electron density" (generic paraphrase of
+  // "electron domain"/"electron pair geometry"), "water
+  // solubility"/"thermal stability" (generic comparative properties, same
+  // class as "stability order" above — not one stable chemistry concept).
+  "transfer of electrons",
+  "attractive forces",
+  "intramolecular attraction",
+  "vector cancellation",
+  "region of electron density",
+  "water solubility",
+  "thermal stability",
+  // Bare generic word/phrase, too vague standalone without a qualifier:
+  // "directional" (hybrid orbitals "are directional" — a property
+  // description, not a concept), "magnetic status" (the real terms are
+  // "paramagnetic"/"diamagnetic"), "electrostatic charge" (redundant with
+  // the more precise "electronic charge", kept as the real constant).
+  "directional",
+  "magnetic status",
+  "electrostatic charge",
+  // Question-specific structural description tied to one particular
+  // molecule (ozone's central oxygen atom), not a general reusable
+  // concept — "central atom" in Lewis structures is the real general
+  // VSEPR concept.
+  "central oxygen atom",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

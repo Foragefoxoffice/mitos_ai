@@ -827,6 +827,10 @@ const GENERIC_NOUNS = new Set([
   // of the body", too vague standalone).
   "sexual",
   "outgrowths",
+  // Formula-derivation narration ("Using rotational equation: Tr=Iα"),
+  // not a named concept — the real captured concepts are torque/moment
+  // of inertia/angular acceleration.
+  "rotational equation",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

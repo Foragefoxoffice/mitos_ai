@@ -814,6 +814,13 @@ const GENERIC_NOUNS = new Set([
   // unrelated questions before being caught and deleted). Same class as
   // "and"/"or"/"not"/"who"/"do"/"no" above.
   "key",
+  // Generic descriptive fragments from the same hint ("faster energy
+  // production, which is essential for activities like running uphill") —
+  // "energy production" matches the already-established "production"
+  // generic-tail-noun pattern; "muscular activity" is an AI paraphrase of
+  // the scenario ("running uphill"), not a distinct concept.
+  "muscular activity",
+  "energy production",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

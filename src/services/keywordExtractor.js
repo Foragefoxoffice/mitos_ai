@@ -798,6 +798,10 @@ const GENERIC_NOUNS = new Set([
   // Combines kept "growth" with the already-blocked bare "processes" —
   // same modifier+generic-tail-noun pattern.
   "growth processes",
+  // Formula-derivation narration ("force on one plate due to the other is
+  // F=..."), not a named concept — the real captured concepts are
+  // "electrostatic force"/"electric field".
+  "force on a plate",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

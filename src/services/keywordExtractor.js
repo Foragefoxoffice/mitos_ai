@@ -882,6 +882,15 @@ const GENERIC_NOUNS = new Set([
   "lindeman's ecological transfer law",
   "lindeman's law",
   "ecological transfer",
+  // Bare "phase" (which metabolic phase — too vague alone, real term is
+  // "g0 phase"/"cell cycle"). "transverse cross-section" describes the
+  // lab viewing technique, not the actual biological content (monocot
+  // stem vascular bundle arrangement). "alkaline environment" is the same
+  // generic condition-descriptor shape as the already-blocked "acid
+  // medium"/"alkaline condition".
+  "phase",
+  "transverse cross-section",
+  "alkaline environment",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

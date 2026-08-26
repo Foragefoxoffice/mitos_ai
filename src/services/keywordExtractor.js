@@ -802,6 +802,18 @@ const GENERIC_NOUNS = new Set([
   // F=..."), not a named concept — the real captured concepts are
   // "electrostatic force"/"electric field".
   "force on a plate",
+  // Descriptive simile from hint narration ("It forms a U-shaped
+  // structure"), describing vasa recta's shape — not a distinct named
+  // structure of its own, same class as "soap-box-like structure" above.
+  "u-shaped structure",
+  // Bare "key" is too polysemous/risky standalone: contextually valid in
+  // ONE biology question (a "key" for taxonomic identification, a real
+  // term), but the physics-subject entry it also produced was describing
+  // a literal metal door key (common-knowledge, wrong for a dictionary) —
+  // confirmed real contamination (6 and 49 mappings respectively across
+  // unrelated questions before being caught and deleted). Same class as
+  // "and"/"or"/"not"/"who"/"do"/"no" above.
+  "key",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

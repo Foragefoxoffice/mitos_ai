@@ -852,6 +852,16 @@ const GENERIC_NOUNS = new Set([
   // classification factors ("length, base composition and number of
   // repeats"), too vague standalone.
   "repeats",
+  // "ancestor" bare is too generic/common-knowledge on its own (everyone
+  // knows what an ancestor is; "common ancestor" as a compound would be
+  // the real specific evolutionary-biology concept). Bare "primary" (the
+  // vascular cambium is "completely primary in origin") is a generic
+  // adjective, too vague alone. "striped appearance" is a descriptive
+  // restatement of "striated muscle" (already a separate established
+  // term), not a distinct concept.
+  "ancestor",
+  "primary",
+  "striped appearance",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

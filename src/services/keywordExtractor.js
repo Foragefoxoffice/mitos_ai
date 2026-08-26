@@ -848,6 +848,10 @@ const GENERIC_NOUNS = new Set([
   // already separate.
   "initiation site",
   "continuous dna strand",
+  // Bare "repeats" is one generic item in a list of satellite-DNA
+  // classification factors ("length, base composition and number of
+  // repeats"), too vague standalone.
+  "repeats",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

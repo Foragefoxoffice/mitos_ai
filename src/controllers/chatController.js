@@ -5,7 +5,7 @@ const { getUsageAnalytics } = require("../services/chatUsageService");
 // chat mode with no specific question in view; see chatService's
 // GENERAL_CHAT_QUESTION_ID sentinel.
 const postMessage = async (req, res) => {
-  const { userId, questionId, message, questionContext, userContext, isTrial, source } = req.body || {};
+  const { userId, questionId, message, questionContext, userContext, isTrial, source, dailyCap, trialCap } = req.body || {};
 
   if (!userId || !message) {
     return res.status(400).json({ message: "userId and message are required" });
@@ -20,6 +20,8 @@ const postMessage = async (req, res) => {
       userContext: userContext || {},
       isTrial: !!isTrial,
       source,
+      dailyCap: dailyCap != null ? Number(dailyCap) : undefined,
+      trialCap: trialCap != null ? Number(trialCap) : undefined,
     });
     res.json(result);
   } catch (error) {
@@ -63,7 +65,12 @@ const getQuotaHandler = async (req, res) => {
   }
 
   try {
-    const result = await getQuota({ userId, isTrial: req.query.isTrial === "true" });
+    const result = await getQuota({
+      userId,
+      isTrial: req.query.isTrial === "true",
+      dailyCap: req.query.dailyCap != null ? Number(req.query.dailyCap) : undefined,
+      trialCap: req.query.trialCap != null ? Number(req.query.trialCap) : undefined,
+    });
     res.json(result);
   } catch (error) {
     res.status(500).json({ message: error.message });

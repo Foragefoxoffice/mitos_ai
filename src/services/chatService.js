@@ -2,20 +2,24 @@ const prisma = require("../utils/prismaClient");
 const { runTask } = require("../router/aiRouter");
 const { buildChatPrompt } = require("../prompts/chatPrompt");
 
-// Temporary safety net, not a real credit system — a proper Wallet/credits
-// module (premium-bundled packages, gated top-ups, configurable daily
-// rates) is planned as a separate, later module. This is just a flat cap
-// so nothing runs away unbounded in the meantime.
+// Flat cap, not a real credit system — a proper Wallet/credits module
+// (premium-bundled packages, gated top-ups, configurable daily rates) is
+// planned as a separate, later module. This is just a cap so nothing runs
+// away unbounded in the meantime.
 //
 // Two different cap shapes on purpose: a paying Premium user gets a cap
-// that resets every day (DAILY_MESSAGE_CAP), but a trial user gets one
-// fixed allowance for their WHOLE trial (TRIAL_MESSAGE_CAP, never resets)
-// — otherwise a multi-day trial would hand out the daily cap every single
-// day for free, which isn't the intended trial value. backend determines
-// trial vs premium (it owns user.status/trialEndsAt/premiumExpiry; this
-// service doesn't have that data) and passes isTrial through.
-const DAILY_MESSAGE_CAP = Number(process.env.CHAT_DAILY_MESSAGE_CAP) || 100;
-const TRIAL_MESSAGE_CAP = Number(process.env.CHAT_TRIAL_MESSAGE_CAP) || 10;
+// that resets every day (dailyCap), but a trial user gets one fixed
+// allowance for their WHOLE trial (trialCap, never resets) — otherwise a
+// multi-day trial would hand out the daily cap every single day for free,
+// which isn't the intended trial value. backend determines trial vs
+// premium (it owns user.status/trialEndsAt/premiumExpiry; this service
+// doesn't have that data) and passes isTrial through, along with the two
+// cap values themselves — backend owns them as admin-editable AppSettings
+// (`aiChatDailyCapPremium` / `aiChatTrialCapTotal`) so an admin change
+// takes effect on the very next message, no restart here. These env vars
+// are only the fallback if backend ever fails to send a value.
+const DEFAULT_DAILY_MESSAGE_CAP = Number(process.env.CHAT_DAILY_MESSAGE_CAP) || 100;
+const DEFAULT_TRIAL_MESSAGE_CAP = Number(process.env.CHAT_TRIAL_MESSAGE_CAP) || 10;
 
 class ChatCapExceededError extends Error {}
 
@@ -95,20 +99,22 @@ const resolveEffectiveQuestionId = (questionId, source) => {
   return source === "test-series" ? -Number(questionId) : Number(questionId);
 };
 
-const sendMessage = async ({ userId, questionId, message, questionContext, userContext, isTrial, source }) => {
+const sendMessage = async ({ userId, questionId, message, questionContext, userContext, isTrial, source, dailyCap, trialCap }) => {
+  const effectiveDailyCap = dailyCap ?? DEFAULT_DAILY_MESSAGE_CAP;
+  const effectiveTrialCap = trialCap ?? DEFAULT_TRIAL_MESSAGE_CAP;
   const effectiveQuestionId = resolveEffectiveQuestionId(questionId, source);
 
   if (isTrial) {
     const totalCount = await countAllMessages(userId);
-    if (totalCount >= TRIAL_MESSAGE_CAP) {
+    if (totalCount >= effectiveTrialCap) {
       throw new ChatCapExceededError(
-        `Trial chat limit (${TRIAL_MESSAGE_CAP} messages total) reached — upgrade to Premium for daily access.`
+        `Trial chat limit (${effectiveTrialCap} messages total) reached — upgrade to Premium for daily access.`
       );
     }
   } else {
     const todayCount = await countTodayMessages(userId);
-    if (todayCount >= DAILY_MESSAGE_CAP) {
-      throw new ChatCapExceededError(`Daily chat limit (${DAILY_MESSAGE_CAP}) reached`);
+    if (todayCount >= effectiveDailyCap) {
+      throw new ChatCapExceededError(`Daily chat limit (${effectiveDailyCap}) reached`);
     }
   }
 
@@ -156,8 +162,8 @@ const sendMessage = async ({ userId, questionId, message, questionContext, userC
 // without needing to send a message — reuses the exact same counting
 // functions sendMessage's cap check uses, so this can never drift out of
 // sync with what actually gets enforced.
-const getQuota = async ({ userId, isTrial }) => {
-  const limit = isTrial ? TRIAL_MESSAGE_CAP : DAILY_MESSAGE_CAP;
+const getQuota = async ({ userId, isTrial, dailyCap, trialCap }) => {
+  const limit = isTrial ? (trialCap ?? DEFAULT_TRIAL_MESSAGE_CAP) : (dailyCap ?? DEFAULT_DAILY_MESSAGE_CAP);
   const used = isTrial ? await countAllMessages(userId) : await countTodayMessages(userId);
 
   return {
@@ -183,4 +189,4 @@ const getHistory = async (userId, questionId, source) => {
   return { messages };
 };
 
-module.exports = { sendMessage, getHistory, getQuota, ChatCapExceededError, DAILY_MESSAGE_CAP, TRIAL_MESSAGE_CAP };
+module.exports = { sendMessage, getHistory, getQuota, ChatCapExceededError };

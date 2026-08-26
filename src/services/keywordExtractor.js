@@ -891,6 +891,31 @@ const GENERIC_NOUNS = new Set([
   "phase",
   "transverse cross-section",
   "alkaline environment",
+  // Generic measurement noun ("volume" is already excluded bare per the
+  // prompt's own rule) with a modifier bolted on — same antipattern the
+  // prompt already names, model just isn't applying it consistently.
+  "total volume",
+  "solution volume",
+  // Descriptive narration/category phrases, not named concepts themselves.
+  "maximum possible percentage error",
+  "permissible values",
+  "storage body",
+  "storage bodies",
+  "partial breakdown",
+  // Scenario variable-label, not a concept (M in v_e = sqrt(2GM/R)).
+  "mass of the planet",
+  // Bare narration verb ("the negative half cycles are inverted").
+  "invert",
+  // Formula variable spoken as a phrase (Δn_g), same class as "v squared".
+  "delta ng",
+  // Bare, too generic standalone (threshold potential/value/frequency all
+  // mean different things) — same pattern as other blocked bare nouns.
+  "threshold",
+  // Garbled/truncated fragment, not a real word.
+  "zo",
+  // Another AI-invented paraphrase of the standardized "10% law" that
+  // slipped past the durable prompt rule added for this exact concept.
+  "lindeman's law of energy transfer",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

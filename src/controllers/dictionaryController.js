@@ -86,8 +86,12 @@ const getTermsForQuestion = async (req, res) => {
     return res.status(400).json({ message: "Invalid questionId" });
   }
 
+  // source: "practice" — a test-series question can share the same numeric
+  // id as a practice question (independent id sequences), so this must stay
+  // scoped now that ai_dictionary_mapping disambiguates by source. See
+  // testSeriesDictionaryController.js for the test-series equivalent.
   const mappings = await prisma.ai_dictionary_mapping.findMany({
-    where: { questionId, dictionary: { status: "completed" } },
+    where: { questionId, source: "practice", dictionary: { status: "completed" } },
     select: { dictionary: { select: { id: true, term: true } } },
   });
 

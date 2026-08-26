@@ -77,12 +77,21 @@ model ai_dictionary_mapping {
   // "Data access note" under Sprint 2).
   questionId   Int
 
+  // "practice" (default — the existing main `question` table) |
+  // "test_series" (`testseriesquestionbank`). Needed because those two
+  // source tables have independent auto-increment id sequences — without
+  // this, questionId alone can't say which table it refers to, and a
+  // practice question and a test-series question could collide on the
+  // same numeric id.
+  source       String   @default("practice") @db.VarChar(20)
+
   createdAt    DateTime @default(now())
 
   dictionary   ai_dictionary @relation(fields: [dictionaryId], references: [id], onDelete: Cascade)
 
-  @@unique([dictionaryId, questionId])
+  @@unique([dictionaryId, questionId, source])
   @@index([questionId])
+  @@index([source, questionId])
 }
 
 // One row per job type. Tracks a resumable cursor (the highest source

@@ -40,4 +40,8 @@ app.listen(PORT, () => {
   require("./src/jobs/dictionaryBatchRunner")
     .resumeAutoRunIfEnabled()
     .catch((error) => console.error("❌ Failed to check/resume auto-run on boot:", error.message));
+
+  require("./src/jobs/testSeriesDictionaryBatchRunner")
+    .resumeAutoRunIfEnabled()
+    .catch((error) => console.error("❌ Failed to check/resume test-series auto-run on boot:", error.message));
 });

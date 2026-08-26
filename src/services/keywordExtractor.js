@@ -916,6 +916,42 @@ const GENERIC_NOUNS = new Set([
   // Another AI-invented paraphrase of the standardized "10% law" that
   // slipped past the durable prompt rule added for this exact concept.
   "lindeman's law of energy transfer",
+  // Describes what "lyases" do (the real term), not a distinct concept.
+  "bond cleavage by elimination",
+  // Exact match to the prompt's own "structural adaptation" antipattern
+  // example — the real term is the named concept ("allen's rule").
+  "anatomical adaptation",
+  // Describes the count of heterozygous loci in this specific problem,
+  // not a stable vocabulary term ("heterozygous" is the real term).
+  "heterozygous gene pairs",
+  // Substance name + "medium" — same generic-condition shape as the
+  // already-blocked "acid medium"/"alkaline condition".
+  "water medium",
+  // Describes the mathematical shape of a formula's variation, not a
+  // named physics concept.
+  "sinusoidal dependence",
+  // Generic noun+noun descriptive combo; real term is "convection".
+  "density difference",
+  // Generic measurement-quantity descriptor (Hooke's law elongation);
+  // same class as already-excluded bare "length"/"distance".
+  "linear extension",
+  // Word-problem apparatus/shape descriptor, not a concept (real term:
+  // magnetic field due to a straight current-carrying conductor).
+  "straight cylindrical wire",
+  // Generic descriptive combo, not a specific concept.
+  "force magnitude",
+  // Not the standard textbook term (elastic limit/breaking stress/yield
+  // point) — an invented paraphrase.
+  "breaking limit",
+  // Same narration-phrase pattern already blocked as "maximum possible
+  // percentage error" — model produced another wording of it.
+  "maximum calculated percentage error",
+  // Generic modifier+noun, not a specific concept (real terms: RNAi,
+  // siRNA, dsRNA).
+  "host tissue",
+  // Paraphrases what "phylloclades" (the real, already-captured term) is
+  // defined as, rather than being its own concept.
+  "photosynthetic stem",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

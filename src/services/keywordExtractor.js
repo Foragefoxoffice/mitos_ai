@@ -862,6 +862,11 @@ const GENERIC_NOUNS = new Set([
   "ancestor",
   "primary",
   "striped appearance",
+  // Bare past-tense verb form describing the action performed ("A
+  // solution of copper sulphate is electrolysed for 10 minutes"), same
+  // class as the earlier-blocked bare verb-forms "reacts"/"reduce" — the
+  // real specific concept is the noun "electrolysis", already separate.
+  "electrolysed",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

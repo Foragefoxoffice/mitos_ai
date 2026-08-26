@@ -765,6 +765,12 @@ const GENERIC_NOUNS = new Set([
   "soap-box-like structure",
   "biochemical pathway",
   "biochemical pathways",
+  // "current carrying cable" is apparatus description from a word problem
+  // (a thick current-carrying cable of radius R...), same scenario-prop
+  // class as the already-blocked bare "wire" above — the real concept
+  // (Ampere's circuital law / magnetic field variation) is captured
+  // separately.
+  "current carrying cable",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

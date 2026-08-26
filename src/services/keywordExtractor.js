@@ -776,6 +776,15 @@ const GENERIC_NOUNS = new Set([
   // than naming a distinct structure — same modifier+generic-tail-noun
   // class as "biochemical pathway" above.
   "protein synthesis machinery",
+  // Generic bare words, too vague standalone: "defence" (one item in a
+  // list — "function mainly in defence, protection..."), "response" (one
+  // item in a generic list of life processes — "metabolism, growth,
+  // reproduction and response"). "linked dna" is a context-specific
+  // descriptive phrase from a question stem about a cloning vector's
+  // origin of replication, not a general reusable concept.
+  "defence",
+  "response",
+  "linked dna",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

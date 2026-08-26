@@ -785,6 +785,19 @@ const GENERIC_NOUNS = new Set([
   "defence",
   "response",
   "linked dna",
+  // "stopping point" is formula-derivation narration ("at stopping point
+  // v=0, so distance becomes..."), not a named concept — the real term
+  // would be "stopping distance". "artificial induction" is a redundant
+  // duplicate of the already-established "induction of flowering" with a
+  // modifier that adds no distinguishing meaning. "industrial production"
+  // is a generic modifier+noun combo (production of WHAT — the real
+  // content here is "citric acid production" via Aspergillus niger).
+  "stopping point",
+  "artificial induction",
+  "industrial production",
+  // Combines kept "growth" with the already-blocked bare "processes" —
+  // same modifier+generic-tail-noun pattern.
+  "growth processes",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

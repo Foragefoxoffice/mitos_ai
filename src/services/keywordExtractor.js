@@ -821,6 +821,12 @@ const GENERIC_NOUNS = new Set([
   // the scenario ("running uphill"), not a distinct concept.
   "muscular activity",
   "energy production",
+  // Bare adjective (sexual phases/asexual phases — too vague alone,
+  // "sexual reproduction" would be the real specific compound) and bare
+  // generic noun (outgrowths of WHAT — insect wings "arise as outgrowths
+  // of the body", too vague standalone).
+  "sexual",
+  "outgrowths",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

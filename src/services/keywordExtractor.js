@@ -754,6 +754,17 @@ const GENERIC_NOUNS = new Set([
   "who",
   "do",
   "no",
+  // From the Test Series pipeline's first quality scan (2026-08-26) —
+  // same established classes, confirming the extraction/filter logic
+  // generalizes cleanly to this second question source. "soap-box-like
+  // structure" is a descriptive simile from the hint (diatom cell walls
+  // "have a distinctive soap-box-like structure"), not a named structure
+  // of its own. "biochemical pathway" is one generic item in a list of
+  // differentiating factors ("genetic makeup, cell wall composition,
+  // biochemical pathways"), not a distinct concept.
+  "soap-box-like structure",
+  "biochemical pathway",
+  "biochemical pathways",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

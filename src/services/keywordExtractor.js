@@ -840,6 +840,14 @@ const GENERIC_NOUNS = new Set([
   // fluid".
   "petal arrangement",
   "intracellular",
+  // "initiation site" is a generic/redundant paraphrase of "promoter
+  // region"/"start site of transcription" (both already separately
+  // captured). "continuous dna strand" describes the OUTCOME of DNA
+  // ligase joining Okazaki fragments, not a distinct concept — the real
+  // established terms (Okazaki fragments, lagging strand, DNA ligase) are
+  // already separate.
+  "initiation site",
+  "continuous dna strand",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

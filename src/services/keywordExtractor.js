@@ -771,6 +771,11 @@ const GENERIC_NOUNS = new Set([
   // (Ampere's circuital law / magnetic field variation) is captured
   // separately.
   "current carrying cable",
+  // Generic descriptive phrase from hint narration ("They contain protein
+  // synthesis machinery"), collectively describing DNA+ribosomes rather
+  // than naming a distinct structure — same modifier+generic-tail-noun
+  // class as "biochemical pathway" above.
+  "protein synthesis machinery",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

@@ -831,6 +831,15 @@ const GENERIC_NOUNS = new Set([
   // not a named concept — the real captured concepts are torque/moment
   // of inertia/angular acceleration.
   "rotational equation",
+  // Generic category description used to define a specific named concept
+  // ("Vexillary aestivation is a type of petal arrangement..."), not a
+  // headword itself — the real specific terms are "aestivation"/
+  // "vexillary aestivation". Bare "intracellular" (most abundant
+  // intracellular cation) is too vague alone, contrasted with the real
+  // specific compartment terms "intracellular fluid"/"extracellular
+  // fluid".
+  "petal arrangement",
+  "intracellular",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

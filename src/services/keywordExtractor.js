@@ -867,6 +867,21 @@ const GENERIC_NOUNS = new Set([
   // class as the earlier-blocked bare verb-forms "reacts"/"reduce" — the
   // real specific concept is the noun "electrolysis", already separate.
   "electrolysed",
+  // "burrows" is a generic scenario detail (desert lizards escaping heat
+  // by burrowing), not core vocabulary — the real specific concept
+  // "behavioural thermoregulation" is already separate. "proliferative
+  // cycle" is a redundant paraphrase of "cell cycle" (already
+  // established), used to contrast against the quiescent G0 phase.
+  // "ecological transfer law" is a fresh naming variant of the same
+  // concept already standardized as "10% law" earlier this session
+  // (Lindeman's 10% law) — same consolidation pattern as the "10 percent
+  // law"/"ten percent law" duplicates blocked before.
+  "burrows",
+  "proliferative cycle",
+  "ecological transfer law",
+  "lindeman's ecological transfer law",
+  "lindeman's law",
+  "ecological transfer",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

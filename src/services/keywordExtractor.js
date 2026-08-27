@@ -1484,6 +1484,148 @@ const GENERIC_NOUNS = new Set([
   // "principle of homogeneity of dimensions".
   "dimensionally homogeneous",
   "dimensionally consistent",
+  // Bare, too generic (describes mitochondrial arrangement / electron
+  // orbit shrinkage in different contexts) — flagged for the full-corpus
+  // sweep on the large pre-existing biology entry; blocked here to stop
+  // further contamination going forward.
+  "spiral",
+  // Redundant/generic descriptor of the already-captured "notochord".
+  "axial support",
+  // Bare adjective, no noun.
+  "non-poisonous",
+  "polypoid",
+  // Generic descriptive combos (hagfish behavior), common English/generic
+  // biology narration, not distinct headwords.
+  "parasitic feeding",
+  "scavenging",
+  // Generic combo; real term "preen gland"/"oil gland" already captured.
+  "skin gland",
+  // Generic combo; real term "tympanum" already captured.
+  "sound vibrations",
+  // Generic combo describing a specific fish's defensive organ.
+  "poisonous sting",
+  // Generic paraphrase of the already-captured
+  // "thermoregulation"/"homoiothermous".
+  "thermoregulatory mechanisms",
+  // Generic combo; real terms "gills"/"operculum" already captured.
+  "pharyngeal region",
+  // Generic category descriptor; the real specific example (Exocoetus)
+  // already captured.
+  "marine bony fish",
+  // Generic combo; real term "calcium carbonate"/coral already captured.
+  "calcareous skeletons",
+  // Generic taxon-category descriptor (singular/plural); the real named
+  // examples (Taenia, Fasciola) already captured.
+  "parasitic flatworm",
+  "parasitic flatworms",
+  // Narration describing sexual dimorphism in Ascaris, not vocabulary;
+  // real term "ascaris" already captured.
+  "female ascaris",
+  "male ascaris",
+  // Generic category umbrella (this question's own topic header); the
+  // real specific mappings (ovule→seed, ovary→fruit, etc.) are the
+  // actual tested content.
+  "post-fertilization development",
+  // Generic descriptive shape phrase, not a distinct concept.
+  "conical crown",
+  // Generic combos describing mycorrhiza's function.
+  "mineral nutrients",
+  "absorptive area",
+  // Generic combo; real term "vascular tissue" already captured.
+  "vascular organs",
+  // Generic category descriptor; the real specific named examples
+  // (Spirogyra, Ulothrix) already captured.
+  "filamentous green algae",
+  // Generic combo, narration for a corrected-false statement.
+  "flagellated stages",
+  // Generic combo describing pyrenoid composition.
+  "proteinaceous matrix",
+  // Descriptive phrase from what taxonomic categories are NOT, not a
+  // headword.
+  "morphological aggregate",
+  // One item in a list of industrial-use functions, generic combo.
+  "stabilising agent",
+  // Word-problem scenario descriptor.
+  "infertile human couples",
+  // Generic combo describing Planaria regeneration.
+  "body fragments",
+  // Generic, too broad/common concept.
+  "body mass",
+  // Generic descriptive phrase (modifier + generic noun "magnitude"),
+  // narration for a specific null-vector problem.
+  "equal magnitude",
+  // Narration describing this specific river-crossing problem's setup.
+  "perpendicular direction",
+  // Narration describing vector components in a specific relative-
+  // velocity problem, not vocabulary.
+  "northward component",
+  "westward component",
+  // Generic math descriptor (Pythagorean-theorem-based magnitude calc),
+  // same class as already-blocked "sum of roots".
+  "pythagorean relation",
+  // Redundant duplicate of the already-kept "trajectory equation" (same
+  // path-equation concept, different question).
+  "path equation",
+  // Etymology trivia (the Latin root word "systema"), not a taxonomic
+  // concept itself.
+  "systema",
+  // Too basic/common chemistry knowledge (element symbol notation),
+  // equivalent to asking to extract "the answer" as a term.
+  "atomic symbol",
+  // Generic/redundant paraphrase; the real specific term "pauling scale"
+  // already captured.
+  "electronegativity scale",
+  // Generic electron-shell terminology, no single stable definition on
+  // its own.
+  "inner shell",
+  // Misspelling duplicate of the already-established "pauling scale".
+  "pauline scale",
+  // Redundant modifier-form duplicate of the already-established
+  // "gametophyte".
+  "male gametophytic generation",
+  // Paraphrase duplicate of the already-established "archegonium".
+  "female sex organ",
+  // Paraphrase duplicate of the already-established "statocysts".
+  "equilibrium organs",
+  // Redundant modifier-form duplicates of the already-established
+  // "regeneration".
+  "regenerative ability",
+  "true regeneration",
+  // Redundant/paraphrase duplicates of the already-established
+  // "phylogeny".
+  "systematic relationship",
+  "evolutionary phylogeny",
+  // Paraphrase duplicate of the already-established "latin".
+  "dead language",
+  // Generic umbrella duplicates of the already-established individual
+  // periodic-table blocks (s-block/p-block/d-block/f-block).
+  "block of the periodic table",
+  "periodic table block",
+  // Paraphrase/redundant duplicate of the already-established "principal
+  // quantum number".
+  "principal quantum shell",
+  // Redundant modifier-form duplicate of the already-established "time
+  // period".
+  "time period of revolution",
+  // Paraphrase duplicates of the already-established "periodicity".
+  "periodic function",
+  "periodic variation",
+  // Narration/paraphrase duplicate of the already-established "covalent
+  // bond"/"lone pair".
+  "shared pair of electrons",
+  // Generic paraphrase duplicates of the already-established "coral
+  // polyps".
+  "colonial coral",
+  "colonial form",
+  "colonial structure",
+  // Paraphrase duplicate of the already-established "tissue-level
+  // organization".
+  "true tissues",
+  // Grammatical-form (plural) duplicate of the already-established
+  // "seasonal breeder".
+  "seasonal breeders",
+  // Incomplete duplicate of the already-blocked "underlining".
+  "underline",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

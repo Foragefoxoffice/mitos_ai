@@ -2391,6 +2391,52 @@ const GENERIC_NOUNS = new Set([
   "peripheral vascular bundles",
   // Redundant modifier duplicate of the already-established "air sacs".
   "air sacs of lungs",
+  // Alternate-spelling/singular duplicate of the already-established
+  // "dumb-bell shaped guard cells".
+  "dumbbell-shaped guard cell",
+  // Singular-form duplicate of the already-established "gourds".
+  "gourd",
+  // Non-hyphenated duplicate of the already-established "super-elastic
+  // collision".
+  "superelastic collision",
+  // Redundant modifier duplicate of the already-established "vacuole".
+  "plant vacuole",
+  // Redundant/generic paraphrase duplicate of the already-established
+  // "synapse".
+  "synaptic communication",
+  // Synonym duplicate of the already-established "axon terminal".
+  "axon endings",
+  // Paraphrase duplicate of the already-established "spiracles".
+  "respiratory openings",
+  // Redundant paraphrase duplicates of the already-established "octet
+  // rule"/"lewis structure".
+  "octet concept",
+  "lewis octet theory",
+  // Paraphrase duplicate of the already-established "gap junctions"/
+  // "intercellular channels".
+  "cytoplasmic channels",
+  // Generic combos/bare words, not distinct concepts.
+  "sensory appendages",
+  "reducing water loss",
+  "functional maturity",
+  "tapering ends",
+  "heat supplied",
+  "coexist",
+  "two-body system",
+  "depth below earth's surface",
+  "explosive forces",
+  "rotational kinematic relation",
+  "retarding angular acceleration",
+  "flexible neck",
+  "longitudinal body axis",
+  "anterior",
+  "pliable matrix",
+  // Redundant/narration duplicate of the already-blocked "protein
+  // mobility" (fluid mosaic model context).
+  "lateral movement of proteins",
+  "plant and animal cells",
+  "filamentous proteinaceous structures",
+  "digesting",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

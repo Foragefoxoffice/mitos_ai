@@ -1083,6 +1083,71 @@ const GENERIC_NOUNS = new Set([
   "leftward shift",
   // Rephrased duplicate of the already-blocked "charged conducting sphere".
   "hollow charged spherical conductor",
+  // Generic descriptive noun about a naming-convention rule; real term is
+  // "binomial nomenclature".
+  "capitalization",
+  // Misspelling/duplicate of the already-correct "aqueous solution".
+  "aquaous solution",
+  // Word-problem apparatus/scenario descriptor; real concept is
+  // conservation of linear momentum / recoil.
+  "rifle-bullet system",
+  // Paraphrases what "analogous organs"/convergent evolution already
+  // captures.
+  "structural plan",
+  // Bare/generic, duplicate of the already-blocked "intracellular
+  // signaling pathways".
+  "signaling pathways",
+  // Narration describing this specific genetics problem's outcome, not
+  // vocabulary — same class as already-blocked "heterozygous gene pairs".
+  "phenotypically normal",
+  // Bare noun, too generic (verb-derived, no stable independent meaning).
+  "activation",
+  // Bare adjectives, no noun (genetic-code / aestivation descriptors).
+  "non-overlapping",
+  "overlapping",
+  // Redundant grammatical-form duplicate of the already-established
+  // "charge independence".
+  "charge independent",
+  // Generic property descriptor; the real named concept is already
+  // captured as "nuclear force"/"nuclear forces".
+  "short-range forces",
+  // Bare, too generic/everyday (electrolysis context still doesn't make
+  // this a distinct headword).
+  "water molecules",
+  // Narration ("not directly from experimental rate data"), not vocabulary.
+  "rate data",
+  // Redundant vs. the already-established acid/base/amphoteric/neutral
+  // oxide classification (the real specific categories).
+  "metallic oxide",
+  // Descriptive property phrase ("strong oxidising nature"); real
+  // concept is electron affinity/halogen group trend.
+  "oxidizing nature",
+  // Narration for one ozonolysis workup step, not a distinct concept
+  // (real concept: ozonolysis, already established).
+  "reductive treatment",
+  // Word-problem scenario prop describing droplet shape/count in this
+  // specific surface-energy calculation, not a concept.
+  "spherical droplet",
+  // Narration describing a computed fraction in this specific half-life
+  // problem, not vocabulary (real concept: half-life/radioactive decay).
+  "active nuclei",
+  // Generic modifier+common-noun descriptor ("heart" is everyday English,
+  // doesn't need NEET-dictionary explanation); real distinguishing
+  // chordate features are notochord/dorsal nerve cord.
+  "muscular heart",
+  // Common everyday device name, no NEET-specific definition needed (same
+  // EXCLUDE rule as other everyday-English terms); real tested fact is
+  // the germicidal action of UV rays.
+  "water purifier",
+  // Yet another AI-invented paraphrase of the standardized "10% law"
+  // slipping past the durable prompt rule — even though the source
+  // question itself names it "Lindeman's Ten Percent Law", the prompt
+  // rule normalizes to the one standard name.
+  "lindeman's ten percent law",
+  // Bare narration verb, no noun. Pre-existing entry from before this
+  // session (7 mappings) — small enough to delete outright rather than
+  // flag for the full-sweep.
+  "hydrolyse",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

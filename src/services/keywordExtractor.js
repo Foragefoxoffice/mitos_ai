@@ -1409,6 +1409,81 @@ const GENERIC_NOUNS = new Set([
   // Generic, vague combo with no single stable definition; pre-existing
   // entry (19 mappings), small enough to delete outright.
   "chemical composition",
+  // Generic descriptive combo/narration for Bohr-model energy levels, not
+  // a distinct concept.
+  "bound electron",
+  "accelerated charged particle",
+  // Generic combo describing canal-ray particles; real term "canal rays"
+  // already captured.
+  "positive particles",
+  // Historical apparatus/detector-material descriptor, scenery for
+  // Rutherford-era experiments.
+  "zinc sulphide screen",
+  // Narration describing this specific two-cars kinematics problem's
+  // given data, not vocabulary.
+  "initial separation",
+  // Narration describing distance/displacement examples in this specific
+  // matching question, not distinct concepts.
+  "closed path motion",
+  "curved path motion",
+  // Math/graph-shape descriptor, same class as already-blocked "parabolic
+  // variation"/"sinusoidal dependence".
+  "quadratic function",
+  // Incomplete/redundant duplicate of the already-established "gay-
+  // lussac's law" (bare surname where the full law name is the concept).
+  "gay lussac",
+  // Generic category umbrella; the real specific individual gas laws are
+  // captured separately.
+  "gas laws",
+  // Generic/common math concept (significant-figures rounding rule),
+  // narration for one specific calculation.
+  "decimal places",
+  // Redundant fragment/incomplete duplicate of the already-established
+  // "gay-lussac's law" (its full name is "...law of gaseous volumes").
+  "gaseous volumes",
+  // Bare adjective, no noun.
+  "reproducible",
+  // Redundant incomplete duplicate of the already-established "si base
+  // quantity"/"si base quantities".
+  "base quantity",
+  // Generic category phrase; real terms (identification, nomenclature,
+  // taxonomy) already captured separately.
+  "taxonomical studies",
+  // Common/generic example item (one of a list of mixtures), no NEET-
+  // specific definition needed.
+  "sugar solution",
+  // Garbled fragment of the species name "Solanum tuberosum" (potato),
+  // not a standalone term.
+  "tuberosum",
+  // Redundant incomplete duplicate of the already-established "si derived
+  // units"/"si derived unit".
+  "derived units",
+  // Generic/plural umbrella phrase for binomial-nomenclature formatting
+  // rules, same class as the already-blocked naming-convention leaks.
+  "scientific names",
+  // Incomplete/bare duplicate of the already-established "binomial
+  // nomenclature".
+  "binomial",
+  // Bare, extremely generic — fails the core test entirely.
+  "formula",
+  // Bare, too generic (describes what early classification was based on).
+  "utility",
+  // Narration describing a quantum-number-rule violation, not vocabulary.
+  "allowed range",
+  // Generic category header (Column II label); the real specific answers
+  // (ultraviolet/visible/infrared region) are the actual vocabulary.
+  "spectral region",
+  // Generic paraphrase duplicate of the already-established "dalton's
+  // atomic theory"/"atomic theory".
+  "atomic nature of matter",
+  // Generic paraphrase duplicates of the already-established "taxonomic
+  // hierarchy"/"taxonomic categories".
+  "hierarchical categories",
+  "taxonomic position",
+  // Adjective-form paraphrase duplicates of the already-established
+  // "principle of homogeneity of dimensions".
+  "dimensionally homogeneous",
+  "dimensionally consistent",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

@@ -1148,6 +1148,86 @@ const GENERIC_NOUNS = new Set([
   // session (7 mappings) — small enough to delete outright rather than
   // flag for the full-sweep.
   "hydrolyse",
+  // Generic descriptor of the invasive species already captured as "nile
+  // perch"/"cichlid".
+  "predatory fish",
+  // Paraphrase of the already-captured "pneumatophores", same class as
+  // already-blocked "root modifications".
+  "stem modifications",
+  // Generic category label, not a distinct concept.
+  "metabolic regulation",
+  // Narration ("reducing sperm motility and fertilizing ability"), not a
+  // distinct concept.
+  "fertilizing ability",
+  // Generic category label for Vmax/Km (the real, already-captured
+  // specific terms).
+  "kinetic parameters",
+  // Narration describing a test-cross result, not vocabulary.
+  "recombinant combinations",
+  // Redundant synonym duplicate of the already-established "axon".
+  "nerve fiber",
+  // Narration describing Raoult's-law deviation, not a distinct concept.
+  "ideal behavior",
+  // Duplicate/synonym of the already-blocked "reductive treatment".
+  "reductive workup",
+  // Narration describing this specific magnetic-field-radius formula
+  // problem, not vocabulary.
+  "radius of circular motion",
+  // Narration fragment ("mass behaves as if concentrated at the center").
+  "concentrated at the center",
+  // Generic measurement descriptor, same class as already-excluded bare
+  // "distance"/"length".
+  "mean distance",
+  // Bare adjective, no noun (image type).
+  "virtual",
+  // Narration comparing apparent vs. actual frequency; real concept is
+  // the already-captured "doppler effect".
+  "actual frequency",
+  // Narration describing the already-established "static friction"'s
+  // property, not a distinct concept.
+  "self-adjusting nature",
+  // Narration describing this specific mitosis-count calculation, not
+  // vocabulary.
+  "cell number doubling",
+  "cell colony",
+  // Bare adjective, no noun (parental phenotype).
+  "parental",
+  // Narration/descriptive detail of the already-captured "marginal
+  // placentation", not a distinct concept.
+  "longitudinal ridge",
+  // Generic paraphrase duplicates of the already-established "aneuploidy".
+  "chromosomal numerical abnormality",
+  "numerical abnormality",
+  // Redundant grammatical-form duplicate of the already-established
+  // "autosome".
+  "autosomal chromosome",
+  // Too generic/everyday; real concept is the already-captured
+  // "eutrophication".
+  "suffocation",
+  // Narration describing Broca's aphasia's symptom, same class as
+  // already-blocked descriptive-symptom phrases; real term "broca's
+  // aphasia" already captured separately.
+  "fluent speech",
+  // Narration describing mycorrhiza's host, not a distinct concept; real
+  // term "mycorrhiza" already captured.
+  "higher terrestrial plants",
+  // Historical-era reference used only as context, not a NEET biology
+  // concept itself; real concept is "industrial melanism"/natural
+  // selection.
+  "industrial revolution",
+  // Generic combo describing part of the electron transport chain's
+  // function, not a distinct concept.
+  "oxygen reduction",
+  // Narration describing the source of glycerol as a by-product, not a
+  // distinct concept; real concept is "distillation under reduced
+  // pressure".
+  "soap manufacture",
+  // Generic ecological category label, not the actual specific concept
+  // being tested (Gause's Competitive Exclusion Principle/niche).
+  "community structure",
+  // Generic modifier+noun ("affinity" alone isn't a headword); real
+  // concept is the already-captured Km/competitive inhibition mechanism.
+  "substrate affinity",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

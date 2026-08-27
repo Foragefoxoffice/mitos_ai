@@ -1829,6 +1829,130 @@ const GENERIC_NOUNS = new Set([
   // Exact match to the prompt's own explicitly-given antipattern example
   // ("leafy shoots") — the model still produced it despite the rule.
   "leafy shoot",
+  // Bare, too generic (verb-derived noun, phloem loading context).
+  "loading",
+  // Common everyday fruit-part word, no NEET-specific definition needed.
+  "pulp",
+  // Narration ("before seed maturity"), generic combo.
+  "seed maturity",
+  // Common/generic botanical term, no NEET-specific definition needed.
+  "flower bud",
+  // Common everyday word (indigo dye example), no NEET-specific
+  // definition needed.
+  "dye",
+  // Redundant modifier-form duplicate of the already-established
+  // "mesophyll".
+  "mesophyll tissue",
+  // Incomplete/truncated duplicate of the already-established "conjoint
+  // collateral vascular bundle".
+  "conjoint collateral",
+  // Redundant near-duplicate of the already-established "sclerenchymatous
+  // cells" (tissue vs. cells).
+  "sclerenchymatous tissue",
+  // Apostrophe-variant duplicate of the already-established "mayer
+  // relation".
+  "mayer's relation",
+  // Singular redundant duplicate of the already-established "banking of
+  // roads".
+  "banking of road",
+  // Redundant synonym duplicate of the already-established "non-contact
+  // forces".
+  "field forces",
+  // Alternate-spelling duplicate of the already-established "amoeba".
+  "ameba",
+  // Redundant modifier-form duplicate of the already-established "cilia".
+  "eukaryotic cilia",
+  // Generic paraphrase duplicates of the already-established "optimum
+  // ph"/"optimum temperature".
+  "acidic conditions",
+  "optimum activity",
+  // Redundant duplicate of the already-established "cell adhesion"/
+  // "desmosomes".
+  "cell-to-cell adhesion",
+  // Redundant/generic duplicate of the already-established "phenotype".
+  "phenotypic characters",
+  // Redundant paraphrase duplicate of the already-established "gills"/
+  // "operculum".
+  "aquatic respiratory organ",
+  // Redundant modifier-form duplicate of the already-established
+  // "mushroom gland".
+  "mushroom-shaped gland",
+  // Adjective-form paraphrase duplicates of the already-established
+  // "spontaneity"/"gibbs free energy".
+  "thermodynamically spontaneous",
+  "thermodynamically favourable",
+  "thermodynamically favourable reaction",
+  // Redundant near-duplicate of the already-established "perfectly
+  // crystalline solid" (substance vs. solid, same Third Law concept).
+  "perfectly crystalline substance",
+  // Vague/redundant duplicate of the already-established "thermodynamic
+  // sign convention".
+  "thermodynamic convention",
+  // Generic sign-descriptor combos, not stable named concepts on their
+  // own.
+  "negative entropy",
+  "negative enthalpy",
+  // Narration/mechanism-description duplicate of the already-established
+  // "net zero dipole moment".
+  "cancellation of dipole moments",
+  // Generic combo/narration; real terms "lattice enthalpy"/"coulombic
+  // interaction" already captured.
+  "inter-ionic distance",
+  // Word-problem scenario prop (six identical balls collision).
+  "identical balls",
+  // Generic combo/narration for a moment-of-inertia matching question,
+  // not a distinct concept.
+  "geometric axis",
+  // Scenario/example-object descriptor illustrating that centre of mass
+  // can lie outside the material, not itself a distinct concept.
+  "uniform thin circular ring",
+  // Narration describing the energy source in a specific projectile-
+  // explosion problem, generic combo.
+  "internal chemical energy",
+  // Verbose/redundant restatement of the already-established "potential
+  // energy".
+  "scalar potential energy function",
+  // Common/generic words (friction-reduction concept), no NEET-specific
+  // definition needed; pre-existing "lubrication" entry (17 mappings,
+  // biology-tagged) small enough to delete outright.
+  "lubricating layer",
+  "lubrication",
+  // Narration duplicates of the already-established "rolling
+  // friction"/"kinetic friction".
+  "relative rolling motion",
+  "relative sliding",
+  // Generic/too-broad; real term "ATP"/"mitochondria" already captured.
+  "cellular energy",
+  // Generic combo; real term "smooth endoplasmic reticulum" already
+  // captured.
+  "hormone synthesis",
+  // Generic historical-descriptor combo; real term "golgi apparatus"
+  // already captured.
+  "reticular structures",
+  // Generic combo; real terms "pili"/"fimbriae" already captured.
+  "bacterial cell surface",
+  "enzymatic content",
+  // Plural-form duplicate of the already-established "mating call".
+  "mating calls",
+  // Generic combo; real terms "heart"/"pericardium" already captured.
+  "muscular structure",
+  // Generic/common geometry-adjacent term.
+  "ventral side",
+  // Generic descriptive combo describing mouthpart function.
+  "biting and chewing",
+  // Generic descriptive-shape combos describing cockroach heart anatomy;
+  // real terms ("ostia", "heart") already captured.
+  "funnel-shaped chambers",
+  "muscular tube",
+  // Generic category/redundant with the already-captured specific parts
+  // (gizzard, proventriculus).
+  "cockroach digestive system",
+  // Generic/common combo; real term "hepatic caeca"/"gastric caeca"
+  // already captured.
+  "digestive juice",
+  // Redundant singular-form duplicate of the already-established "labial
+  // palps".
+  "labial palp",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

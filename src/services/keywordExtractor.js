@@ -2288,6 +2288,109 @@ const GENERIC_NOUNS = new Set([
   // established "sub-aerial stem modifications".
   "sub-aerial stem",
   "sub-aerial stem modification",
+  // Misspelling duplicate of the already-established "periplaneta
+  // americana".
+  "periplaeta americana",
+  // Redundant duplicate, same class as the already-blocked "funnel-
+  // shaped chambers".
+  "muscular chambers",
+  // Generic combos/category labels, real terms already captured
+  // (smooth muscle, salivary/exocrine glands, tight/adhering/gap
+  // junctions, taste buds/sensory papillae).
+  "hollow internal organs",
+  "unstriped",
+  "multicellular glands",
+  "specialised connective tissue",
+  "epithelial layer",
+  "sensory cells",
+  // Generic combo/narration; real term "phenolphthalein"/indicator range
+  // already captured.
+  "colour transition",
+  // Generic combo describing Ostwald's dilution law, real concept
+  // already captured.
+  "un-ionized electrolyte",
+  // Generic combo; real term "ph range"/indicator already captured.
+  "acidic range",
+  // Narration/generic phrases for specific gravitation problems, not
+  // stable concepts.
+  "minimum potential",
+  "minimum value",
+  "surface value",
+  "center of earth",
+  "earth's orbit",
+  "interior point",
+  "earth's rotation period",
+  "potential at the surface",
+  "outer spherical layers",
+  "distance from center",
+  "point masses",
+  "net gravitational field",
+  // Word-problem scenario/apparatus descriptor.
+  "vertical circular track",
+  // Generic combo/narration; real term "work-energy theorem"/"kinetic
+  // energy" already captured.
+  "net change in kinetic energy",
+  // Generic combo; real term "hybridization state" already captured.
+  "cationic species",
+  // Generic combo; real term "lattice enthalpy"/"electrostatic forces"
+  // already captured.
+  "electrostatic stabilization",
+  // Common/generic example reactions, no NEET-specific definition
+  // needed.
+  "decomposition of water",
+  "rusting of iron",
+  // Generic/redundant; real term "equilibrium"/"gibbs free energy"
+  // already captured.
+  "reversible system",
+  // Narration describing the Δn_g variable, not a distinct concept.
+  "change in number of gaseous moles",
+  // Generic/incomplete combos; real terms "sieve cells"/"phloem" already
+  // captured.
+  "food-conducting",
+  "conducting elements",
+  // Generic combos; real terms "xylem parenchyma"/"sclereids"/"xylem
+  // fibres" already captured.
+  "lignified cells",
+  "cellulosic walls",
+  "wedge-shaped",
+  // Bare, too generic (ambiguous — could mean many things).
+  "pit",
+  // Generic combo; real term "tracheids" already captured.
+  "water-conducting elements",
+  // Scenario/example-plant descriptor, generic.
+  "sunflower stem",
+  // Generic combo/narration; real term "xylem vessels" already captured.
+  "transport of water and minerals",
+  "conducting channels",
+  // Redundant duplicates of each other; real terms "sclereids"/"xylem
+  // fibres" already captured.
+  "lignified secondary wall",
+  "lignified cell wall",
+  // Redundant paraphrase duplicates of the already-established "adaxial
+  // leaf surface".
+  "adaxial side",
+  "abaxial side",
+  // Redundant duplicate of the already-established "perfectly
+  // crystalline solid".
+  "pure crystalline substance",
+  // Redundant modifier duplicate of the already-established
+  // "collenchymatous cell".
+  "collenchymatous tissue",
+  // Generic paraphrase duplicate of the already-established "lysigenous
+  // water cavities".
+  "water-containing cavities",
+  // Redundant duplicate of the already-established "brønsted base".
+  "bronsted-lowry base",
+  // Redundant modifier duplicate of the already-established "root hair".
+  "unicellular root hairs",
+  // Generic/redundant combo; real terms "metallic bonding"/"non-
+  // directional bond" already captured.
+  "metallic crystal lattice",
+  // Generic combo, distinct from but same class as the already-
+  // established "scattered vascular bundles".
+  "peripheral vascular bundles",
+  // Redundant modifier duplicate of the already-established "air sacs".
+  "air sacs of lungs",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

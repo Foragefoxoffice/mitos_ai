@@ -988,6 +988,60 @@ const GENERIC_NOUNS = new Set([
   // antagonist"; real terms are "abscisic acid"/"ethylene".
   "plant growth inhibitor",
   "gaseous plant hormone",
+  // Bare narration verbs ("conditions solubilize and activate the protoxin").
+  "solubilize",
+  "activate",
+  // Bare adjective, no noun.
+  "homeostatic",
+  "non-vascular",
+  // Narration/descriptive phrase about an already-captured concept, not a
+  // headword itself.
+  "nearly universal",
+  "root modifications",
+  "energy ratio",
+  "extreme displacement",
+  "conducting ions",
+  "gaseous atom",
+  "universal anaerobic pathway",
+  "native aquatic plants",
+  // Generic category name where the real specific term is already
+  // captured separately (e.g. "logistic growth curve", "electron gain
+  // enthalpy", "electric field inside a conductor", "reflection"/
+  // "refraction"/"polarisation").
+  "population growth model",
+  "optical phenomena",
+  "closed loop path",
+  "charged conducting sphere",
+  "metallic bar",
+  // Misspelling of the already-correct "chargaff's rule".
+  "chargedaff's rule",
+  // Bare, too generic standalone.
+  "tumors",
+  "light rays",
+  "vision",
+  // Describes what an already-captured named structure/concept IS or
+  // does, not a distinct headword ("titillator", "secondary structure of
+  // proteins", "signal recognition particle").
+  "external asymmetry",
+  "helical arrangement",
+  "signal recognition",
+  // Generic modifier+noun descriptor; real named structure differs
+  // (vasa efferentia/ureters).
+  "urinary ducts",
+  // Redundant grammatical-form duplicate of the already-established
+  // "cell-surface receptors".
+  "cell membrane receptors",
+  // Not standard terminology for this concept (real term: "codominance"/
+  // "lac operon"/"negative regulation").
+  "codominant expression",
+  "negative repressor system",
+  // Scenario variable-label ("the Volume of the Wire remains constant"),
+  // same class as already-blocked "mass of the planet".
+  "volume of the wire",
+  // Narration labeling a variable in one kinematics/scenario problem, same
+  // class as already-blocked "instantaneous process"/"draining time".
+  "instantaneous position",
+  "penetration distance",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

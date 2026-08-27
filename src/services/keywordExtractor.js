@@ -952,6 +952,42 @@ const GENERIC_NOUNS = new Set([
   // Paraphrases what "phylloclades" (the real, already-captured term) is
   // defined as, rather than being its own concept.
   "photosynthetic stem",
+  // Bare verb ("before it fractures") — real term is "breaking stress".
+  "fractures",
+  // Narration describing a derived quantity in one specific tank-draining
+  // problem, not a stable concept (real concept: Torricelli's theorem).
+  "draining time",
+  "discharge rate",
+  // Tautological/redundant phrase (altitude IS height); real concept is
+  // variation of g with altitude.
+  "altitude height",
+  // Narration about emission timing, not a standalone concept (real term:
+  // photoelectric effect/threshold frequency).
+  "instantaneous process",
+  // Describes a measured count specific to one question's statement list,
+  // not vocabulary — same class as already-blocked "heterozygous gene pairs".
+  "number of photoelectrons",
+  // Describes a graph's shape, not a concept — same class as already-
+  // blocked "sinusoidal dependence".
+  "parabolic variation",
+  "asymptotic approach",
+  // Paraphrase/label for the literal reaction in this specific problem,
+  // not a standard named reaction category (unlike "combustion reaction").
+  "water formation reaction",
+  // Generic apparatus/scenario descriptor (open vs. closed container);
+  // real concept is Gibbs free energy/spontaneity.
+  "open vessel",
+  // Modifier+generic-noun scenario descriptor; real concept is nuclear
+  // radius/mass number.
+  "spherical atomic nucleus",
+  // Misspelling of the already-correct "avena coleoptile" (Avena is the
+  // oat genus in F.W. Went's auxin discovery) — garbled duplicate.
+  "avenia coleoptile",
+  // Generic hormone-category description (what ABA/ethylene are), not a
+  // distinct concept — same antipattern as the already-blocked "growth
+  // antagonist"; real terms are "abscisic acid"/"ethylene".
+  "plant growth inhibitor",
+  "gaseous plant hormone",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

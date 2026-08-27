@@ -2482,6 +2482,22 @@ const GENERIC_NOUNS = new Set([
   "protein-synthetic activity",
   // Bare/generic word.
   "cushioning",
+  // Misspelling duplicate of the already-established "chargaff's rule".
+  "charghaff's rule",
+  // Bare/generic combos, not distinct concepts.
+  "human body mass",
+  "collision",
+  "condense",
+  "chromosomal material",
+  "enzyme-mediated process",
+  "temperature interval",
+  "temperature excess",
+  "two-particle system",
+  "one-dimensional force field",
+  "aquatic life",
+  "acid-base character",
+  // Bare adjective, no noun.
+  "unsaturated",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

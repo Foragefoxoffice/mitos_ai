@@ -1283,6 +1283,43 @@ const GENERIC_NOUNS = new Set([
   // Garbled misreading of the source text's "ADH" (already an established
   // term) — not a real distinct term.
   "adg",
+  // Narration describing AV-node delay before ventricular activation, not
+  // a distinct concept; real terms (AV node, PR interval) already
+  // captured.
+  "ventricular activation",
+  // Formula-component narration for the already-captured "respiratory
+  // quotient" definition, not standalone vocabulary.
+  "oxygen consumed",
+  "carbon dioxide evolved",
+  // Generic descriptive combo listing one of proteins' functions, not a
+  // distinct concept.
+  "enzymatic catalysis",
+  // Narration describing this specific first-order-reaction calculation.
+  "completion time",
+  // Narration describing the hyperconjugation mechanism, not a distinct
+  // concept; real term "hyperconjugation" already captured.
+  "adjacent bonds",
+  // Paraphrase duplicate of the already-established "heat loss".
+  "thermal losses",
+  // Generic descriptive combo; real concepts ("fluid mosaic model",
+  // "membrane fluidity") already captured.
+  "protein mobility",
+  // Garbled/truncated duplicate of the already-established "iui".
+  "iu",
+  // Nickname/paraphrase duplicate of the already-established "adhering
+  // junctions".
+  "cellular cement",
+  // Generic descriptive duplicate of the already-established
+  // "obelia"/"metagenesis".
+  "colonial hydrozoan",
+  // Historical-event reference used only as context, not itself a
+  // biology concept; real concept is "late blight of potato"/oomycete.
+  "great irish famine",
+  // Common everyday word/process, no NEET-specific definition needed.
+  "brewing",
+  // Generic paraphrase/category label for the already-established
+  // "oxidation"/"reduction" definitions.
+  "electron-transfer concept",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

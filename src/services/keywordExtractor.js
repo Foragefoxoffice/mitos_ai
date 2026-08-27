@@ -1953,6 +1953,99 @@ const GENERIC_NOUNS = new Set([
   // Redundant singular-form duplicate of the already-established "labial
   // palps".
   "labial palp",
+  // Bare, too generic (electron revolution around nucleus context).
+  "revolution",
+  // Bare verbs/adverbs, no noun.
+  "respond",
+  "sense",
+  "predating",
+  "autotrophically",
+  "proliferation",
+  "upward",
+  // Bare, too generic.
+  "fluctuation",
+  "limits",
+  "coordinate axes",
+  "gas molecules",
+  // Bare formula abbreviation, same class as already-excluded "cos
+  // theta".
+  "cos",
+  // Generic/math-narration term describing measured quantities in a
+  // specific error-propagation problem.
+  "observables",
+  // Too generic/vague; the specific historical apparatus is "gold foil".
+  "foil",
+  // Word-problem scenario props.
+  "highway",
+  "aircraft",
+  "horizontal loop",
+  "launch point",
+  // Redundant/informal duplicate of the already-established "cockroach".
+  "roach",
+  // Alternate-spelling duplicate of the already-established
+  // "cesium-133 atom".
+  "caesium-133",
+  // Paraphrase duplicates of the already-established "hyperfine
+  // transition frequency".
+  "ground-state hyperfine transition",
+  "caesium frequency",
+  // Redundant duplicate of the already-established "james chadwick".
+  "j. chadwick",
+  // Apostrophe-variant duplicate of the already-established "maxwell
+  // electromagnetic theory".
+  "maxwell's electromagnetic theory",
+  // Alternate-spelling duplicate of the already-established
+  // "aestivation".
+  "estivation",
+  // Misspelling of the already-established "albugo".
+  "albufo",
+  // Generic paraphrase duplicate of the already-established "atomic
+  // number"/"neutral atom".
+  "electric neutrality",
+  // Redundant modifier-form duplicates of the already-established "guard
+  // cells" (the dicot shape descriptors, distinct from the kept monocot
+  // "dumb-bell shaped guard cells").
+  "kidney-shaped guard cells",
+  "bean-shaped guard cells",
+  // Redundant modifier duplicate of the already-established "absorptive
+  // nutrition".
+  "heterotrophic absorptive nutrition",
+  // Generic combo; real term "food chain"/"primary productivity" already
+  // captured.
+  "aquatic food chain",
+  // Generic category label (matching-question header).
+  "sensory structure",
+  // Generic combo; real term "cloaca" already captured.
+  "reproductive ducts",
+  // Generic/redundant category framing of this question, not itself
+  // vocabulary.
+  "primary vascular bundles",
+  // Redundant/generic combos; real terms "guard cells"/"bean-shaped"/
+  // "kidney-shaped"/"dumb-bell shaped" already captured.
+  "dicot stomata",
+  "grass stomata",
+  // Generic/common phrase (drought stress).
+  "water deficiency",
+  // Bare, too generic (one of several listed viral-disease symptoms);
+  // the actual distinguishing symptom, "mosaic formation", is kept.
+  "yellowing",
+  // Basic calculus method narration, not physics-specific vocabulary.
+  "product rule",
+  // Generic category label (matching-question header).
+  "vector operation",
+  // Generic/narration duplicate of the already-established "equal and
+  // opposite forces" concept via Newton's third law (not itself a
+  // distinct headword).
+  "equal and opposite forces",
+  // Pre-existing entry (2 mappings, small enough to delete outright);
+  // generic/common phrase.
+  "limiting value",
+  // Bare hyphenated-surname duplicate of the already-established
+  // "gay-lussac's law".
+  "gay-lussac",
+  // Redundant full-name duplicate of the already-established, more
+  // concise "gay-lussac's law".
+  "gay-lussac's law of gaseous volumes",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

@@ -2141,6 +2141,153 @@ const GENERIC_NOUNS = new Set([
   "capsule wall cells",
   // Bare, too generic/common animal name.
   "snake",
+  // Bare, ambiguous one/two-letter element symbols — too short/generic
+  // standalone to be real headwords (the periodic-law prediction
+  // question they came from tests the actual element names, not bare
+  // symbols).
+  "ca",
+  "na",
+  "si",
+  "be",
+  "li",
+  // Paraphrase duplicate of the already-established "spontaneity".
+  "criterion for spontaneity",
+  // Narration/redundant-sign-convention duplicate of the already-kept
+  // "expansion work" concept, not a distinct concept.
+  "work done by the gas",
+  // Word-problem scenario/example-shape descriptors for a centre-of-mass
+  // matching question, same class as the already-blocked "uniform thin
+  // circular ring".
+  "solid hemisphere",
+  "horseshoe magnet",
+  // Scenario/geometric-shape descriptor for a specific moment-of-inertia
+  // problem.
+  "right-angled isosceles triangle",
+  // Narration/scenario-specific phrases for one particular Earth-
+  // angular-momentum conservation problem, not stable concepts.
+  "duration of day",
+  "earth's rotation axis",
+  "polar ice caps",
+  // Narration describing this specific conical-pendulum-string problem's
+  // setup, not vocabulary.
+  "projected horizontally",
+  // Redundant modifier duplicate of "mechanical equilibrium"/
+  // "equilibrium", already captured.
+  "complete mechanical equilibrium",
+  // Generic narration for a specific circular-motion equation-solving
+  // step, not a distinct named concept.
+  "radial equation",
+  // Generic/contrastive descriptor, not itself a concept.
+  "three-dimensional solid bodies",
+  // Generic/common chemistry term.
+  "polar liquid",
+  // Paraphrase duplicate of the already-kept "ice structure".
+  "cage-like structure",
+  // Generic combo/narration describing NH3's structure, not a distinct
+  // concept; real terms "trigonal pyramidal"/"lone pair" already
+  // captured.
+  "central nitrogen atom",
+  // Generic combo; real term "ionic bond"/"coulombic interaction"
+  // already captured.
+  "electrostatic forces",
+  // Word-problem apparatus/scenario descriptor.
+  "lifting cable",
+  // Bare adjective describing a mathematical property.
+  "distributive",
+  // Generic/vague, not a distinct concept.
+  "relative quantity",
+  // Narration for a specific elevator-power calculation, not a distinct
+  // concept.
+  "motor force",
+  // Narration for a specific coefficient-of-restitution problem.
+  "rebound height",
+  // Verbose narration describing a derivation; real concept
+  // "power"/"kinetic energy" already captured.
+  "rate of imparting kinetic energy",
+  // Bare adjective/generic descriptor.
+  "frame-dependent",
+  // Generic combo; real term "microbodies"/"peroxisomes" already
+  // captured.
+  "oxidative enzymes",
+  "ribosomal components",
+  // Narration describing cockroach head fusion, generic combo.
+  "embryonic segments",
+  // Redundant/generic framing (this question's own topic header); real
+  // term "nucleus" already captured.
+  "eukaryotic nucleus",
+  // Generic combo describing fungi's research-model use-case, not a
+  // distinct concept.
+  "genetic work",
+  "biochemical work",
+  // Bare adjective, no noun.
+  "non-cellulosic",
+  // Generic/vague contrast phrase.
+  "true plants",
+  // Generic category descriptor; real term "slime moulds"/"plasmodium"
+  // already captured.
+  "saprophytic protists",
+  // Generic combo; real term "choanocytes" already captured.
+  "flagellated cells",
+  // Generic category framing (this question's own topic header).
+  "gymnospermic plants",
+  // Generic descriptive combo, same class as already-blocked
+  // "proteinaceous matrix"/"proteinaceous core".
+  "proteinaceous layer",
+  // Generic combo; real term "heterocysts" already captured.
+  "thick-walled cells",
+  // Bare, too generic.
+  "infectivity",
+  // Generic combo; real terms "archaebacteria"/"methanogens" already
+  // captured.
+  "branched-chain hydrocarbons",
+  // Generic/broad phrase.
+  "environmental stimuli",
+  // Generic category label (this question's own topic header).
+  "defining features of living beings",
+  "taxonomic grouping",
+  // Generic/redundant with the already-blocked "dye"; the specific
+  // substance name "indigo" is kept separately.
+  "natural dye",
+  // Generic geographic descriptors.
+  "temperate zones",
+  "subtropics",
+  // Generic combos describing floral-appendage theory, not distinct
+  // concepts.
+  "vegetative appendages",
+  "reproductive appendages",
+  // Generic combo; real term "phylloclade"/euphorbia example already
+  // captured.
+  "arid adaptation",
+  // Generic combo, same class as already-blocked "swampy regions".
+  "underground root system",
+  "marshy habitat",
+  "swampy habitat",
+  // Duplicates missing the leading hyphen of the already-established
+  // "-aceae"/"-ales"/"-phyta" suffix terms.
+  "aceae",
+  "ales",
+  "phyta",
+  // Redundant duplicates (with an added Spanish/Latin "familia" prefix)
+  // of the already-established "anacardiaceae"/"solanaceae".
+  "familia anacardiaceae",
+  "familia solanaceae",
+  // Generic category duplicate; the real specific example "volvox"
+  // already captured.
+  "colonial green algae",
+  // Verbose redundant duplicates of the already-established "trigonal
+  // bipyramidal"/"tetrahedral"/"tetrahedral geometry".
+  "trigonal bipyramidal electron-pair arrangement",
+  "tetrahedral electron-pair arrangement",
+  // Near-duplicate paraphrase of the already-established "molecular
+  // orbital electron configuration".
+  "valence molecular orbital configuration",
+  // Redundant modifier-form duplicate of the already-established
+  // "diadelphous androecium".
+  "diadelphous condition",
+  // Redundant duplicate variants; keeping the more complete, already-
+  // established "sub-aerial stem modifications".
+  "sub-aerial stem",
+  "sub-aerial stem modification",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

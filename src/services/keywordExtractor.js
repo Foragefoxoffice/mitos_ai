@@ -1228,6 +1228,61 @@ const GENERIC_NOUNS = new Set([
   // Generic modifier+noun ("affinity" alone isn't a headword); real
   // concept is the already-captured Km/competitive inhibition mechanism.
   "substrate affinity",
+  // Factually wrong/hallucinated — the source question is about
+  // "downstream processing", not "upstream production"; a garbled
+  // invention, not a real term.
+  "upstream production phase",
+  // Narration for the WRONG-answer option in this specific question
+  // (gibberellin's actual effect, "internodal growth", is kept
+  // separately); a generic descriptive phrase, not a headword.
+  "lateral root inhibition",
+  // Generic scenario descriptor for where methanogens live; real concept
+  // is "methanogens"/"rumen", already captured.
+  "gut of ruminant animals",
+  // Narration describing convex-lens virtual-image formation, not a
+  // distinct concept.
+  "refracted rays",
+  // Generic apparatus/scenario descriptor (free expansion into vacuum),
+  // not a distinct concept.
+  "isolated container",
+  // Redundant restatement/duplicate of the already-established
+  // "archimedes' principle"/"buoyant force".
+  "weight of displaced fluid",
+  // Narration fragment describing geostationary satellite direction, not
+  // vocabulary.
+  "west to east",
+  // Narration paraphrasing the Amazon rainforest's photosynthetic role,
+  // not a distinct concept.
+  "atmospheric oxygen balance",
+  // Generic paraphrase of the already-captured "semicircular canals"/
+  // vestibular apparatus; "dynamic equilibrium" alone is too generic.
+  "dynamic equilibrium",
+  // Narration for a specific RQ calculation, not vocabulary.
+  "carbon dioxide production",
+  // Generic paraphrase of the already-captured
+  // "productivity"/"primary productivity" concept.
+  "photosynthetic production",
+  // Narration/generic descriptor for the origin-of-life timeline, not a
+  // distinct concept.
+  "organismal diversification",
+  // Generic category descriptor; real term "phenylketonuria" already
+  // captured.
+  "metabolic disorder",
+  // Generic combo contrasted with polycistronic mRNA; not itself a
+  // distinct headword.
+  "eukaryotic genes",
+  // Generic category redundant with the already-captured, more specific
+  // IUD/copper-releasing-IUD terms.
+  "contraceptive device",
+  // Redundant/incomplete grammatical duplicate of the already-established
+  // "polarizing power" (bare adjective, no noun).
+  "polarizing",
+  // Word-problem scenario condition ("if a person shifts to..."), not a
+  // distinct concept.
+  "high-protein diet",
+  // Garbled misreading of the source text's "ADH" (already an established
+  // term) — not a real distinct term.
+  "adg",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

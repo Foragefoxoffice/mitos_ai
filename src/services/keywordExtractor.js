@@ -1715,6 +1715,120 @@ const GENERIC_NOUNS = new Set([
   // Redundant modifier-form duplicate of the already-established
   // "gametophyte".
   "moss gametophyte",
+  // Generic combos describing the centre-of-mass concept, not distinct
+  // concepts; real term "centre of mass" already captured.
+  "hollow body",
+  "symmetrical body",
+  // Redundant duplicate of the already-established "true weight".
+  "actual weight",
+  // Word-problem apparatus/scenario descriptor.
+  "light inextensible string",
+  // Narration describing rocket-thrust mechanism, not a distinct concept.
+  "ejection of burnt fuel",
+  // Generic/common phrase (minimal-wear-at-optimum-speed narration).
+  "wear and tear",
+  // Generic category phrase (the question's own request to name the
+  // genus, i.e. "cycas" — the real content, already captured).
+  "gymnospermic genus",
+  // Generic combos; real specific terms (ground tissue, medullary rays,
+  // mesophyll) already captured.
+  "spongy tissues",
+  "parenchymatous tissues",
+  // Generic scenario descriptor for identifying "tetrarch"/xylem poles,
+  // not itself vocabulary.
+  "root cross section",
+  // Redundant modifier duplicate of the already-established "cortex".
+  "root cortex",
+  // Generic category-label framing of this question, not a distinct
+  // concept.
+  "primary dicot root",
+  // Generic/common geometry term, same class as already-excluded generic
+  // geometry nouns.
+  "transverse walls",
+  "leaf surface",
+  // Word-problem scenario/example prop.
+  "jet plane",
+  // Generic category descriptor (climbing habit), real content is the
+  // specific tendril mechanism/example plants.
+  "climbing plants",
+  // Generic/common-use category label.
+  "ornamental plant",
+  // Generic/redundant duplicates of the already-established "sucker".
+  "underground stem modification",
+  "modification of stem",
+  "modifications of stem",
+  // Bare/generic, too broad (matching-question category header).
+  "plant family",
+  // Common everyday food-category words, no NEET-specific definition
+  // needed, same class as already-blocked "carrot".
+  "vegetable crops",
+  "vegetable",
+  "pulse",
+  "pulse crops",
+  // Generic combo; real term "friction"/"static friction" already
+  // captured.
+  "contact surfaces",
+  // Generic narration/paraphrase of the already-established "hess's
+  // law"/"state function".
+  "reaction path",
+  "intermediate step",
+  // Redundant duplicate of the already-established "recoil".
+  "recoil of a gun",
+  // Paraphrase duplicate of the already-established "antherozoids".
+  "flagellated sperm",
+  // Redundant duplicate of the already-established, more concise "hess's
+  // law".
+  "hess's law of constant heat summation",
+  // Generic paraphrase duplicate of the already-established "gibbs free
+  // energy"/"spontaneity".
+  "gibbs energy criterion",
+  // Bare/generic paraphrase duplicate of the already-established "state
+  // function"/"hess's law".
+  "path independent",
+  // Generic/incomplete descriptor; real terms "newton's third law"/
+  // "action-reaction pair" already captured.
+  "action force",
+  // Paraphrase duplicates of the already-established "rolling without
+  // slipping".
+  "rolling condition",
+  "instantaneously at rest",
+  // Generic descriptors for moment-of-inertia-formula selection, not
+  // distinct concepts.
+  "central symmetry axis",
+  "axis perpendicular to length",
+  // Paraphrase/synonym duplicate of the already-established
+  // "pneumatophores".
+  "respiratory root",
+  // Redundant modifier-form duplicates of the already-established
+  // "actinomorphic"/"zygomorphic".
+  "actinomorphic flowers",
+  "zygomorphic flowers",
+  // Redundant paraphrase duplicate of the already-established
+  // "dicotyledonae"/"reticulate venation".
+  "dicotyledonous leaves",
+  // Generic paraphrase duplicate of the already-established "endosperm"/
+  // "cotyledon".
+  "food-storage tissue",
+  // Redundant paraphrase duplicate of the already-established
+  // "calorimeter".
+  "calorimeter system",
+  // Narration describing the bond-enthalpy calculation method, not
+  // distinct concepts; real term "bond enthalpy" already captured.
+  "bonds formed",
+  "bonds broken",
+  "gaseous atoms",
+  // Generic/common category descriptor.
+  "aquatic plant",
+  // Bare adjective, no noun.
+  "non-secretory",
+  // Bare, too generic (matches the trichome/hair-type context, but
+  // "hairs" alone fails the core test).
+  "hairs",
+  // Bare formula variable/notation.
+  "pv",
+  // Exact match to the prompt's own explicitly-given antipattern example
+  // ("leafy shoots") — the model still produced it despite the rule.
+  "leafy shoot",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

@@ -1626,6 +1626,95 @@ const GENERIC_NOUNS = new Set([
   "seasonal breeders",
   // Incomplete duplicate of the already-blocked "underlining".
   "underline",
+  // Bare, too generic (petal/sepal edges in aestivation questions).
+  "margins",
+  // Redundant modifier-form duplicate of the already-established
+  // "monocotyledonae".
+  "monocotyledonous seeds",
+  // Generic geometry descriptor (defines radial symmetry), same class as
+  // already-excluded generic geometry nouns.
+  "vertical plane",
+  // Generic habitat/scenery descriptor.
+  "swampy regions",
+  // Common/generic coconut-husk descriptor; real structures ("mesocarp",
+  // "endocarp", "drupe") already captured.
+  "fibrous husk",
+  // Generic descriptive combos for pyrenoid composition, same class as
+  // the already-blocked "proteinaceous matrix".
+  "protein core",
+  "proteinaceous core",
+  // Generic paraphrases of what chemotaxonomy/cytotaxonomy (the real,
+  // already-captured terms) examine.
+  "chemical constituents",
+  "cytological characters",
+  // Narration for a specific free-fall nth-second-distance calculation.
+  "distance covered in first second",
+  // Paraphrase/synonym duplicate of the already-established "angle of
+  // banking" (same v²/rg relation, cyclist-leaning phrasing).
+  "angle of leaning",
+  // Formula variable spoken as a phrase, same class as already-excluded
+  // "v squared".
+  "cos theta",
+  // Generic narration describing the vector-product magnitude formula,
+  // not a distinct concept; real term "vector product" already captured.
+  "magnitude of vector product",
+  // Generic/redundant paraphrase of Bohr-model electron orbits.
+  "electronic orbits",
+  // Generic paraphrase of the already-established "filter feeding"/
+  // "canal system".
+  "food gathering",
+  // Generic combo/narration describing a gymnosperm comparison, not a
+  // distinct concept.
+  "stem branching",
+  // Generic narration describing the arbitrary PE reference point.
+  "reference zero level",
+  // Generic descriptive combo for the work-via-integration method, not a
+  // distinct named concept.
+  "force-displacement relation",
+  // Word-problem apparatus/scenario descriptors.
+  "water jet",
+  "nozzle",
+  // Redundant/paraphrase duplicate of the already-established
+  // "conservation of energy".
+  "total energy conservation",
+  // Redundant modifier-form duplicate of the already-established
+  // "restoring force".
+  "spring restoring force",
+  // Redundant/paraphrase duplicate of the already-established "uniform
+  // circular motion".
+  "uniform circular path",
+  // Generic descriptor, same class as already-blocked "equal masses
+  // collision".
+  "equal mass",
+  // Generic narration describing the dot-product-is-zero fact, not a
+  // distinct concept.
+  "mutually perpendicular vectors",
+  // Paraphrase duplicate of the already-established "neoblast cells".
+  "regenerative cells",
+  // Grammatical-form (singular) duplicate of the already-established
+  // "statocysts".
+  "statocyst",
+  // Paraphrase/incomplete duplicate of the already-established "ciliary
+  // comb plates".
+  "ciliary combs",
+  // Grammatical-form (plural) duplicate of the already-established
+  // "akinete".
+  "akinetes",
+  // Redundant modifier-form duplicate of the already-established
+  // "trigonal bipyramidal".
+  "trigonal bipyramidal arrangement",
+  // Redundant modifier-form duplicate of the already-established "linear
+  // shape"/"linear geometry".
+  "linear molecular shape",
+  // Paraphrase/redundant duplicate of the already-established
+  // "resonance"/"canonical structures".
+  "canonical lewis structure",
+  // Redundant singular/generic-form duplicate of the already-established
+  // "supplementary units".
+  "supplementary quantity",
+  // Redundant modifier-form duplicate of the already-established
+  // "gametophyte".
+  "moss gametophyte",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

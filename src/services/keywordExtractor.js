@@ -1042,6 +1042,47 @@ const GENERIC_NOUNS = new Set([
   // class as already-blocked "instantaneous process"/"draining time".
   "instantaneous position",
   "penetration distance",
+  // Narration describing the numeric outcome/count of a specific
+  // calculation, not stable vocabulary — same class as already-blocked
+  // "heterozygous gene pairs"/"number of photoelectrons".
+  "linear dna fragments",
+  "chromosome count",
+  // Bare, too generic standalone.
+  "detection",
+  "positive ion",
+  // Generic category label where the real specific answer is already
+  // captured separately (real terms: phaeophyceae, GPP/primary
+  // productivity).
+  "algal class",
+  "organic matter production",
+  "plant taxonomy",
+  // Extremely broad generic descriptive combo, not a distinct concept.
+  "metabolic reaction",
+  "eye movement",
+  "cascade of intracellular reactions",
+  "intracellular signaling pathways",
+  "molecular aggregates",
+  // Bare adjective, no noun.
+  "mutable",
+  "viral",
+  "sporophytic",
+  "non-reducing",
+  // Math/formula-derivation narration, not subject vocabulary (quadratic
+  // root-sum rule, error-propagation power rule).
+  "sum of roots",
+  "powers",
+  // Narration describing this specific problem's setup/outcome, not a
+  // stable concept (real terms: shear modulus, coulomb's law, resistivity
+  // formula, geostationary satellite orbit).
+  "direction of rotation",
+  "shape change",
+  "uniform stretching",
+  "zero net force",
+  // Graph-direction descriptor, same class as already-blocked "parabolic
+  // variation"/"sinusoidal dependence"; real term is "bohr effect".
+  "leftward shift",
+  // Rephrased duplicate of the already-blocked "charged conducting sphere".
+  "hollow charged spherical conductor",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

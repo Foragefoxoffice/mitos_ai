@@ -2437,6 +2437,51 @@ const GENERIC_NOUNS = new Set([
   "plant and animal cells",
   "filamentous proteinaceous structures",
   "digesting",
+  // Grammatical-form (plural) duplicate of the already-established
+  // "isobilateral monocot leaf".
+  "isobilateral monocot leaves",
+  // Paraphrase duplicate of the already-established "substrate
+  // affinity".
+  "substrate-binding affinity",
+  // Grammatical-form (plural) duplicate of the already-established
+  // "primary root".
+  "primary roots",
+  // Garbled/non-standard term, not the real "biomolecule".
+  "biomicromolecule",
+  // Bare/generic combos, not distinct concepts.
+  "blue color",
+  "abundance",
+  "volatile oils",
+  // Bare adjective, no noun.
+  "heterocyclic",
+  "acidifying agent",
+  "migration of ions",
+  // Modifier-variant duplicates of the already-established generic-
+  // condition pattern ("acidic medium"/"alkaline condition").
+  "strongly alkaline medium",
+  "faintly alkaline medium",
+  "negative polarity",
+  "stress-strain behaviour",
+  "molecular collision rate",
+  // Common/generic everyday word, no NEET-specific definition needed.
+  "detergent",
+  "stream velocity",
+  // Generic combos; real terms "plasma membrane"/"ribosome" already
+  // captured.
+  "phospholipid membrane",
+  "protein-synthesizing machinery",
+  // Bare, too generic.
+  "sorting",
+  // Generic descriptive combo, same class as already-blocked
+  // "proteinaceous matrix"/"proteinaceous core"/"proteinaceous layer".
+  "proteinaceous structures",
+  "cellular motility",
+  // Generic combo; real term "connective tissue proper" and specific
+  // fiber types already captured.
+  "connective tissue fibres",
+  "protein-synthetic activity",
+  // Bare/generic word.
+  "cushioning",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

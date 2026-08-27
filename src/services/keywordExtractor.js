@@ -1320,6 +1320,95 @@ const GENERIC_NOUNS = new Set([
   // Generic paraphrase/category label for the already-established
   // "oxidation"/"reduction" definitions.
   "electron-transfer concept",
+  // Generic descriptor of binomial-nomenclature convention, same class as
+  // already-blocked "capitalization".
+  "latinised name",
+  // Duplicate of the already-established "specific epithet".
+  "species name",
+  // Narration about naming-convention formatting rules, not headwords.
+  "italicized",
+  "italicization",
+  "underlining",
+  "italic",
+  "author's name",
+  // Generic descriptive phrase from the definition of "systematics"
+  // (already captured), not a distinct concept.
+  "diversity of organisms",
+  // Generic category label; the real specific bacterial-nutrition modes
+  // are already captured individually.
+  "nutritional modes",
+  "bacterial nutrition",
+  // Generic descriptive phrase defining saprophytic/parasitic nutrition,
+  // not distinct concepts (real terms already captured).
+  "dead and decaying organic matter",
+  "living hosts",
+  "inorganic substrates",
+  // Bare, too generic (describes a graph feature).
+  "peak",
+  // Narration describing stabilising selection's effect, not a distinct
+  // concept.
+  "extreme variants",
+  // Generic combo describing the AV node's function; real term already
+  // captured.
+  "signal conduction",
+  // Generic paraphrase duplicate of the already-captured "cytochrome
+  // oxidase complex"/"complex iv".
+  "terminal complex",
+  // Generic combo; real term (SA node/pacemaker) already captured.
+  "heart rhythm",
+  // Sentence fragment, not a headword.
+  "homo sapiens arose",
+  // Misspelling duplicate of the already-established "engelmann".
+  "englmann",
+  // Narration describing the prion mechanism, not a distinct concept.
+  "abnormal folding",
+  // Food-example scenario prop; real term "vitamin k" already captured.
+  "green leafy vegetables",
+  // Common everyday food word used as an example, no NEET-specific
+  // definition needed; pre-existing entry (16 mappings), small enough to
+  // delete outright.
+  "carrot",
+  // Redundant duplicate of the already-established "metallic bonding".
+  "interatomic metallic bonding",
+  // Generic paraphrase duplicate of the already-established "low-spin
+  // octahedral complex".
+  "low-spin arrangement",
+  // Generic combo describing an ideal-gas model assumption, not a
+  // distinct concept.
+  "spherical molecules",
+  // Narration duplicate of the already-captured "forward bias"/"reverse
+  // bias".
+  "biasing conditions",
+  // Redundant duplicate of the already-established "angle of banking"/
+  // "banking of roads".
+  "ideal banking",
+  // Word-problem scenario prop (the racetrack itself), not a concept.
+  "racetrack",
+  "insulated floor",
+  // Narration describing this specific elastic-collision scenario, not a
+  // distinct concept.
+  "equal masses collision",
+  // Generic descriptive combo; real term "gamma rays" already captured.
+  "penetrating waves",
+  // Duplicate of the already-kept "germicidal action" (same UV fact,
+  // different phrasing).
+  "germicidal properties",
+  // Redundant modifier — angular momentum already implies rotation.
+  "rotational angular momentum",
+  // Common/generic radio-broadcast abbreviations, no NEET-specific
+  // definition needed.
+  "fm broadcasting",
+  "am",
+  // Generic combo; real term "electromagnetic wave" already captured.
+  "electromagnetic wave propagation",
+  // Generic math/scaling concepts, not physics-specific vocabulary.
+  "power of ten",
+  "numerical magnitude",
+  // Narration describing a specific Celsius-to-Fahrenheit calculation.
+  "temperature conversion",
+  // Generic, vague combo with no single stable definition; pre-existing
+  // entry (19 mappings), small enough to delete outright.
+  "chemical composition",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

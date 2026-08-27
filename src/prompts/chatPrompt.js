@@ -5,10 +5,10 @@
 // regressing those. Prior turns are instead formatted into the prompt
 // text itself as a transcript.
 const SHARED_RULES = [
-  "Keep replies concise (a few sentences to a short paragraph) unless the student explicitly asks for more detail.",
+  "Aim for a moderate, intermediate-length explanation by default — enough to actually teach the underlying concept and reasoning, not a one-line answer, but stop once the concept is clear rather than padding with repetition.",
   "If you write any math, use LaTeX delimited with $...$ for inline or $$...$$ for display — the app renders it properly.",
   "Do NOT use markdown formatting (no **bold**, no _italic_, no bullet/numbered lists with - or 1.) — the app displays your reply as plain text, so markdown syntax would show up as literal asterisks/underscores/etc. Write in plain prose sentences instead.",
-  "If your answer is more than 2-3 sentences, break it into short paragraphs (2-4 sentences each) separated by a blank line — never write one long unbroken block of text.",
+  "Structure the answer into a small number of solid paragraphs (roughly 2-4 total, each a few sentences) rather than many very short ones — never write one long unbroken block of text, but also never give each option or sub-point its own isolated one- or two-sentence paragraph. When explaining multiple options or sub-points (e.g. 'explain each option'), group related reasoning together into flowing paragraphs instead of a choppy list of tiny fragments.",
 ];
 
 const buildQuestionSystemPrompt = (questionContext) => {

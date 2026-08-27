@@ -2046,6 +2046,101 @@ const GENERIC_NOUNS = new Set([
   // Redundant full-name duplicate of the already-established, more
   // concise "gay-lussac's law".
   "gay-lussac's law of gaseous volumes",
+  // Missed in an earlier round: generic unit-rate descriptor for a
+  // clock-hands angular-speed-ratio problem, not vocabulary.
+  "revolutions per hour",
+  // Misspelling duplicate of the already-established "photoelectric
+  // equation".
+  "einsten's photoelectric equation",
+  // Bare IUPAC-numerical-root fragments, same class as already-excluded
+  // bare word fragments; the real concept "numerical root" already
+  // captured.
+  "un",
+  "nil",
+  "uue",
+  // Redundant paraphrase duplicate of the already-established
+  // "chondrichthyes".
+  "marine cartilaginous fishes",
+  // Paraphrase/incomplete duplicate of the already-established
+  // "post-anal tail".
+  "post-anal part",
+  // Paraphrase duplicate of the already-established "statocysts".
+  "balance organs",
+  // Redundant modifier duplicate of the already-established "pauling
+  // scale".
+  "pauling electronegativity scale",
+  // Synonym duplicate of the already-established "successive ionization
+  // enthalpies".
+  "successive ionization energies",
+  // Redundant modifier-form duplicate of the already-established
+  // "sporophyte".
+  "moss sporophyte",
+  // Informal/redundant duplicate of the already-established "maximum
+  // height".
+  "max height",
+  // Generic/redundant duplicate of the already-established "limiting
+  // friction".
+  "limiting motion",
+  // Generic/vague duplicate; the real specific terms "parallelogram
+  // law"/"triangle law of vector addition" already captured.
+  "vector law",
+  // Paraphrase duplicates of the already-established "antherozoids".
+  "motile sperms",
+  "non-motile male gametes",
+  // Redundant modifier-form duplicates of the already-established
+  // "electronic configuration"/"valence-shell electronic configuration".
+  "inner-shell configuration",
+  "valence-shell configuration",
+  // Generic/redundant paraphrase; the real specific term "hydrogen
+  // spectral series" already captured.
+  "spectrum of hydrogen",
+  // Generic combo, not a distinct concept.
+  "solid particles",
+  "multiplying factor",
+  // Scenario-example atom for a Slater's-rules calculation, not a
+  // distinct named chemical species (unlike the kept "helium
+  // molecule"/"neon molecule", which are real tested MOT species).
+  "lithium atom",
+  // Generic matching-question category header.
+  "iupac official name",
+  // Generic combo/narration, not distinct concepts.
+  "stopping time",
+  "vertical component of tension",
+  "optimum safe speed",
+  "safe speed",
+  "scalar multiples",
+  "experimental techniques",
+  "scalar component equations",
+  "impact time",
+  "molecular bonds",
+  "crop damage",
+  "marine animals",
+  "body surface",
+  "primitive features",
+  "commercially beneficial insects",
+  "excretory tubules",
+  "leaf cell",
+  "soil-binding",
+  "medicinal applications",
+  "vascular systems",
+  "gametophytic cell",
+  // Bare adjective, no noun.
+  "cytological",
+  "coniferous",
+  // Generic combo, narration.
+  "reproductive stage",
+  "culture media",
+  "sexual characteristics",
+  "vegetative characteristics",
+  "molecular approaches",
+  // Generic narration ("quantitative measure of force"), not itself a
+  // distinct concept.
+  "quantitative measure",
+  // Redundant modifier duplicate of the already-established "capsule
+  // wall".
+  "capsule wall cells",
+  // Bare, too generic/common animal name.
+  "snake",
 ]);
 
 // A term containing "ncert" or exactly "neet" is always leaked citation

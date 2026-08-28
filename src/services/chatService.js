@@ -125,10 +125,6 @@ const sendMessage = async ({ userId, questionId, message, questionContext, userC
     orderBy: { createdAt: "asc" },
   });
 
-  await prisma.ai_chat_message.create({
-    data: { sessionId: session.id, role: "user", content: message },
-  });
-
   const { system, prompt } = buildChatPrompt({
     questionContext,
     userContext,
@@ -142,6 +138,20 @@ const sendMessage = async ({ userId, questionId, message, questionContext, userC
   // generation's earlier 700-token truncation.
   const complexity = classifyComplexity(message);
   const result = await runTask("explainAndChat", { system, prompt, maxTokens: 1500, complexity });
+
+  // The user's message is only persisted here, AFTER runTask succeeds —
+  // not before it. countTodayMessages/countAllMessages (the cap check
+  // above) count these "role: user" rows directly; there's no separate
+  // credit counter. Inserting it before the AI call meant a provider
+  // outage ("Something went wrong") still burned a cap credit for zero
+  // output, and the student's inevitable retry burned a second credit
+  // for the one real answer they got — two credits taken, one question
+  // answered (reported 2026-08-28). Session creation above stays
+  // unconditional (an empty session on a failed attempt is harmless),
+  // only the message rows are now gated on success.
+  await prisma.ai_chat_message.create({
+    data: { sessionId: session.id, role: "user", content: message },
+  });
 
   const assistantMessage = await prisma.ai_chat_message.create({
     data: {

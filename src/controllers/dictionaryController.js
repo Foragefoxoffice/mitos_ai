@@ -104,9 +104,28 @@ const getTermExplanation = async (req, res) => {
     return res.status(400).json({ message: "Missing term" });
   }
 
-  const entry = await prisma.ai_dictionary.findUnique({ where: { term } });
+  // findFirst, not findUnique — `term` alone stopped being a unique key
+  // once entries got scoped by subject (term_subject is the real unique
+  // key now, see schema.prisma), and the mobile client doesn't send a
+  // subject here (the WebView term-tap handler only round-trips the bare
+  // term string — see highlightTerms.js/HighlightedMathText.jsx). An
+  // app-side fix to thread the subject (or dictionary id, which the
+  // client already has from getTermsForQuestion) through would let this
+  // go back to an exact lookup; until then, best-effort "any completed
+  // entry for this term" is far better than 500ing on every single tap.
+  // Not a rare edge case either — 2,749 of 45,882 completed entries
+  // (~6%, measured 2026-08-28) share a term across subjects, skewed
+  // toward common cross-subject vocabulary (pressure/energy/density/
+  // temperature/etc.), so this can genuinely show the wrong subject's
+  // explanation until the client-side fix lands. orderBy pins it to the
+  // same (lowest-id) entry every time at least, so a given term shows a
+  // consistent explanation across repeat taps instead of flapping.
+  const entry = await prisma.ai_dictionary.findFirst({
+    where: { term, status: "completed" },
+    orderBy: { id: "asc" },
+  });
 
-  if (!entry || entry.status !== "completed") {
+  if (!entry) {
     return res.status(404).json({ message: "Term not found" });
   }
 

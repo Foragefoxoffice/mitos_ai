@@ -4,7 +4,14 @@ const OpenAI = require("openai");
 let client;
 const getClient = () => {
   if (!client) {
-    client = new OpenAI({ apiKey: process.env.DEEPSEEK_API_KEY, baseURL: "https://api.deepseek.com" });
+    // See claudeProvider.js for why timeout/maxRetries are overridden —
+    // same reasoning applies to every provider in the fallback chain.
+    client = new OpenAI({
+      apiKey: process.env.DEEPSEEK_API_KEY,
+      baseURL: "https://api.deepseek.com",
+      timeout: 30000,
+      maxRetries: 0,
+    });
   }
   return client;
 };

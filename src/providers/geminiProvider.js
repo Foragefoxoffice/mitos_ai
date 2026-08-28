@@ -26,7 +26,10 @@ const getClient = () => {
 // thinking from crowding out the real answer (confirmed: same prompt at
 // budget 1 finished with STOP and a complete reply).
 const generate = async ({ model, system, prompt, maxTokens = 1024, temperature = 0.7, jsonMode = false }) => {
-  const genModel = getClient().getGenerativeModel({ model, systemInstruction: system });
+  // requestOptions.timeout — see claudeProvider.js for why every provider
+  // in the fallback chain gets a short explicit timeout instead of the
+  // SDK default (unbounded/very long here).
+  const genModel = getClient().getGenerativeModel({ model, systemInstruction: system }, { timeout: 30000 });
 
   const result = await genModel.generateContent({
     contents: [{ role: "user", parts: [{ text: prompt }] }],

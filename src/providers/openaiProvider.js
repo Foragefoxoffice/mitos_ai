@@ -6,7 +6,9 @@ const OpenAI = require("openai");
 let client;
 const getClient = () => {
   if (!client) {
-    client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+    // See claudeProvider.js for why timeout/maxRetries are overridden —
+    // same reasoning applies to every provider in the fallback chain.
+    client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY, timeout: 30000, maxRetries: 0 });
   }
   return client;
 };

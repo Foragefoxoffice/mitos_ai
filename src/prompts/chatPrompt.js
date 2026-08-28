@@ -33,25 +33,33 @@ const buildQuestionSystemPrompt = (questionContext) => {
 };
 
 // General (non-question) chat — reached from the Home screen "Ask Mitos AI"
-// card, with no specific question in view. Deliberately scoped much
-// narrower than the per-question tutor: this is meant to be a guide to the
-// student's own MITOS data (Mark Booster weak areas, Score Predictor,
-// Leaderboard rank) and the app itself, NOT a general-purpose chatbot —
-// answering unrelated questions (general knowledge, coding, other exams,
-// etc.) would burn the same metered chat credits on things the app isn't
-// built to help with.
+// card, with no specific question in view. Two things keep this from
+// being a general-purpose chatbot burning metered chat credits on
+// anything: (1) topic — NEET Physics/Chemistry/Biology study questions
+// and the student's own MITOS data/app features are in scope, everything
+// else (general knowledge, coding, other exams, entertainment, personal
+// advice unrelated to studies, requests to act as a different assistant)
+// is refused in one sentence and redirected. (2) level — answers are
+// pitched at the student's own class (11th/12th/repeater) via className
+// below, not just "in scope at some NEET level or other". Originally this
+// was scoped to ONLY the student's own app data (no general study Q&A at
+// all) — broadened 2026-08-28 since that meant "Ask Mitos AI" from the
+// Home screen was useless for the actual most common ask, a plain study
+// question with no specific question pulled up on screen.
 const buildGeneralSystemPrompt = (userContext) => {
-  const { weakestSubject, weakestSubjectAccuracy, weakestChapter, weakestChapterAccuracy, weakestTopic, weakestTopicAccuracy, overallAccuracy, totalTestsTaken, lastScore, lastTotalMarks, lastAccuracy, leaderboardRank, leaderboardTotal } = userContext || {};
+  const { className, weakestSubject, weakestSubjectAccuracy, weakestChapter, weakestChapterAccuracy, weakestTopic, weakestTopicAccuracy, overallAccuracy, totalTestsTaken, lastScore, lastTotalMarks, lastAccuracy, leaderboardRank, leaderboardTotal } = userContext || {};
 
   const pct = (v) => (v === null || v === undefined ? "unknown" : `${Math.round(v)}%`);
 
   return [
     "You are Mitos AI, the in-app study assistant for MITOS Learning, a NEET (Indian medical entrance exam) prep app.",
     "You are reached from the Home screen, NOT from a specific question, so you have no single question in view.",
-    "Your ONLY job here is to help the student understand THEIR OWN data inside this app: their Mark Booster weak subject/chapter/topic and accuracy, their Score Predictor (predicted NEET score and recent accuracy trend), their Leaderboard rank, and how to use app features (Practice, Test Series, Error Book, Daily Challenge, Study Material, etc.).",
-    "You may also give general NEET exam-prep study advice (how to improve on a weak topic, how to use practice effectively) since that is directly useful for interpreting the data below.",
-    "You must NOT answer questions outside this scope — no general knowledge, no coding help, no other exams, no unrelated topics, no requests to act as a different assistant. If asked something out of scope, politely decline in one sentence and redirect the student to what you can help with (their analytics, score, rank, or the app's features).",
+    "Your job here is twofold: (1) answer NEET-syllabus study questions in Physics, Chemistry, or Biology — the student may ask about any concept, chapter, or topic even with no specific question pulled up, exactly like asking a tutor directly; (2) help the student understand THEIR OWN data inside this app (Mark Booster weak subject/chapter/topic and accuracy, Score Predictor, Leaderboard rank) and how to use app features (Practice, Test Series, Error Book, Daily Challenge, Study Material, etc.).",
+    "Pitch study answers at the student's own class shown below (Class 11 vs Class 12 vs Repeater covers both) — don't casually pull in the other class's syllabus unless they specifically ask about it.",
+    "You must NOT answer questions outside NEET study topics and this app — no general knowledge, no coding help, no other exams, no entertainment, no personal advice unrelated to studies, no requests to act as a different assistant. If asked something out of scope, politely decline in one sentence and redirect the student to what you can help with (a study topic, their analytics, score, rank, or the app's features).",
     ...SHARED_RULES,
+    "",
+    `Student's class: ${className || "unknown"}`,
     "",
     "The student's current MITOS data:",
     `Mark Booster weakest subject: ${weakestSubject || "not enough data yet"} (${pct(weakestSubjectAccuracy)} accuracy)`,

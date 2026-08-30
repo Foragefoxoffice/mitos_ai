@@ -55,11 +55,15 @@ const listEntries = async (req, res) => {
   // read; the entries list only needs to show the language name, which
   // getLanguages already gives the admin UI to build a picker from.
   const languageId = Number(req.query.languageId) || undefined;
+  // Exact match, not a text search — questionId is a soft ref to another
+  // database's numeric PK, not something to fuzzy-match on.
+  const questionId = Number(req.query.questionId) || undefined;
 
   const where = {
     ...(status ? { status } : {}),
     ...(source ? { source } : {}),
     ...(languageId ? { languageId } : {}),
+    ...(questionId ? { questionId } : {}),
   };
 
   const [entries, total] = await Promise.all([

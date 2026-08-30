@@ -59,6 +59,7 @@ model ai_dictionary {
   updatedAt             DateTime @updatedAt
 
   mappings              ai_dictionary_mapping[]
+  translations          ai_dictionary_translation[]
 
   @@unique([term, subject])
   @@index([status])
@@ -177,4 +178,92 @@ model ai_chat_message {
 
   @@index([sessionId])
   @@index([createdAt])
+}
+
+// Regional Language Translation — see
+// docs/superpowers/specs/2026-08-24-regional-language-translation-design.md
+// for the full design (§4.1 explains why language is a row here, not a
+// table-per-language or column-per-language).
+
+model ai_language {
+  id         Int      @id @default(autoincrement())
+  code       String   @unique @db.VarChar(10) // "hi", "ta", "ur", ...
+  name       String   @db.VarChar(50) // "Hindi" — admin-facing label
+  nativeName String   @db.VarChar(50) // "हिन्दी" — shown in the student picker
+  isRTL      Boolean  @default(false) // Urdu is RTL; storage is unaffected (utf8mb4 either way), this flag is for mobile rendering
+  sortOrder  Int      @default(0)
+  enabled    Boolean  @default(true)
+  createdAt  DateTime @default(now())
+
+  questionTranslations   ai_question_translation[]
+  dictionaryTranslations ai_dictionary_translation[]
+}
+
+model ai_question_translation {
+  id         Int @id @default(autoincrement())
+  // Soft ref to core `question.id` — cross-database, same pattern as
+  // ai_dictionary_mapping (no DB-level FK possible across databases).
+  questionId Int
+  languageId Int
+
+  question String? @db.LongText
+  optionA  String? @db.LongText
+  optionB  String? @db.LongText
+  optionC  String? @db.LongText
+  optionD  String? @db.LongText
+  hint     String? @db.LongText
+
+  status              String   @default("pending") @db.VarChar(20) // pending | generating | completed | failed
+  failureReason       String?  @db.Text
+  generatedByProvider String?  @db.VarChar(20)
+  generatedByModel    String?  @db.VarChar(100)
+  manuallyEdited      Boolean  @default(false)
+  promptVersion       Int      @default(1) // lets a future prompt improvement selectively regenerate stale, non-hand-edited rows
+  // SHA-256 of the English source fields at translation time — detects
+  // the source question being edited later (§5.1 of the design doc).
+  // Not a sourceUpdatedAt column: core `question` has no updatedAt at
+  // all, and adding one means migrating a live 48,640-row core table,
+  // which is exactly the risk this design stays out of.
+  sourceHash String? @db.VarChar(64)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  language ai_language @relation(fields: [languageId], references: [id])
+
+  @@unique([questionId, languageId])
+  @@index([languageId, status]) // "all pending Hindi translations" — the query admin/jobs actually run once there's more than one language
+}
+
+model ai_dictionary_translation {
+  id           Int @id @default(autoincrement())
+  dictionaryId Int
+  languageId   Int
+
+  term                String?  @db.VarChar(255) // translated term, for display
+  meaning             String?  @db.LongText
+  simpleExplanation   String?  @db.LongText
+  eli5                String?  @db.LongText
+  detailedExplanation String?  @db.LongText
+  mnemonic            String?  @db.LongText
+  realLifeExample     String?  @db.LongText
+
+  status              String   @default("pending") @db.VarChar(20)
+  failureReason       String?  @db.Text
+  generatedByProvider String?  @db.VarChar(20)
+  generatedByModel    String?  @db.VarChar(100)
+  manuallyEdited      Boolean  @default(false)
+  promptVersion       Int      @default(1)
+  // Same staleness mechanism as ai_question_translation.sourceHash, over
+  // the English term's own fields instead of a question's.
+  sourceHash          String?  @db.VarChar(64)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  dictionary ai_dictionary @relation(fields: [dictionaryId], references: [id], onDelete: Cascade)
+  language   ai_language   @relation(fields: [languageId], references: [id])
+
+  @@unique([dictionaryId, languageId])
+  @@index([languageId, status])
 }

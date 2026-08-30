@@ -56,4 +56,24 @@ const fetchQuestionBatch = async ({ afterId, limit }) => {
   return rows;
 };
 
-module.exports = { fetchQuestionBatch };
+// Regional Language Translation needs the options too (a student reading a
+// translated question needs translated options, not just translated
+// prose) — fetchQuestionBatch above deliberately excludes them for
+// keyword extraction's narrower needs, so this is a separate function
+// rather than widening that one and risking an unrelated regression.
+// Reuses the same pool/connection (getPool/assertReadOnly) — confirmed
+// live (2026-08-30) the mitos_ai_reader user already has full table-level
+// SELECT on `question` (not column-restricted), so this needed no new DB
+// grant, just a wider query.
+const fetchQuestionBatchForTranslation = async ({ afterId, limit }) => {
+  await assertReadOnly();
+
+  const [rows] = await getPool().query(
+    "SELECT id, question, optionA, optionB, optionC, optionD, hint, subjectId FROM question WHERE id > ? ORDER BY id ASC LIMIT ?",
+    [afterId, limit]
+  );
+
+  return rows;
+};
+
+module.exports = { fetchQuestionBatch, fetchQuestionBatchForTranslation };

@@ -52,6 +52,7 @@ if (LOCAL_ONLY) {
     explainAndChat: { simple: localRoute, complex: localRoute },
     performanceAnalysis: localRoute,
     studyPlan: localRoute,
+    translateContent: localRoute,
   };
 } else if (OPENAI_ONLY) {
   const openaiRoute = [{ provider: "openai", model: process.env.MODEL_OPENAI_FALLBACK || "gpt-5-mini" }];
@@ -62,6 +63,7 @@ if (LOCAL_ONLY) {
     explainAndChat: { simple: openaiRoute, complex: openaiRoute },
     performanceAnalysis: openaiRoute,
     studyPlan: openaiRoute,
+    translateContent: openaiRoute,
   };
 } else if (DEEPSEEK_ONLY) {
   const deepseekRoute = [{ provider: "deepseek", model: process.env.MODEL_DEEPSEEK || "deepseek-v4-flash" }];
@@ -72,6 +74,7 @@ if (LOCAL_ONLY) {
     explainAndChat: { simple: deepseekRoute, complex: deepseekRoute },
     performanceAnalysis: deepseekRoute,
     studyPlan: deepseekRoute,
+    translateContent: deepseekRoute,
   };
 } else {
   const geminiFlash = { provider: "gemini", model: process.env.MODEL_GEMINI_FLASH || "gemini-3.6-flash" };
@@ -109,5 +112,12 @@ if (LOCAL_ONLY) {
     },
     performanceAnalysis: [geminiPro, geminiFlash, claudeFallback, openaiMini],
     studyPlan: [geminiPro, geminiFlash, openaiMini, claudeFallback],
+    // Regional Language Translation (2026-08-30) — same structured-JSON,
+    // no-deep-reasoning shape as keywordExtraction/wordExplain above, so
+    // leads with DeepSeek on the same cost/quality rationale. NOT
+    // independently validated on real translation traffic yet (unlike
+    // those two, which had a 150+ question audit) — first real runs
+    // should watch quality/failure rate before trusting this at scale.
+    translateContent: [deepseekFlash, geminiFlash, geminiPro, openaiMini],
   };
 }

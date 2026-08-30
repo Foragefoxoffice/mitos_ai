@@ -53,4 +53,18 @@ const fetchTestSeriesQuestionBatch = async ({ afterId, limit }) => {
   return rows;
 };
 
-module.exports = { fetchTestSeriesQuestionBatch };
+// See questionSource.js's fetchQuestionBatchForTranslation — same
+// reasoning, same confirmed-no-new-grant-needed result, applied to the
+// test-series table.
+const fetchTestSeriesQuestionBatchForTranslation = async ({ afterId, limit }) => {
+  await assertReadOnly();
+
+  const [rows] = await getPool().query(
+    "SELECT id, question, optionA, optionB, optionC, optionD, hint, subjectId FROM testseriesquestionbank WHERE id > ? ORDER BY id ASC LIMIT ?",
+    [afterId, limit]
+  );
+
+  return rows;
+};
+
+module.exports = { fetchTestSeriesQuestionBatch, fetchTestSeriesQuestionBatchForTranslation };

@@ -12,6 +12,7 @@ internal.use(verifyInternalService);
 internal.use("/ai/dictionary", require("./dictionaryRoutes"));
 internal.use("/ai/test-series-dictionary", require("./testSeriesDictionaryRoutes"));
 internal.use("/ai/chat", require("./chatRoutes"));
+internal.use("/ai/translation", require("./translationRoutes"));
 
 router.use("/internal", internal);
 

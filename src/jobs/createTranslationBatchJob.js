@@ -41,13 +41,19 @@ const runWithConcurrency = async (items, limit, worker) => {
 // `source` tags every ai_question_translation row this instance creates
 // ("practice" | "test_series") — see that model's `source` column comment
 // for why (mirrors ai_dictionary_mapping's identical need).
-const createTranslationBatchJob = ({ jobType, fetchQuestionBatch, source, language }) => {
+// `languageId`, not a `language` object — runner instantiation (see
+// translationBatchRunner.js) happens synchronously at module load, same
+// as dictionaryBatchRunner.js, but the language's name/nativeName live in
+// the DB. Resolved fresh inside runTranslationBatch (once per batch call,
+// not per question) instead — also means an admin editing a language's
+// name takes effect on the next batch run with no server restart needed.
+const createTranslationBatchJob = ({ jobType, fetchQuestionBatch, source, languageId }) => {
   // Translates ONE question's fields and upserts the result. Never
   // advances job.cursor or currentBatchProcessed directly — same reason
   // as createDictionaryBatchJob.js: under concurrency, questions finish
   // out of order, so only the caller (after seeing every outcome) can
   // safely decide how far the cursor may move.
-  const processQuestion = async (question, jobId) => {
+  const processQuestion = async (question, jobId, language) => {
     try {
       const result = await translateQuestion({
         language,
@@ -132,6 +138,11 @@ const createTranslationBatchJob = ({ jobType, fetchQuestionBatch, source, langua
   // work that just gets harmlessly redone (fast — upsert overwrites) on
   // the next run before the cursor catches up to it.
   const runTranslationBatch = async ({ batchSize } = {}) => {
+    const language = await prisma.ai_language.findUnique({ where: { id: languageId } });
+    if (!language) {
+      throw new Error(`ai_language id ${languageId} not found — was it deleted?`);
+    }
+
     let job = await prisma.ai_job.findUnique({ where: { type: jobType } });
 
     if (!job) {
@@ -165,7 +176,7 @@ const createTranslationBatchJob = ({ jobType, fetchQuestionBatch, source, langua
 
     const results = await runWithConcurrency(questions, lanes, async (question) => {
       await sleep(AI_CALL_DELAY_MS);
-      const result = await processQuestion(question, job.id);
+      const result = await processQuestion(question, job.id, language);
       await prisma.ai_job.update({ where: { id: job.id }, data: { currentBatchProcessed: { increment: 1 } } }).catch(() => {});
       return result;
     });

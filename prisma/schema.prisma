@@ -205,6 +205,14 @@ model ai_question_translation {
   // ai_dictionary_mapping (no DB-level FK possible across databases).
   questionId Int
   languageId Int
+  // "practice" (question) | "test_series" (testseriesquestionbank) — those
+  // two tables have independent auto-increment id sequences, so questionId
+  // alone can't tell them apart; without this a practice question and a
+  // test-series question sharing an id would collide into the same
+  // translation row. Same fix ai_dictionary_mapping needed for the exact
+  // same reason (see its `source` column comment) — caught here before
+  // any real rows existed, so no backfill/migration-of-data needed.
+  source String @default("practice") @db.VarChar(20)
 
   question String? @db.LongText
   optionA  String? @db.LongText
@@ -231,8 +239,9 @@ model ai_question_translation {
 
   language ai_language @relation(fields: [languageId], references: [id])
 
-  @@unique([questionId, languageId])
+  @@unique([questionId, languageId, source])
   @@index([languageId, status]) // "all pending Hindi translations" — the query admin/jobs actually run once there's more than one language
+  @@index([source, questionId])
 }
 
 model ai_dictionary_translation {

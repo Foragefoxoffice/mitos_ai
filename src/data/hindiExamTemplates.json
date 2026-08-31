@@ -1,0 +1,272 @@
+[
+  {
+    "english": "List I",
+    "hindi": "सूची I",
+    "confidence": 0.9666666666666667,
+    "seenCount": 30
+  },
+  {
+    "english": "List II",
+    "hindi": "सूची II",
+    "confidence": 0.9666666666666667,
+    "seenCount": 30
+  },
+  {
+    "english": "only",
+    "hindi": "केवल",
+    "confidence": 1,
+    "seenCount": 29
+  },
+  {
+    "english": "Statement I :",
+    "hindi": "कथन I :",
+    "confidence": 1,
+    "seenCount": 26
+  },
+  {
+    "english": "Statement II :",
+    "hindi": "कथन II :",
+    "confidence": 1,
+    "seenCount": 26
+  },
+  {
+    "english": "SPACE FOR ROUGH WORK",
+    "hindi": "रफ कार्य के लिए स्थान",
+    "confidence": 0.9,
+    "seenCount": 20
+  },
+  {
+    "english": "List - I",
+    "hindi": "सूची - I",
+    "confidence": 0.7142857142857143,
+    "seenCount": 14
+  },
+  {
+    "english": "List - II",
+    "hindi": "सूची - II",
+    "confidence": 0.7142857142857143,
+    "seenCount": 14
+  },
+  {
+    "english": "Match List I with List II",
+    "hindi": "सूची I का सूची II से मिलान कीजिए:",
+    "confidence": 0.6363636363636364,
+    "seenCount": 11
+  },
+  {
+    "english": "Both Statement I and Statement II are incorrect",
+    "hindi": "कथन I और कथन II, दोनों गलत हैं।",
+    "confidence": 0.6,
+    "seenCount": 10
+  },
+  {
+    "english": "Statement I is correct but Statement II is incorrect",
+    "hindi": "कथन I सही है, परन्तु कथन II गलत है।",
+    "confidence": 0.6,
+    "seenCount": 10
+  },
+  {
+    "english": "Statement I is incorrect but Statement II is correct",
+    "hindi": "कथन I गलत है, परन्तु कथन II सही है।",
+    "confidence": 0.6,
+    "seenCount": 10
+  },
+  {
+    "english": "Both Statement I and Statement II are correct",
+    "hindi": "कथन I और कथन II, दोनों सही हैं।",
+    "confidence": 0.6,
+    "seenCount": 10
+  },
+  {
+    "english": "Assertion A :",
+    "hindi": "अभिकथन A :",
+    "confidence": 0.75,
+    "seenCount": 8
+  },
+  {
+    "english": "Column - I",
+    "hindi": "स्तंभ - I",
+    "confidence": 1,
+    "seenCount": 7
+  },
+  {
+    "english": "Column - II",
+    "hindi": "स्तंभ - II",
+    "confidence": 1,
+    "seenCount": 7
+  },
+  {
+    "english": "Statement I is true but Statement II is false",
+    "hindi": "कथन I सत्य है लेकिन कथन II असत्य है।",
+    "confidence": 0.8571428571428571,
+    "seenCount": 7
+  },
+  {
+    "english": "Statement I is false but Statement II is true",
+    "hindi": "कथन I असत्य है लेकिन कथन II सत्य है।",
+    "confidence": 0.8571428571428571,
+    "seenCount": 7
+  },
+  {
+    "english": "and",
+    "hindi": "और",
+    "confidence": 1,
+    "seenCount": 6
+  },
+  {
+    "english": "Reason R :",
+    "hindi": "कारण R :",
+    "confidence": 1,
+    "seenCount": 6
+  },
+  {
+    "english": "Statement I:",
+    "hindi": "कथन I:",
+    "confidence": 1,
+    "seenCount": 6
+  },
+  {
+    "english": "Statement II:",
+    "hindi": "कथन II:",
+    "confidence": 1,
+    "seenCount": 6
+  },
+  {
+    "english": "Both A and R are true and R is NOT the correct explanation of A.",
+    "hindi": "A और R दोनों सत्य हैं, परंतु R, A की सही व्याख्या नहीं है।",
+    "confidence": 0.6,
+    "seenCount": 5
+  },
+  {
+    "english": "Choose the most appropriate answer from the options given below :",
+    "hindi": "निम्न विकल्पों से सबसे सही उत्तर का चयन करो:",
+    "confidence": 0.6,
+    "seenCount": 5
+  },
+  {
+    "english": "Given below are two statements : one is labelled as Assertion (A) and the other is labelled as Reason (R).",
+    "hindi": "नीचे दो कथन दिए गए हैं : एक को अभिकथन (A) के रूप में और दूसरे को तर्क (R) के रूप में नामांकित किया गया है।",
+    "confidence": 0.6,
+    "seenCount": 5
+  },
+  {
+    "english": "Both A and R are true and R is the correct explanation of A",
+    "hindi": "A और R दोनों सत्य हैं और R, A की सही व्याख्या है।",
+    "confidence": 0.8,
+    "seenCount": 5
+  },
+  {
+    "english": "Match the items given in Column I with those in Column II and select the correct option given below :",
+    "hindi": "स्तम्भ I में दी गई मदों का स्तम्भ II की मदों से मिलान कीजिए और नीचे दिए गए विकल्पों में से सही विकल्प का चयन कीजिए :",
+    "confidence": 1,
+    "seenCount": 4
+  },
+  {
+    "english": "Column I",
+    "hindi": "स्तम्भ I",
+    "confidence": 0.75,
+    "seenCount": 4
+  },
+  {
+    "english": "Column II",
+    "hindi": "स्तम्भ II",
+    "confidence": 0.75,
+    "seenCount": 4
+  },
+  {
+    "english": "respectively",
+    "hindi": "क्रमशः",
+    "confidence": 1,
+    "seenCount": 4
+  },
+  {
+    "english": "is given by",
+    "hindi": "होगा",
+    "confidence": 0.6666666666666666,
+    "seenCount": 3
+  },
+  {
+    "english": "Given :",
+    "hindi": "दिया गया है :",
+    "confidence": 1,
+    "seenCount": 3
+  },
+  {
+    "english": "Select the correct option :",
+    "hindi": "सही विकल्प चुनिए :",
+    "confidence": 0.6666666666666666,
+    "seenCount": 3
+  },
+  {
+    "english": "Which of the following statements is not correct ?",
+    "hindi": "निम्न में कौनसा कथन सही नहीं है ?",
+    "confidence": 0.6666666666666666,
+    "seenCount": 3
+  },
+  {
+    "english": "Match the following :",
+    "hindi": "निम्नलिखित को सुमेलित कीजिए :",
+    "confidence": 0.6666666666666666,
+    "seenCount": 3
+  },
+  {
+    "english": "will be :",
+    "hindi": "होगी :",
+    "confidence": 0.6666666666666666,
+    "seenCount": 3
+  },
+  {
+    "english": "Assertion (A) :",
+    "hindi": "अभिकथन (A) :",
+    "confidence": 0.6666666666666666,
+    "seenCount": 3
+  },
+  {
+    "english": "Reason (R) :",
+    "hindi": "तर्क (R) :",
+    "confidence": 0.6666666666666666,
+    "seenCount": 3
+  },
+  {
+    "english": "Assertion A:",
+    "hindi": "अभिकथन A:",
+    "confidence": 1,
+    "seenCount": 3
+  },
+  {
+    "english": "Reason R:",
+    "hindi": "कारण R:",
+    "confidence": 1,
+    "seenCount": 3
+  },
+  {
+    "english": "Given below are two statements: one is labelled as Assertion A and the other is labelled as Reason R.",
+    "hindi": "नीचे दो कथन दिये गये हैं : एक अभिकथन A है दूसरा कारण R है।",
+    "confidence": 0.6666666666666666,
+    "seenCount": 3
+  },
+  {
+    "english": "List-I",
+    "hindi": "सूची I",
+    "confidence": 1,
+    "seenCount": 3
+  },
+  {
+    "english": "List-II",
+    "hindi": "सूची II",
+    "confidence": 1,
+    "seenCount": 3
+  },
+  {
+    "english": "Which of the following is an example of",
+    "hindi": "निम्नलिखित में से कौन सा",
+    "confidence": 0.6666666666666666,
+    "seenCount": 3
+  },
+  {
+    "english": "Match List - I with List - II",
+    "hindi": "सूची-I का सूची-II के साथ मिलान कीजिए :",
+    "confidence": 1,
+    "seenCount": 3
+  }
+]

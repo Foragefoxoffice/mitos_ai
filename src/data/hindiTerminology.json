@@ -1,0 +1,6362 @@
+[
+  {
+    "english": "radius",
+    "hindi": "त्रिज्या",
+    "seenCount": 27
+  },
+  {
+    "english": "mass",
+    "hindi": "द्रव्यमान",
+    "seenCount": 26
+  },
+  {
+    "english": "temperature",
+    "hindi": "ताप",
+    "alternates": [
+      "तापमान"
+    ],
+    "seenCount": 14
+  },
+  {
+    "english": "magnetic field",
+    "hindi": "चुम्बकीय क्षेत्र",
+    "seenCount": 14
+  },
+  {
+    "english": "resistance",
+    "hindi": "प्रतिरोध",
+    "seenCount": 13
+  },
+  {
+    "english": "Reaction",
+    "hindi": "अभिक्रिया",
+    "seenCount": 13
+  },
+  {
+    "english": "current",
+    "hindi": "धारा",
+    "seenCount": 11
+  },
+  {
+    "english": "circuit",
+    "hindi": "परिपथ",
+    "seenCount": 11
+  },
+  {
+    "english": "length",
+    "hindi": "लम्बाई",
+    "seenCount": 11
+  },
+  {
+    "english": "product",
+    "hindi": "उत्पाद",
+    "seenCount": 11
+  },
+  {
+    "english": "velocity",
+    "hindi": "वेग",
+    "seenCount": 10
+  },
+  {
+    "english": "electron",
+    "hindi": "इलेक्ट्रॉन",
+    "seenCount": 10
+  },
+  {
+    "english": "electric field",
+    "hindi": "विद्युत क्षेत्र",
+    "alternates": [
+      "वैद्युत क्षेत्र"
+    ],
+    "seenCount": 10
+  },
+  {
+    "english": "zero",
+    "hindi": "शून्य",
+    "seenCount": 10
+  },
+  {
+    "english": "particle",
+    "hindi": "कण",
+    "seenCount": 10
+  },
+  {
+    "english": "volume",
+    "hindi": "आयतन",
+    "seenCount": 9
+  },
+  {
+    "english": "ideal gas",
+    "hindi": "आदर्श गैस",
+    "seenCount": 9
+  },
+  {
+    "english": "acceleration",
+    "hindi": "त्वरण",
+    "seenCount": 8
+  },
+  {
+    "english": "frequency",
+    "hindi": "आवृत्ति",
+    "seenCount": 8
+  },
+  {
+    "english": "magnitude",
+    "hindi": "परिमाण",
+    "seenCount": 8
+  },
+  {
+    "english": "capacitor",
+    "hindi": "संधारित्र",
+    "alternates": [
+      "धारित्र"
+    ],
+    "seenCount": 8
+  },
+  {
+    "english": "compound",
+    "hindi": "यौगिक",
+    "seenCount": 8
+  },
+  {
+    "english": "species",
+    "hindi": "स्पीशीज़",
+    "alternates": [
+      "स्पीशीज",
+      "जाति"
+    ],
+    "seenCount": 8
+  },
+  {
+    "english": "density",
+    "hindi": "घनत्व",
+    "seenCount": 8
+  },
+  {
+    "english": "transcription",
+    "hindi": "अनुलेखन",
+    "seenCount": 8
+  },
+  {
+    "english": "charge",
+    "hindi": "आवेश",
+    "seenCount": 7
+  },
+  {
+    "english": "force",
+    "hindi": "बल",
+    "seenCount": 7
+  },
+  {
+    "english": "focal length",
+    "hindi": "फोकस दूरी",
+    "seenCount": 7
+  },
+  {
+    "english": "wavelength",
+    "hindi": "तरंगदैर्ध्य",
+    "alternates": [
+      "तरंगदैर्घ्य"
+    ],
+    "seenCount": 7
+  },
+  {
+    "english": "height",
+    "hindi": "ऊँचाई",
+    "alternates": [
+      "ऊंचाई"
+    ],
+    "seenCount": 7
+  },
+  {
+    "english": "ion",
+    "hindi": "आयन",
+    "seenCount": 7
+  },
+  {
+    "english": "Oxygen",
+    "hindi": "ऑक्सीजन",
+    "seenCount": 7
+  },
+  {
+    "english": "Adaptive radiation",
+    "hindi": "अनुकूली विकिरण",
+    "seenCount": 7
+  },
+  {
+    "english": "speed",
+    "hindi": "चाल",
+    "seenCount": 7
+  },
+  {
+    "english": "Eukaryotes",
+    "hindi": "यूकैरियोट",
+    "seenCount": 7
+  },
+  {
+    "english": "Pollen grains",
+    "hindi": "परागकण",
+    "alternates": [
+      "परागकणों"
+    ],
+    "seenCount": 7
+  },
+  {
+    "english": "energy",
+    "hindi": "ऊर्जा",
+    "seenCount": 7
+  },
+  {
+    "english": "refractive index",
+    "hindi": "अपवर्तनांक",
+    "seenCount": 6
+  },
+  {
+    "english": "inductor",
+    "hindi": "प्रेरक",
+    "seenCount": 6
+  },
+  {
+    "english": "hydrogen atom",
+    "hindi": "हाइड्रोजन परमाणु",
+    "seenCount": 6
+  },
+  {
+    "english": "perpendicular",
+    "hindi": "लम्बवत्",
+    "seenCount": 6
+  },
+  {
+    "english": "paramagnetic",
+    "hindi": "अनुचुम्बकीय",
+    "alternates": [
+      "अनुचुंबकीय"
+    ],
+    "seenCount": 6
+  },
+  {
+    "english": "Mitochondria",
+    "hindi": "सूत्रकणिका",
+    "seenCount": 6
+  },
+  {
+    "english": "concentration",
+    "hindi": "सांद्रता",
+    "seenCount": 6
+  },
+  {
+    "english": "Pachytene",
+    "hindi": "स्थूलपट्ट",
+    "seenCount": 6
+  },
+  {
+    "english": "Proteins",
+    "hindi": "प्रोटीन",
+    "seenCount": 6
+  },
+  {
+    "english": "Heart",
+    "hindi": "हृदय",
+    "seenCount": 6
+  },
+  {
+    "english": "EMF",
+    "hindi": "विद्युत वाहक बल",
+    "seenCount": 6
+  },
+  {
+    "english": "capacitance",
+    "hindi": "धारिता",
+    "seenCount": 6
+  },
+  {
+    "english": "solution",
+    "hindi": "विलयन",
+    "seenCount": 6
+  },
+  {
+    "english": "Endoplasmic reticulum",
+    "hindi": "अंतर्द्रव्यी जालिका",
+    "seenCount": 6
+  },
+  {
+    "english": "cockroach",
+    "hindi": "तिलचट्टे",
+    "seenCount": 6
+  },
+  {
+    "english": "Abscisic acid",
+    "hindi": "एब्सीसिक अम्ल",
+    "alternates": [
+      "एबसिसिक अम्ल"
+    ],
+    "seenCount": 6
+  },
+  {
+    "english": "Surface tension",
+    "hindi": "पृष्ठ तनाव",
+    "seenCount": 6
+  },
+  {
+    "english": "diameter",
+    "hindi": "व्यास",
+    "seenCount": 5
+  },
+  {
+    "english": "output",
+    "hindi": "निर्गत",
+    "seenCount": 5
+  },
+  {
+    "english": "resistor",
+    "hindi": "प्रतिरोधक",
+    "seenCount": 5
+  },
+  {
+    "english": "molecules",
+    "hindi": "अणुओं",
+    "alternates": [
+      "अणु"
+    ],
+    "seenCount": 5
+  },
+  {
+    "english": "compounds",
+    "hindi": "यौगिकों",
+    "alternates": [
+      "यौगिक"
+    ],
+    "seenCount": 5
+  },
+  {
+    "english": "solubility",
+    "hindi": "विलेयता",
+    "seenCount": 5
+  },
+  {
+    "english": "Iron",
+    "hindi": "आयरन",
+    "alternates": [
+      "लोह"
+    ],
+    "seenCount": 5
+  },
+  {
+    "english": "gymnosperms",
+    "hindi": "अनावृतबीजी",
+    "seenCount": 5
+  },
+  {
+    "english": "meiosis",
+    "hindi": "अर्धसूत्रीविभाजन",
+    "seenCount": 5
+  },
+  {
+    "english": "Golgi complex",
+    "hindi": "गॉल्जी सम्मिश्र",
+    "seenCount": 5
+  },
+  {
+    "english": "Respiration",
+    "hindi": "श्वसन",
+    "seenCount": 5
+  },
+  {
+    "english": "bacteria",
+    "hindi": "जीवाणुओं",
+    "alternates": [
+      "जीवाणु"
+    ],
+    "seenCount": 5
+  },
+  {
+    "english": "Convergent evolution",
+    "hindi": "अभिसारी विकास",
+    "seenCount": 5
+  },
+  {
+    "english": "ovulation",
+    "hindi": "अंडोत्सर्ग",
+    "seenCount": 5
+  },
+  {
+    "english": "hydrogen",
+    "hindi": "हाइड्रोजन",
+    "seenCount": 5
+  },
+  {
+    "english": "time",
+    "hindi": "समय",
+    "seenCount": 5
+  },
+  {
+    "english": "dipole moment",
+    "hindi": "द्विध्रुव आघूर्ण",
+    "seenCount": 5
+  },
+  {
+    "english": "ethylene",
+    "hindi": "एथिलीन",
+    "seenCount": 5
+  },
+  {
+    "english": "copper",
+    "hindi": "कॉपर",
+    "alternates": [
+      "ताँबा"
+    ],
+    "seenCount": 5
+  },
+  {
+    "english": "population",
+    "hindi": "समष्टि",
+    "seenCount": 5
+  },
+  {
+    "english": "depolarisation",
+    "hindi": "विध्रुवण",
+    "seenCount": 5
+  },
+  {
+    "english": "DNA ligase",
+    "hindi": "डी.एन.ए. लाइगेज",
+    "seenCount": 5
+  },
+  {
+    "english": "S phase",
+    "hindi": "S अवस्था",
+    "seenCount": 5
+  },
+  {
+    "english": "chromosome",
+    "hindi": "गुणसूत्र",
+    "seenCount": 5
+  },
+  {
+    "english": "replication",
+    "hindi": "प्रतिकृतिकरण",
+    "alternates": [
+      "प्रतिकृति"
+    ],
+    "seenCount": 5
+  },
+  {
+    "english": "molecule",
+    "hindi": "अणु",
+    "seenCount": 5
+  },
+  {
+    "english": "enzyme",
+    "hindi": "एंजाइम",
+    "seenCount": 5
+  },
+  {
+    "english": "ecosystem",
+    "hindi": "पारितन्त्र",
+    "seenCount": 5
+  },
+  {
+    "english": "Glucose",
+    "hindi": "ग्लूकोस",
+    "seenCount": 5
+  },
+  {
+    "english": "potential difference",
+    "hindi": "विभवान्तर",
+    "seenCount": 5
+  },
+  {
+    "english": "chemical reaction",
+    "hindi": "रासायनिक अभिक्रिया",
+    "seenCount": 5
+  },
+  {
+    "english": "major product",
+    "hindi": "मुख्य उत्पाद",
+    "seenCount": 5
+  },
+  {
+    "english": "connected in series",
+    "hindi": "श्रेणीक्रम में संयोजित",
+    "alternates": [
+      "श्रेणी में संयोजित",
+      "श्रेणी क्रम में जोड़ा गया",
+      "श्रेणी-क्रम में संयोजित"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "angle of incidence",
+    "hindi": "आपतन कोण",
+    "seenCount": 4
+  },
+  {
+    "english": "object",
+    "hindi": "पिण्ड",
+    "alternates": [
+      "बिम्ब"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "inductance",
+    "hindi": "प्रेरकत्व",
+    "seenCount": 4
+  },
+  {
+    "english": "half-life",
+    "hindi": "अर्ध-आयु",
+    "alternates": [
+      "अर्धआयु",
+      "अर्धायु"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "Young's double slit experiment",
+    "hindi": "यंग के द्विझिरी प्रयोग",
+    "alternates": [
+      "यंग द्वि झिरीं प्रयोग"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "rest",
+    "hindi": "विरामावस्था",
+    "alternates": [
+      "विराम अवस्था"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "horizontal",
+    "hindi": "क्षैतिज",
+    "seenCount": 4
+  },
+  {
+    "english": "complex",
+    "hindi": "संकुल",
+    "alternates": [
+      "संकर",
+      "सम्मिश्र"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "diamagnetic",
+    "hindi": "प्रतिचुम्बकीय",
+    "alternates": [
+      "प्रतिचुंबकीय"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "aniline",
+    "hindi": "ऐनिलीन",
+    "seenCount": 4
+  },
+  {
+    "english": "molecular mass",
+    "hindi": "आण्विक द्रव्यमान",
+    "alternates": [
+      "मोलर द्रव्यमान",
+      "आणविक द्रव्यमान"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "molar mass",
+    "hindi": "मोलर द्रव्यमान",
+    "seenCount": 4
+  },
+  {
+    "english": "reactant",
+    "hindi": "अभिकारक",
+    "seenCount": 4
+  },
+  {
+    "english": "element",
+    "hindi": "तत्त्व",
+    "alternates": [
+      "तत्व"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "vector",
+    "hindi": "वेक्टर",
+    "alternates": [
+      "संवाहक"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "Biopiracy",
+    "hindi": "बायोपायरेसी",
+    "alternates": [
+      "बायोपायरेसी (जैव दस्युता)",
+      "बायोपाइरेसी"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "Transformation",
+    "hindi": "रूपांतरण",
+    "alternates": [
+      "रूपान्तरण"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "Mustard",
+    "hindi": "सरसों",
+    "seenCount": 4
+  },
+  {
+    "english": "Diakinesis",
+    "hindi": "पारगतिक्रम",
+    "alternates": [
+      "पारगतिक्रम (डायाकाइनेसिस)"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "Zygotene",
+    "hindi": "युग्मपट्ट",
+    "alternates": [
+      "युग्मपट् अवस्था"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "Enzymes",
+    "hindi": "एंजाइम",
+    "alternates": [
+      "एंज़ाइमों",
+      "एंजाइमों",
+      "एन्जाइम"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "divergent evolution",
+    "hindi": "अपसारी विकास",
+    "seenCount": 4
+  },
+  {
+    "english": "relaxin",
+    "hindi": "रिलैक्सिन",
+    "seenCount": 4
+  },
+  {
+    "english": "Hypothalamus",
+    "hindi": "हाइपोथैलेमस",
+    "alternates": [
+      "हाइपोथेलेमस"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "Progesterone",
+    "hindi": "प्रोजेस्टेरोन",
+    "alternates": [
+      "प्राजेस्टेरॉन",
+      "प्रोजेस्टेरॉन"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "Estrogen",
+    "hindi": "एस्ट्रोजन",
+    "seenCount": 4
+  },
+  {
+    "english": "emphysema",
+    "hindi": "वातस्फीति",
+    "alternates": [
+      "वात्स्फीति",
+      "एमफाइसिमा"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "Gout",
+    "hindi": "गाउट",
+    "seenCount": 4
+  },
+  {
+    "english": "anal cerci",
+    "hindi": "गुदीय लूम",
+    "alternates": [
+      "गुदलूम"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "amplitude",
+    "hindi": "आयाम",
+    "seenCount": 4
+  },
+  {
+    "english": "surface of earth",
+    "hindi": "पृथ्वी के पृष्ठ",
+    "alternates": [
+      "पृथ्वी के तल"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "series",
+    "hindi": "श्रेणी",
+    "alternates": [
+      "श्रेणीक्रम",
+      "श्रेणी क्रम",
+      "श्रेणी-क्रम"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "centre",
+    "hindi": "केन्द्र",
+    "seenCount": 4
+  },
+  {
+    "english": "battery",
+    "hindi": "बैटरी",
+    "alternates": [
+      "बैस्ट्री"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "surface area",
+    "hindi": "पृष्ठीय क्षेत्रफल",
+    "alternates": [
+      "क्षेत्रफल",
+      "पृष्ठ क्षेत्रफल",
+      "सतह क्षेत्र"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "pressure",
+    "hindi": "दाब",
+    "seenCount": 4
+  },
+  {
+    "english": "first order reaction",
+    "hindi": "प्रथम कोटि अभिक्रिया",
+    "alternates": [
+      "प्रथम कोटि की एक अभिक्रिया",
+      "प्रथम कोटि की अभिक्रिया"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "rate constant",
+    "hindi": "वेग स्थिरांक",
+    "alternates": [
+      "वेग नियतांक"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "activation energy",
+    "hindi": "सक्रियण ऊर्जा",
+    "seenCount": 4
+  },
+  {
+    "english": "Protein",
+    "hindi": "प्रोटीन",
+    "seenCount": 4
+  },
+  {
+    "english": "antibodies",
+    "hindi": "प्रतिरक्षी",
+    "seenCount": 4
+  },
+  {
+    "english": "ventricles",
+    "hindi": "निलयों",
+    "alternates": [
+      "निलय"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "Cell division",
+    "hindi": "कोशिका विभाजन",
+    "seenCount": 4
+  },
+  {
+    "english": "ovary",
+    "hindi": "अंडाशय",
+    "seenCount": 4
+  },
+  {
+    "english": "RNA polymerase",
+    "hindi": "RNA पॉलीमरेज",
+    "alternates": [
+      "RNA पालिमरेज",
+      "आर.एन.ए. पॉलिमेरेज़",
+      "आर.एन.ए. पॉलिमरेज"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "nitrogen",
+    "hindi": "नाइट्रोजन",
+    "seenCount": 4
+  },
+  {
+    "english": "UV radiation",
+    "hindi": "यु.वी. विकिरण",
+    "alternates": [
+      "UV विकिरण",
+      "यु वी विकिरण"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "commensalism",
+    "hindi": "सहभोजिता",
+    "alternates": [
+      "सहभोजिता (कमेन्सेलिस्म)"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "genetic material",
+    "hindi": "आनुवंशिक पदार्थ",
+    "seenCount": 4
+  },
+  {
+    "english": "Filariasis",
+    "hindi": "फाइलेरियासिस",
+    "alternates": [
+      "फाइलेरिएसिस"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "Ammonia",
+    "hindi": "अमोनिया",
+    "seenCount": 4
+  },
+  {
+    "english": "alveoli",
+    "hindi": "कूपिकाओं",
+    "alternates": [
+      "वायु कूपिका",
+      "कूपिका"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "oxyhaemoglobin",
+    "hindi": "ऑक्सीहीमोग्लोबिन",
+    "alternates": [
+      "ऑक्सी-हीमोग्लोबिन"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "Zinc",
+    "hindi": "जिंक",
+    "seenCount": 4
+  },
+  {
+    "english": "amino acids",
+    "hindi": "ऐमिनो अम्ल",
+    "alternates": [
+      "एमीनो अम्ल",
+      "ऐमीनो अम्लों",
+      "ऐमीनों अम्लों"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "Lysine",
+    "hindi": "लाइसिन",
+    "alternates": [
+      "लाइसीन"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "Pancreas",
+    "hindi": "अग्न्याशय",
+    "alternates": [
+      "अग्नाशय"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "Leptotene",
+    "hindi": "तनुपट्ट",
+    "seenCount": 4
+  },
+  {
+    "english": "Ctenophora",
+    "hindi": "टीनोफोरा",
+    "seenCount": 4
+  },
+  {
+    "english": "Hydrolysis",
+    "hindi": "जल-अपघटन",
+    "alternates": [
+      "जलापघटन"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "sucrose",
+    "hindi": "सुक्रोस",
+    "seenCount": 4
+  },
+  {
+    "english": "benzene",
+    "hindi": "बेन्जीन",
+    "alternates": [
+      "बेन्ज़ीन"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "simple harmonic motion",
+    "hindi": "सरल आवर्त गति",
+    "alternates": [
+      "सरल आवर्ती गति"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "potential energy",
+    "hindi": "स्थितिज ऊर्जा",
+    "seenCount": 4
+  },
+  {
+    "english": "moment of inertia",
+    "hindi": "जड़त्व आघूर्ण",
+    "seenCount": 4
+  },
+  {
+    "english": "speed of light",
+    "hindi": "प्रकाश की चाल",
+    "alternates": [
+      "प्रकाश का वेग"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "organic compound",
+    "hindi": "कार्बनिक यौगिक",
+    "alternates": [
+      "जैविक यौगिक"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "Morphine",
+    "hindi": "मॉर्फीन",
+    "alternates": [
+      "मार्फीन",
+      "मॉर्फिन"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "angiosperm",
+    "hindi": "आवृतबीजी",
+    "alternates": [
+      "आवृतबीजी पादपों",
+      "एन्जियोस्पर्म",
+      "एन्जियोस्पर्म (आवृतबीजी)"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "centromere",
+    "hindi": "गुणसूत्रबिन्दु",
+    "alternates": [
+      "गुणसूत्रबिंदु"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "chromosomes",
+    "hindi": "गुणसूत्र",
+    "alternates": [
+      "गुणसूत्र (क्रोमोसोम)",
+      "गुणसूत्रों"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "Mutualism",
+    "hindi": "सहोपकारिता",
+    "alternates": [
+      "सहोपकारिता (म्युचलिस्म)"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "prokaryotes",
+    "hindi": "प्रोकेरियोटों",
+    "alternates": [
+      "असीमकेन्द्रकी",
+      "प्रोकैरियोट (असीम केंद्रकी)"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "G1 phase",
+    "hindi": "G1 अवस्था",
+    "alternates": [
+      "G1 प्रावस्था"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "Plasmid",
+    "hindi": "प्लाज्मिड",
+    "alternates": [
+      "प्लाैज्मिड",
+      "प्लास्मिड"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "parallel",
+    "hindi": "समान्तर क्रम",
+    "alternates": [
+      "पार्श्व-क्रम",
+      "समान्तर"
+    ],
+    "seenCount": 4
+  },
+  {
+    "english": "screw gauge",
+    "hindi": "स्क्रू गेज़",
+    "alternates": [
+      "स्क्रू गेज",
+      "स्क्रूगेज"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "least count",
+    "hindi": "अल्पतमांक",
+    "seenCount": 3
+  },
+  {
+    "english": "main scale reading",
+    "hindi": "मुख्य पैमाने का पाठ्यांक",
+    "alternates": [
+      "मुख्य पैमाने की माप"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "boiling point",
+    "hindi": "क्वथनांक",
+    "seenCount": 3
+  },
+  {
+    "english": "monochromatic light",
+    "hindi": "एकवर्णी प्रकाश",
+    "seenCount": 3
+  },
+  {
+    "english": "displacement",
+    "hindi": "विस्थापन",
+    "alternates": [
+      "विस्थापित"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "constant",
+    "hindi": "स्थिरांक",
+    "alternates": [
+      "नियत",
+      "स्थिर"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "kinetic energy",
+    "hindi": "गतिज ऊर्जा",
+    "seenCount": 3
+  },
+  {
+    "english": "p-n junction diode",
+    "hindi": "p-n संधि डायोड",
+    "seenCount": 3
+  },
+  {
+    "english": "resonance",
+    "hindi": "अनुनाद",
+    "seenCount": 3
+  },
+  {
+    "english": "room temperature",
+    "hindi": "कक्ष ताप",
+    "alternates": [
+      "कमरे के ताप",
+      "कमरे का ताप"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "bob",
+    "hindi": "गोलक",
+    "alternates": [
+      "लोलक"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "heat",
+    "hindi": "ऊष्मा",
+    "alternates": [
+      "ऊष्माओं",
+      "गर्म"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "solid sphere",
+    "hindi": "ठोस गोला",
+    "alternates": [
+      "ठोस गोले"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Frictional force",
+    "hindi": "घर्षण बल",
+    "alternates": [
+      "घर्षण"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "dimensions",
+    "hindi": "विमाएँ",
+    "alternates": [
+      "विमा",
+      "विमाएं"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "alcohols",
+    "hindi": "ऐल्कोहॉलों",
+    "alternates": [
+      "ऐल्कोहॉल"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "atmosphere",
+    "hindi": "वायुमंडल",
+    "alternates": [
+      "वायुमण्डल",
+      "ऐटमॉस्फियर"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "carbon atoms",
+    "hindi": "कार्बन परमाणु",
+    "seenCount": 3
+  },
+  {
+    "english": "sequence of reactions",
+    "hindi": "अभिक्रिया श्रृंखला",
+    "alternates": [
+      "अभिक्रियाओं के क्रम",
+      "अभिक्रियाओं के निम्नलिखित क्रम"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "redox reaction",
+    "hindi": "रेडॉक्स अभिक्रिया",
+    "alternates": [
+      "अपचयोपचय अभिक्रिया"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Low temperature",
+    "hindi": "निम्न ताप",
+    "alternates": [
+      "निम्न तापक्रम"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "oxidation states",
+    "hindi": "ऑक्सीकरण अवस्थाओं",
+    "alternates": [
+      "उपचयन अवस्थाएँ",
+      "ऑक्सीकरण अवस्थाएँ"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "central atom",
+    "hindi": "केन्द्रीय परमाणु",
+    "seenCount": 3
+  },
+  {
+    "english": "oxidation state",
+    "hindi": "ऑक्सीकरण अवस्था",
+    "seenCount": 3
+  },
+  {
+    "english": "Annealing",
+    "hindi": "तापानुशीलन",
+    "alternates": [
+      "अनीलन"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Extension",
+    "hindi": "प्रसार",
+    "alternates": [
+      "विस्तरण"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Denaturation",
+    "hindi": "निष्क्रियकरण",
+    "alternates": [
+      "विकृतीकरण"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Transduction",
+    "hindi": "पारक्रमण",
+    "seenCount": 3
+  },
+  {
+    "english": "Carbon",
+    "hindi": "कार्बन",
+    "seenCount": 3
+  },
+  {
+    "english": "Grasshopper",
+    "hindi": "टिड्डा",
+    "seenCount": 3
+  },
+  {
+    "english": "translation",
+    "hindi": "स्थानांतरण",
+    "alternates": [
+      "ट्रांसलेशन (अनुवादन/स्थानांतरण)",
+      "रूपान्तरण"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Bacterium",
+    "hindi": "जीवाणु",
+    "alternates": [
+      "बैक्टीरियम"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Mango",
+    "hindi": "आम",
+    "seenCount": 3
+  },
+  {
+    "english": "Secondary xylem",
+    "hindi": "द्वितीयक ज़ाइलम",
+    "alternates": [
+      "द्वितीयक दारू",
+      "द्वितीयक जाइलम"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Phellogen",
+    "hindi": "कागजन",
+    "seenCount": 3
+  },
+  {
+    "english": "Stem",
+    "hindi": "तना",
+    "alternates": [
+      "तने"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "spores",
+    "hindi": "बीजाणु",
+    "alternates": [
+      "बीजाणुओं"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "photosynthesis",
+    "hindi": "प्रकाश-संश्लेषण",
+    "alternates": [
+      "प्रकाश संश्लेषण",
+      "प्रकाशसंश्लेषण"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "nucleolus",
+    "hindi": "केन्द्रिक",
+    "alternates": [
+      "केंद्रिका",
+      "न्यूक्लीओलस (केन्द्रिक)"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Diplotene",
+    "hindi": "द्विपट्ट",
+    "alternates": [
+      "द्विपट् अवस्था"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Glycolysis",
+    "hindi": "ग्लाइकोलिसिस",
+    "alternates": [
+      "ग्लाइकोलाइसिस"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "ribosomes",
+    "hindi": "राइबोसोम",
+    "seenCount": 3
+  },
+  {
+    "english": "mRNA",
+    "hindi": "mRNA",
+    "alternates": [
+      "दूत आरएनए"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "prolactin",
+    "hindi": "प्रोलैक्टिन",
+    "seenCount": 3
+  },
+  {
+    "english": "uterus",
+    "hindi": "गर्भाशय",
+    "seenCount": 3
+  },
+  {
+    "english": "Medulla oblongata",
+    "hindi": "मेड्यूला आब्लाँगैटा",
+    "alternates": [
+      "मेड्यूला ओबलोगेटा",
+      "मेड्यूला ओबलांगटा"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Corpus callosum",
+    "hindi": "कॉर्पस कैलोसम",
+    "alternates": [
+      "कारपस कैलोसम"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Aldosterone",
+    "hindi": "ऐल्डोस्टेरोन",
+    "alternates": [
+      "एल्डोस्टेरान",
+      "एल्डोस्टेरोन"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Goblet cells",
+    "hindi": "कलश (गोब्लेट) कोशिकाएँ",
+    "alternates": [
+      "गोब्लेट कोशिकाएँ",
+      "कलश कोशिकाएं"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Calcium",
+    "hindi": "कैल्शियम",
+    "seenCount": 3
+  },
+  {
+    "english": "bonds",
+    "hindi": "आबंध",
+    "alternates": [
+      "आबंधों"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Renal calculi",
+    "hindi": "वृक्कीय पथरी (रीनल कैल्क्यूलाई)",
+    "alternates": [
+      "रीनल केलकलाई",
+      "रीनल कैलकुली"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Proximal convoluted tubule",
+    "hindi": "समीपस्थ संवलित नलिका",
+    "alternates": [
+      "समीपस्थ संवालित नलिका"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "sternum",
+    "hindi": "उरोस्थि",
+    "seenCount": 3
+  },
+  {
+    "english": "Osteichthyes",
+    "hindi": "ऑस्टिक्थिइज़",
+    "alternates": [
+      "ओस्टिक्थीज",
+      "ऑस्टिक्थीज"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Cyanobacteria",
+    "hindi": "साइनोबैक्टीरिया",
+    "alternates": [
+      "सायनोबैक्टीरिया"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "time period",
+    "hindi": "आवर्तकाल",
+    "alternates": [
+      "आवर्त काल"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "AC source",
+    "hindi": "प्रत्यावर्ती स्रोत",
+    "seenCount": 3
+  },
+  {
+    "english": "sphere",
+    "hindi": "गोले",
+    "alternates": [
+      "गोला"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "electric dipole",
+    "hindi": "वैद्युत द्विध्रुव",
+    "alternates": [
+      "विद्युत द्विध्रुव"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "power",
+    "hindi": "क्षमता",
+    "alternates": [
+      "शक्ति"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Basic",
+    "hindi": "क्षारीय",
+    "seenCount": 3
+  },
+  {
+    "english": "Acidic",
+    "hindi": "अम्लीय",
+    "seenCount": 3
+  },
+  {
+    "english": "Amphoteric",
+    "hindi": "उभयधर्मी",
+    "seenCount": 3
+  },
+  {
+    "english": "aqueous solution",
+    "hindi": "जलीय विलयन",
+    "alternates": [
+      "जलीय विलयनों"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "de Broglie wavelength",
+    "hindi": "डि ब्रागली तरंगदैर्घ्य",
+    "alternates": [
+      "दे ब्रॉग्ली तरंगदैर्ध्य",
+      "डी ब्रॉग्ली तरंगदैर्ध्य"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Catalyst",
+    "hindi": "उत्प्रेरक",
+    "seenCount": 3
+  },
+  {
+    "english": "Process",
+    "hindi": "प्रक्रम",
+    "alternates": [
+      "प्रक्रिया"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "oxidation",
+    "hindi": "ऑक्सीकरण",
+    "seenCount": 3
+  },
+  {
+    "english": "positive deviation",
+    "hindi": "धनात्मक विचलन",
+    "seenCount": 3
+  },
+  {
+    "english": "total pressure",
+    "hindi": "कुल दाब",
+    "seenCount": 3
+  },
+  {
+    "english": "partial pressure",
+    "hindi": "आंशिक दाब",
+    "seenCount": 3
+  },
+  {
+    "english": "blood group",
+    "hindi": "रुधिर वर्ग",
+    "alternates": [
+      "रक्त समूह"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "progeny",
+    "hindi": "संतति",
+    "seenCount": 3
+  },
+  {
+    "english": "genotype",
+    "hindi": "जीनोटाइप",
+    "alternates": [
+      "जीनप्ररूप"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "microbes",
+    "hindi": "सूक्ष्म जीवों",
+    "alternates": [
+      "सूक्ष्मजीवों",
+      "सूक्ष्मजीव"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "inbreeding",
+    "hindi": "अंतःप्रजनन",
+    "alternates": [
+      "अंत: प्रजनन"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Lecithin",
+    "hindi": "लेसिथिन",
+    "alternates": [
+      "लेसीथीन"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "active transport",
+    "hindi": "सक्रिय परिवहन",
+    "alternates": [
+      "सक्रिय अभिगमन"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "concentration gradient",
+    "hindi": "सांद्रता प्रवणता",
+    "alternates": [
+      "सांद्रण प्रवणता"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Fructose",
+    "hindi": "फ्रक्टोज",
+    "alternates": [
+      "फ्रक्टोस",
+      "फ़्रक्टोस"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "action potential",
+    "hindi": "क्रिया विभव",
+    "seenCount": 3
+  },
+  {
+    "english": "atria",
+    "hindi": "अलिंदों",
+    "alternates": [
+      "आलिंद"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Over exploitation",
+    "hindi": "अतिदोहन",
+    "alternates": [
+      "अत्याधिक शोषण"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Co-extinction",
+    "hindi": "सह उन्मूलन",
+    "alternates": [
+      "सह-विलुप्तता",
+      "सह-विलुप्ति"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Platyhelminthes",
+    "hindi": "प्लेटीहैल्मिंथीज",
+    "alternates": [
+      "प्लेटीहेल्मिंथीज"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Coelenterata",
+    "hindi": "सिलेंटेरेटा",
+    "alternates": [
+      "सीलेन्ट्रेटा",
+      "सीलेन्टरेटा"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Annelids",
+    "hindi": "ऐनेलिडा",
+    "alternates": [
+      "एनेलिड"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Aschelminthes",
+    "hindi": "ऐस्केलमिंथीज",
+    "alternates": [
+      "एस्कहैल्मिंथीज"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "nucleus",
+    "hindi": "केन्द्रक",
+    "alternates": [
+      "केंद्रक"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "protein coat",
+    "hindi": "प्रोटीन कोट",
+    "alternates": [
+      "प्रोटीन कवच",
+      "प्रोटीन आवरण"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "sexually transmitted diseases",
+    "hindi": "यौन संचरित रोगों",
+    "alternates": [
+      "यौन संचारित रोग"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Genital herpes",
+    "hindi": "जननिक परिसर्प",
+    "seenCount": 3
+  },
+  {
+    "english": "Zygote",
+    "hindi": "युग्मनज",
+    "alternates": [
+      "युग्मज"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "evolution",
+    "hindi": "विकास",
+    "alternates": [
+      "क्रमागत उन्नति"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "CODING STRAND",
+    "hindi": "कोडिंग रज्जु",
+    "alternates": [
+      "कूट रज्जुक"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Myasthenia gravis",
+    "hindi": "मायस्थेनिया ग्रेविस",
+    "alternates": [
+      "माइस्थेनिया ग्रेविस"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Crossing over",
+    "hindi": "जीन विनिमय",
+    "alternates": [
+      "क्रॉसिंग ओवर"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "cell cycle",
+    "hindi": "कोशिका चक्र",
+    "alternates": [
+      "कोशिका चक्रण"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "soil",
+    "hindi": "मृदा",
+    "seenCount": 3
+  },
+  {
+    "english": "plant growth regulators",
+    "hindi": "वृद्धि नियंत्रक",
+    "alternates": [
+      "पादप वृद्धि नियंत्रकों",
+      "पादप वृद्धि नियंत्रक (नियामक)"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Gel electrophoresis",
+    "hindi": "जैल इलेक्ट्रोफोरेसिस",
+    "alternates": [
+      "जेल इलेक्ट्रोफोरेसिस",
+      "जेल वैद्युत के संचलन"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "ozone",
+    "hindi": "ओजोन",
+    "alternates": [
+      "ओज़ोन"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "gametes",
+    "hindi": "युग्मकों",
+    "seenCount": 3
+  },
+  {
+    "english": "cocaine",
+    "hindi": "कोकेन",
+    "seenCount": 3
+  },
+  {
+    "english": "pollination",
+    "hindi": "परागण",
+    "seenCount": 3
+  },
+  {
+    "english": "China rose",
+    "hindi": "चायना रोज",
+    "alternates": [
+      "चाइना रोज",
+      "गुड़हल"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "embryo sac",
+    "hindi": "भ्रूणकोष",
+    "alternates": [
+      "भ्रूण-कोष"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Genetic Code",
+    "hindi": "आनुवंशिक कूट",
+    "alternates": [
+      "आनुवंशिक कूट (जेनेटिक कोड)"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Typhoid",
+    "hindi": "टाइफॉइड",
+    "alternates": [
+      "टायफॉयड"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Pneumonia",
+    "hindi": "न्यूमोनिया",
+    "alternates": [
+      "निमोनिया"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Malaria",
+    "hindi": "मलेरिया",
+    "seenCount": 3
+  },
+  {
+    "english": "alleles",
+    "hindi": "ऐलील",
+    "alternates": [
+      "एलीलों (युग्म विकल्प)",
+      "एलील"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Chitin",
+    "hindi": "काइटिन",
+    "seenCount": 3
+  },
+  {
+    "english": "Cellulose",
+    "hindi": "सेलुलोज",
+    "seenCount": 3
+  },
+  {
+    "english": "insulin",
+    "hindi": "इंसुलिन",
+    "seenCount": 3
+  },
+  {
+    "english": "cytoplasm",
+    "hindi": "कोशिकाद्रव्य",
+    "seenCount": 3
+  },
+  {
+    "english": "Ethidium bromide",
+    "hindi": "एथिडियम ब्रोमाइड",
+    "seenCount": 3
+  },
+  {
+    "english": "notochord",
+    "hindi": "पृष्ठ रज्जु",
+    "alternates": [
+      "पृष्ठरज्जु"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Hemichordata",
+    "hindi": "हेमीकॉर्डेटा",
+    "seenCount": 3
+  },
+  {
+    "english": "Cloning vector",
+    "hindi": "क्लोनिंग संवाहक",
+    "alternates": [
+      "क्लोनिक वेक्टर"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "DNA polymerase",
+    "hindi": "डी.एन.ए. पॉलिमरेज",
+    "alternates": [
+      "डी.एन.ए. पॉलिमेरेज़",
+      "डीएनए पोलिमरेस"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "vascular bundles",
+    "hindi": "संवहन बंडल",
+    "alternates": [
+      "संवहन बण्डल",
+      "संवहन पूल (बंडल)"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Foetus",
+    "hindi": "भ्रूण",
+    "alternates": [
+      "भ्रूणा"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "alimentary canal",
+    "hindi": "आहार नाल",
+    "seenCount": 3
+  },
+  {
+    "english": "Butyric Acid",
+    "hindi": "ब्युटिरिक अम्ल",
+    "alternates": [
+      "ब्यूटिरिक अम्ल",
+      "ब्यूटाइरिक अम्ल"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Mannitol",
+    "hindi": "मैनीटॉल",
+    "alternates": [
+      "मैनीटाल",
+      "मैनीटोल"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "trophic levels",
+    "hindi": "पोषी स्तरों",
+    "alternates": [
+      "पोषी स्तर",
+      "पोषण स्तर"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Cytokinin",
+    "hindi": "साइटोकाइनिन",
+    "alternates": [
+      "साइटोकाइनीन"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Gibberellin",
+    "hindi": "जिबरैलिन",
+    "alternates": [
+      "जिबरेलीन"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Leydig cells",
+    "hindi": "लीडिग कोशिकाएँ",
+    "alternates": [
+      "लीडिंग कोशिकाओं"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Natural selection",
+    "hindi": "प्राकृतिक वरण",
+    "alternates": [
+      "प्राकृतिक चयन"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Repolarisation",
+    "hindi": "पुनर्ध्रुवण",
+    "alternates": [
+      "अध्रुवण",
+      "पुनःध्रुवण"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Basophils",
+    "hindi": "बेसोफिल",
+    "alternates": [
+      "बेसोफिलौं"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Lymphocytes",
+    "hindi": "लसीकाणु",
+    "alternates": [
+      "लिंफोसाइट"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Adenine",
+    "hindi": "ऐडेनीन",
+    "alternates": [
+      "एडिनीन"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "carbon dioxide",
+    "hindi": "कार्बन डाइऑक्साइड",
+    "seenCount": 3
+  },
+  {
+    "english": "Hydrogen gas",
+    "hindi": "हाइड्रोजन गैस",
+    "seenCount": 3
+  },
+  {
+    "english": "Atomic mass",
+    "hindi": "परमाणु द्रव्यमान",
+    "seenCount": 3
+  },
+  {
+    "english": "atoms",
+    "hindi": "परमाणुओं",
+    "alternates": [
+      "परमाणु"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "electrons",
+    "hindi": "इलेक्ट्रॉनों",
+    "alternates": [
+      "इलेक्ट्रॉन"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Urea",
+    "hindi": "यूरिया",
+    "seenCount": 3
+  },
+  {
+    "english": "n-Hexane",
+    "hindi": "n-हैक्सेन",
+    "alternates": [
+      "n-हेक्सेन"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "electromagnetic wave",
+    "hindi": "विद्युत चुम्बकीय तरंग",
+    "alternates": [
+      "विद्युतचुम्बकीय तरंग"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "surface of the earth",
+    "hindi": "पृथ्वी सतह",
+    "alternates": [
+      "पृथ्वी के पृष्ठ"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "acceleration due to gravity",
+    "hindi": "गुरुत्वीय त्वरण",
+    "seenCount": 3
+  },
+  {
+    "english": "logic circuit",
+    "hindi": "लॉजिक परिपथ",
+    "alternates": [
+      "तर्क परिपथ"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "truth table",
+    "hindi": "सत्यता सारणी",
+    "alternates": [
+      "सत्यमान सारणी"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "displacement current",
+    "hindi": "विस्थापन धारा",
+    "seenCount": 3
+  },
+  {
+    "english": "plane electromagnetic wave",
+    "hindi": "समतल विद्युत चुम्बकीय तरंग",
+    "alternates": [
+      "समतल वैद्युतचुंबकीय तरंग",
+      "समतल वैद्युत-चुम्बकीय तरंग"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "spring",
+    "hindi": "स्प्रिंग",
+    "alternates": [
+      "कमानी"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "suspended",
+    "hindi": "लटकाया जाता है",
+    "alternates": [
+      "निलम्बित"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "objective",
+    "hindi": "अभिदृश्यक",
+    "alternates": [
+      "अभिदृश्यक लेंस"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "uniform speed",
+    "hindi": "एकसमान चाल",
+    "alternates": [
+      "समान चाल"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "acetic acid",
+    "hindi": "ऐसीटिक अम्ल",
+    "alternates": [
+      "एसिटिक अम्ल",
+      "एसीटिक अम्ल"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "dry Ether",
+    "hindi": "शुष्क ईथर",
+    "seenCount": 3
+  },
+  {
+    "english": "Square pyramidal",
+    "hindi": "वर्ग पिरामिडी",
+    "alternates": [
+      "वर्ग पिैरामिडी"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Octahedral",
+    "hindi": "अष्टफलकीय",
+    "seenCount": 3
+  },
+  {
+    "english": "Heroin",
+    "hindi": "हिरोइन",
+    "alternates": [
+      "हेरोइन"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "mixture",
+    "hindi": "मिश्रण",
+    "seenCount": 3
+  },
+  {
+    "english": "Histones",
+    "hindi": "हिस्टोन",
+    "seenCount": 3
+  },
+  {
+    "english": "maturity",
+    "hindi": "परिपक्व अवस्था",
+    "alternates": [
+      "परिपक्वता",
+      "परिपक्व होने पर"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Gene amplification",
+    "hindi": "जीन प्रवर्धन",
+    "seenCount": 3
+  },
+  {
+    "english": "Pea",
+    "hindi": "मटर",
+    "seenCount": 3
+  },
+  {
+    "english": "Amensalism",
+    "hindi": "अन्तरजातीय परजीविता",
+    "alternates": [
+      "अंतरजातीय परजीविता",
+      "अंतरजातीय परजीविता (एमेन्सेलिस्म)"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Cristae",
+    "hindi": "क्रिस्टी",
+    "seenCount": 3
+  },
+  {
+    "english": "G2 phase",
+    "hindi": "G2 अवस्था",
+    "alternates": [
+      "G2 प्रावस्था"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "mitosis",
+    "hindi": "सूत्री विभाजन",
+    "seenCount": 3
+  },
+  {
+    "english": "DNA replication",
+    "hindi": "डी.एन.ए. प्रतिकृतिकरण",
+    "alternates": [
+      "डी.एन.ए. प्रतिकृतियन",
+      "डीएनए प्रतिकृतीयन (रेप्लीकेशन)"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "RNA polymerase III",
+    "hindi": "आर.एन.ए. पॉलिमरेज-III",
+    "alternates": [
+      "आर.एन.ए. पालिमरेज III",
+      "आरएनए पॉलीमरेज III"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "centriole",
+    "hindi": "तारककेंद्र",
+    "alternates": [
+      "सेन्ट्रिओल",
+      "तारक केन्द्र"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "DNA dependent RNA polymerase",
+    "hindi": "डी एन ए पर निर्भर आर एन ए पॉलीमरेज",
+    "alternates": [
+      "डीएनए निर्भर आरएनए (RNA) पोलीमरेस",
+      "डीएनए निर्भर आरएनए पॉलीमरेज"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "bone marrow",
+    "hindi": "अस्थि मज्जा",
+    "seenCount": 3
+  },
+  {
+    "english": "kidney",
+    "hindi": "वृक्क",
+    "seenCount": 3
+  },
+  {
+    "english": "amino acid",
+    "hindi": "ऐमीनो अम्ल",
+    "alternates": [
+      "अमीनो अम्ल"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Corpus luteum",
+    "hindi": "पीत पिंड",
+    "alternates": [
+      "पीतक पिंड",
+      "पीत पिण्ड (कार्पस ल्युटियम)"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Ringworm",
+    "hindi": "रिंगवर्म",
+    "seenCount": 3
+  },
+  {
+    "english": "free space",
+    "hindi": "मुक्त आकाश",
+    "seenCount": 3
+  },
+  {
+    "english": "satellite",
+    "hindi": "उपग्रह",
+    "alternates": [
+      "सेटेलाइट"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "cofactor",
+    "hindi": "सह-घटक",
+    "alternates": [
+      "सहकारक (कोफैक्टर)",
+      "कोफेक्टर (सहकारक)"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "complexes",
+    "hindi": "संकुलों",
+    "alternates": [
+      "संकुल"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "gametophyte",
+    "hindi": "युग्मकोद्भिद् (गैमीटोफाइट)",
+    "alternates": [
+      "युग्मकोद्भिद्"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "Dedifferentiation",
+    "hindi": "निर्विभेदन",
+    "seenCount": 3
+  },
+  {
+    "english": "Gene",
+    "hindi": "जीन",
+    "seenCount": 3
+  },
+  {
+    "english": "substrate",
+    "hindi": "क्रियाधार",
+    "seenCount": 3
+  },
+  {
+    "english": "magnetic moment",
+    "hindi": "चुम्बकीय आघूर्ण",
+    "seenCount": 3
+  },
+  {
+    "english": "stable",
+    "hindi": "स्थायी",
+    "alternates": [
+      "स्थाई"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "angle",
+    "hindi": "कोण",
+    "seenCount": 3
+  },
+  {
+    "english": "parallel plate capacitor",
+    "hindi": "समान्तर प्लेट संधारित्र",
+    "alternates": [
+      "समान्तर पट्टिका संधारित्र",
+      "समानान्तर पट्टिका संधारित्र"
+    ],
+    "seenCount": 3
+  },
+  {
+    "english": "liquid",
+    "hindi": "द्रव",
+    "seenCount": 3
+  },
+  {
+    "english": "Maturation",
+    "hindi": "परिपक्वन",
+    "seenCount": 3
+  },
+  {
+    "english": "orbit",
+    "hindi": "कक्षा",
+    "seenCount": 3
+  },
+  {
+    "english": "uniform electric field",
+    "hindi": "एकसमान विद्युत-क्षेत्र",
+    "alternates": [
+      "एकसमान वैद्युत क्षेत्र"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "average velocity",
+    "hindi": "औसत वेग",
+    "seenCount": 2
+  },
+  {
+    "english": "average speed",
+    "hindi": "औसत चाल",
+    "seenCount": 2
+  },
+  {
+    "english": "stationary",
+    "hindi": "स्थिर",
+    "alternates": [
+      "स्थिर अवस्था"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "fundamental frequency",
+    "hindi": "मूल आवृत्ति",
+    "seenCount": 2
+  },
+  {
+    "english": "rms speed",
+    "hindi": "वर्ग माध्य मूल (rms) चाल",
+    "alternates": [
+      "वर्ग माध्य मूल चाल"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "efficiency",
+    "hindi": "दक्षता",
+    "seenCount": 2
+  },
+  {
+    "english": "internal resistance",
+    "hindi": "आन्तरिक प्रतिरोध",
+    "seenCount": 2
+  },
+  {
+    "english": "connected in parallel",
+    "hindi": "पार्व क्रम में समायोजित",
+    "alternates": [
+      "समान्तर क्रम में जोड़ा जाता है"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "propagating",
+    "hindi": "गमन कर रही है",
+    "alternates": [
+      "संचरित"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "oscillating magnetic field",
+    "hindi": "चुम्बकीय क्षेत्र दोलन",
+    "alternates": [
+      "चुंबकीय क्षेत्र के दोलन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "direction",
+    "hindi": "दिशा",
+    "seenCount": 2
+  },
+  {
+    "english": "initial velocity",
+    "hindi": "आरम्भिक वेग",
+    "seenCount": 2
+  },
+  {
+    "english": "de-Broglie wavelength",
+    "hindi": "दे-ब्रॉग्ली तरंगदैर्घ्य",
+    "alternates": [
+      "डी-ब्रागली तरंगदैर्ध्य"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "nuclei",
+    "hindi": "नाभिकों",
+    "alternates": [
+      "केन्द्रक"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "disintegration",
+    "hindi": "विघटित होने",
+    "alternates": [
+      "विखंडन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "total energy",
+    "hindi": "कुल ऊर्जा",
+    "seenCount": 2
+  },
+  {
+    "english": "Bohr orbit",
+    "hindi": "बोर कक्षा",
+    "alternates": [
+      "बोर कक्ष"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "threshold frequency",
+    "hindi": "देहली आवृत्ति",
+    "seenCount": 2
+  },
+  {
+    "english": "angular width",
+    "hindi": "कोणीय चौड़ाई",
+    "seenCount": 2
+  },
+  {
+    "english": "heating",
+    "hindi": "गर्म होने से",
+    "alternates": [
+      "गरम करने पर"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "combination",
+    "hindi": "संयोजन",
+    "seenCount": 2
+  },
+  {
+    "english": "tuning fork",
+    "hindi": "स्वरित्र द्विभुज",
+    "seenCount": 2
+  },
+  {
+    "english": "pendulum",
+    "hindi": "लोलक",
+    "seenCount": 2
+  },
+  {
+    "english": "time period of oscillation",
+    "hindi": "दोलन का आवर्तकाल",
+    "seenCount": 2
+  },
+  {
+    "english": "horizontally",
+    "hindi": "क्षैतिज",
+    "alternates": [
+      "क्षैतिज दिशा में"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "smooth inclined plane",
+    "hindi": "चिकने आनत तल",
+    "alternates": [
+      "चिकने नतसमतल"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "gravitational potential energy",
+    "hindi": "गुरुत्वीय स्थितिज ऊर्जा",
+    "seenCount": 2
+  },
+  {
+    "english": "cross-sectional area",
+    "hindi": "अनुप्रस्थ-काट का क्षेत्रफल",
+    "alternates": [
+      "अनुप्रस्थ काट क्षेत्रफल"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "steam",
+    "hindi": "भाप",
+    "seenCount": 2
+  },
+  {
+    "english": "internal energy",
+    "hindi": "आन्तरिक ऊर्जा",
+    "alternates": [
+      "आंतरिक ऊर्जा"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "circular ring",
+    "hindi": "वृत्ताकार छल्ला",
+    "alternates": [
+      "वृत्तीय छल्ले"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "angular speed",
+    "hindi": "कोणीय चाल",
+    "seenCount": 2
+  },
+  {
+    "english": "collision",
+    "hindi": "संघट्ट",
+    "seenCount": 2
+  },
+  {
+    "english": "normal reaction",
+    "hindi": "अभिलम्ब प्रतिक्रिया",
+    "alternates": [
+      "अभिलम्ब अभिक्रिया"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "metal ions",
+    "hindi": "धातु आयनों",
+    "seenCount": 2
+  },
+  {
+    "english": "Coordination isomerism",
+    "hindi": "उपसहसंयोजन समावयवता",
+    "seenCount": 2
+  },
+  {
+    "english": "Ionization isomerism",
+    "hindi": "आयनन समावयवता",
+    "seenCount": 2
+  },
+  {
+    "english": "Linkage isomerism",
+    "hindi": "बंधनी समावयवता",
+    "seenCount": 2
+  },
+  {
+    "english": "paramagnetism",
+    "hindi": "अनुचुम्बकत्व",
+    "alternates": [
+      "अनुचुंबकत्व"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "magnetic behaviour",
+    "hindi": "चुम्बकीय गुण",
+    "alternates": [
+      "चुंबकीय व्यवहार"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "amylopectin",
+    "hindi": "ऐमिलopeक्टिन",
+    "alternates": [
+      "एमाइलोपेक्टिन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "oxides",
+    "hindi": "ऑक्साइड",
+    "seenCount": 2
+  },
+  {
+    "english": "Wurtz reaction",
+    "hindi": "वुर्ट्ज़ अभिक्रिया",
+    "seenCount": 2
+  },
+  {
+    "english": "major products",
+    "hindi": "मुख्य उत्पाद",
+    "seenCount": 2
+  },
+  {
+    "english": "Benzoic acid",
+    "hindi": "बेन्ज़ोइक अम्ल",
+    "alternates": [
+      "बेंजोइक एसिड"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "solutions",
+    "hindi": "विलयनों",
+    "seenCount": 2
+  },
+  {
+    "english": "concentrations",
+    "hindi": "सान्द्रताओं",
+    "alternates": [
+      "सांद्रताओं"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "bond dissociation energy",
+    "hindi": "आबंध वियोजन ऊर्जा",
+    "seenCount": 2
+  },
+  {
+    "english": "initial concentration",
+    "hindi": "प्रारम्भिक सान्द्रता",
+    "alternates": [
+      "प्रारंभिक सांद्रता"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "coefficients",
+    "hindi": "गुणांक",
+    "seenCount": 2
+  },
+  {
+    "english": "High temperature",
+    "hindi": "उच्च ताप",
+    "alternates": [
+      "उच्च तापक्रम"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "metals",
+    "hindi": "धातु",
+    "alternates": [
+      "धातुएँ"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "atomic radii",
+    "hindi": "परमाण्विक त्रिज्याओं",
+    "alternates": [
+      "परमाणु त्रिज्या"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "bond order",
+    "hindi": "आबंध कोटि",
+    "alternates": [
+      "आबंध क्रम"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "orbital",
+    "hindi": "कक्षक",
+    "seenCount": 2
+  },
+  {
+    "english": "Magnesium",
+    "hindi": "मैग्नीशियम",
+    "seenCount": 2
+  },
+  {
+    "english": "ground state",
+    "hindi": "निम्नतम अवस्था",
+    "alternates": [
+      "मूल अवस्था"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "genetically modified organisms",
+    "hindi": "आनुवंशिकतः रूपांतरित जीवों",
+    "seenCount": 2
+  },
+  {
+    "english": "bioresources",
+    "hindi": "जैवसंसाधनों",
+    "alternates": [
+      "जैव संसाधनों"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "multinational companies",
+    "hindi": "बहुराष्ट्रीय कम्पनियों",
+    "alternates": [
+      "मल्टीनेशनल कंपनियों"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Biodegradation",
+    "hindi": "जैव-अपघटन",
+    "alternates": [
+      "अपघटन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Polymerase Chain Reaction (PCR)",
+    "hindi": "पॉलिमेरेज़ शृंखला अभिक्रिया (PCR)",
+    "alternates": [
+      "पॉलिमरेज श्रृंखला अभिक्रिया (पीसीआर)"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Nucleic acid",
+    "hindi": "न्यूक्लिक अम्ल",
+    "alternates": [
+      "न्यूक्लीक अम्ल"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Niche",
+    "hindi": "निकेत",
+    "alternates": [
+      "नीश"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Natality",
+    "hindi": "नेटेलिटी",
+    "alternates": [
+      "जन्म दर"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Pyramid of energy",
+    "hindi": "ऊर्जा का पिरामिड",
+    "seenCount": 2
+  },
+  {
+    "english": "stratosphere",
+    "hindi": "समतापमंडल",
+    "seenCount": 2
+  },
+  {
+    "english": "Co-dominance",
+    "hindi": "सहप्रभाविता",
+    "seenCount": 2
+  },
+  {
+    "english": "Linkage",
+    "hindi": "सहलग्नता",
+    "alternates": [
+      "बंधन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Punnett square",
+    "hindi": "पनेट वर्ग",
+    "seenCount": 2
+  },
+  {
+    "english": "Fungus",
+    "hindi": "कवक",
+    "seenCount": 2
+  },
+  {
+    "english": "Virus",
+    "hindi": "विषाणु",
+    "seenCount": 2
+  },
+  {
+    "english": "Lac operon",
+    "hindi": "लैॉक ओपेरॉन",
+    "alternates": [
+      "लैैैक-ओपेरोन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Mitotic divisions",
+    "hindi": "सूत्री विभाजन",
+    "alternates": [
+      "समसूत्री/सूत्री विभाजनों"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Parthenocarpy",
+    "hindi": "अनिषेकफलन",
+    "alternates": [
+      "अनिषेकफलन (पार्थिनोकार्पी)"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Papaya",
+    "hindi": "पपीता",
+    "seenCount": 2
+  },
+  {
+    "english": "pollen",
+    "hindi": "पराग",
+    "alternates": [
+      "परागकण"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Vascular cambium",
+    "hindi": "संवहन एधा",
+    "alternates": [
+      "संवहनी कैम्बीयम"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Sweet potato",
+    "hindi": "शकरकंद",
+    "alternates": [
+      "शकरकंदी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Cortex",
+    "hindi": "वलकुट",
+    "alternates": [
+      "वल्कुट"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Epidermis",
+    "hindi": "बाह्यत्वचा",
+    "seenCount": 2
+  },
+  {
+    "english": "heterosporous",
+    "hindi": "विषमबीजाणु",
+    "alternates": [
+      "विषमबीजाणुक"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "homosporous",
+    "hindi": "समबीजाणु",
+    "alternates": [
+      "समबीजाणुक"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Pseudopodia",
+    "hindi": "पादाभ",
+    "seenCount": 2
+  },
+  {
+    "english": "Cell wall",
+    "hindi": "कोशिका भित्ति",
+    "seenCount": 2
+  },
+  {
+    "english": "Fungi",
+    "hindi": "कवकों",
+    "seenCount": 2
+  },
+  {
+    "english": "Key",
+    "hindi": "कुंजी",
+    "alternates": [
+      "कुन्जी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "karyogamy",
+    "hindi": "केन्द्रकसंलयन",
+    "alternates": [
+      "केन्द्रक संलयन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Biflagellate zoospores",
+    "hindi": "द्विकशाभिक चलबीजाणु",
+    "alternates": [
+      "द्विकशाभी जूस्पोर (अलैंगिक चल बीजाणुओं)"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Brown algae",
+    "hindi": "भूरे शैवाल",
+    "seenCount": 2
+  },
+  {
+    "english": "Chlorella",
+    "hindi": "क्लोरेला",
+    "seenCount": 2
+  },
+  {
+    "english": "light reaction",
+    "hindi": "प्रकाश-संश्लेषण की प्रकाश अभिक्रिया",
+    "alternates": [
+      "प्रकाश अभिक्रिया"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "dividing cells",
+    "hindi": "विभाजित होती कोशिकाओं",
+    "alternates": [
+      "विभाजित हो रही काशिकायें"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Nucleic acids",
+    "hindi": "न्यूक्लिक अम्ल",
+    "alternates": [
+      "केन्द्रक अम्ल"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "lipids",
+    "hindi": "लिपिड",
+    "seenCount": 2
+  },
+  {
+    "english": "mitochondrial matrix",
+    "hindi": "सूत्रकणिका के आधात्री",
+    "alternates": [
+      "माइटोकॉन्ड्रिया के आधात्री"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Oxidative phosphorylation",
+    "hindi": "ऑक्सीकरणी फ़ॉस्फ़ोरीलीकरण",
+    "alternates": [
+      "ऑक्सीडेटिव फास्फोरिलेशन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "outer mitochondrial membrane",
+    "hindi": "सूत्रकणिका की बाह्य झिल्ली",
+    "alternates": [
+      "माइटोकॉन्ड्रिया की बाहरी झिल्ली"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Sex chromosomes",
+    "hindi": "लिंग गुणसूत्र",
+    "seenCount": 2
+  },
+  {
+    "english": "Nucleosome",
+    "hindi": "केन्द्रिकाभ",
+    "alternates": [
+      "न्यूक्लियोसोम"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Forelimbs",
+    "hindi": "अग्रपाद",
+    "seenCount": 2
+  },
+  {
+    "english": "Rheumatoid arthritis",
+    "hindi": "रूमेटी संधिशोथ",
+    "alternates": [
+      "रूमेटॉयड संधि शोध"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Amoebiasis",
+    "hindi": "अमीबिएसिस",
+    "alternates": [
+      "अमीबता"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "vertebrates",
+    "hindi": "कशेरुकों",
+    "alternates": [
+      "कशेरुकी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Analogy",
+    "hindi": "तुल्यरूपता",
+    "seenCount": 2
+  },
+  {
+    "english": "Homology",
+    "hindi": "समजातता",
+    "seenCount": 2
+  },
+  {
+    "english": "placenta",
+    "hindi": "अपरा",
+    "seenCount": 2
+  },
+  {
+    "english": "oxytocin",
+    "hindi": "ऑक्सिटोसिन",
+    "alternates": [
+      "ऑक्सीटॉसिन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "progestogens",
+    "hindi": "प्रोजेस्टोजेन",
+    "alternates": [
+      "प्रोजेस्टोजन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "glucocorticoids",
+    "hindi": "ग्लूकोकोर्टिकॉइड",
+    "alternates": [
+      "ग्लूकोकॉर्टिकॉइड"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "spermiogenesis",
+    "hindi": "शुक्राणुजनन",
+    "seenCount": 2
+  },
+  {
+    "english": "sertoli cells",
+    "hindi": "सर्टोली कोशिकाओं",
+    "alternates": [
+      "सरटोली कोशिकाएँ"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "cavity",
+    "hindi": "गुहिका",
+    "alternates": [
+      "गुहा"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Epinephrine",
+    "hindi": "एपिनेफ्रीन",
+    "seenCount": 2
+  },
+  {
+    "english": "Limbic system",
+    "hindi": "लिंबिक तंत्र",
+    "seenCount": 2
+  },
+  {
+    "english": "ligaments",
+    "hindi": "स्नायुओं",
+    "alternates": [
+      "स्नायु"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "osteoporosis",
+    "hindi": "अस्थिसुषिरता",
+    "seenCount": 2
+  },
+  {
+    "english": "Parathyroid hormone",
+    "hindi": "पैराथाइरॉइड हॉर्मोन",
+    "alternates": [
+      "पैराथाइराइड हॉर्मोन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "respiratory surface",
+    "hindi": "श्वसनी सतह",
+    "alternates": [
+      "गैस विनिमय सतह"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "pulmonary artery",
+    "hindi": "फुप्फुसीय धमनी",
+    "alternates": [
+      "फुप्फुस धमनी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "right atrium",
+    "hindi": "दाहिने अलिंद",
+    "alternates": [
+      "दायें आलिंद"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Tidal volume",
+    "hindi": "ज्वारीय आयतन",
+    "seenCount": 2
+  },
+  {
+    "english": "Inspiratory Reserve volume",
+    "hindi": "अंत:श्वसन सुरक्षित आयतन",
+    "alternates": [
+      "अंतःश्वसन सुरक्षित आयतन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Expiratory Reserve volume",
+    "hindi": "नि:श्वसन सुरक्षित आयतन",
+    "alternates": [
+      "निःश्वसन सुरक्षित आयतन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Residual volume",
+    "hindi": "अवशिष्ट आयतन",
+    "seenCount": 2
+  },
+  {
+    "english": "Glycosuria",
+    "hindi": "ग्लाइकोसूरियां",
+    "alternates": [
+      "ग्लाइकोसूरिया"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "male cockroach",
+    "hindi": "नर कॉकरोच",
+    "alternates": [
+      "नर तिलचट्टे"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "female cockroach",
+    "hindi": "मादा कॉकरोच",
+    "alternates": [
+      "मादा तिलचट्टे"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "abdominal segment",
+    "hindi": "उदर खंड",
+    "alternates": [
+      "खंड"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "crop",
+    "hindi": "क्रॉप",
+    "alternates": [
+      "अन्नपुट"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "gizzard",
+    "hindi": "गिज़ार्ड",
+    "alternates": [
+      "पेषिणी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "digestive system",
+    "hindi": "पाचन तंत्र",
+    "seenCount": 2
+  },
+  {
+    "english": "Earthworm",
+    "hindi": "केंचुआ",
+    "seenCount": 2
+  },
+  {
+    "english": "contractile vacuole",
+    "hindi": "संकुचनशील धानी",
+    "alternates": [
+      "संकुचनशील रसधानी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "locomotion",
+    "hindi": "गमन",
+    "alternates": [
+      "चलन (गमन)"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "surface charge density",
+    "hindi": "पृष्ठीय आवेश घनत्व",
+    "alternates": [
+      "पृष्ठ आवेश घनत्व"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "simple pendulum",
+    "hindi": "सरल लोलक",
+    "seenCount": 2
+  },
+  {
+    "english": "planet",
+    "hindi": "ग्रह",
+    "seenCount": 2
+  },
+  {
+    "english": "water surface",
+    "hindi": "जल के पृष्ठ",
+    "alternates": [
+      "जल की सतह"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "velocity of light",
+    "hindi": "प्रकाश की चाल",
+    "alternates": [
+      "प्रकाश का वेग"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "terminals",
+    "hindi": "टर्मिनलों",
+    "alternates": [
+      "सिरों"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "thermal conductivity",
+    "hindi": "ऊष्मा चालकता",
+    "seenCount": 2
+  },
+  {
+    "english": "logic gate",
+    "hindi": "लॉजिक गेट",
+    "alternates": [
+      "लॉजिक परिपथ"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "helium",
+    "hindi": "हीलियम",
+    "seenCount": 2
+  },
+  {
+    "english": "main scale",
+    "hindi": "मुख्य पैमाने",
+    "seenCount": 2
+  },
+  {
+    "english": "vernier callipers",
+    "hindi": "वर्नियर कैलीपर्स",
+    "alternates": [
+      "वर्नियर केलिपर्स"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "vernier scale",
+    "hindi": "वर्नियर पैमाने",
+    "seenCount": 2
+  },
+  {
+    "english": "straight line",
+    "hindi": "सरल रेखा",
+    "alternates": [
+      "ऋजु रेखा"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "constant velocity",
+    "hindi": "नियत वेग",
+    "seenCount": 2
+  },
+  {
+    "english": "work function",
+    "hindi": "कार्यफलन",
+    "alternates": [
+      "कार्य फलन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "photosensitive material",
+    "hindi": "प्रकाश सुग्राही पदार्थ",
+    "seenCount": 2
+  },
+  {
+    "english": "de Broglie wavelengths",
+    "hindi": "दे ब्राग्ली तरंगदैर्घ्यों",
+    "alternates": [
+      "दे-ब्रोग्ली तरंगदैर्घ्यों"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "horizontal force",
+    "hindi": "क्षैतिज बल",
+    "seenCount": 2
+  },
+  {
+    "english": "at rest",
+    "hindi": "विराम में",
+    "seenCount": 2
+  },
+  {
+    "english": "angle of inclination",
+    "hindi": "कोण के झुकाव",
+    "alternates": [
+      "आनति कोण"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "centre of mass",
+    "hindi": "संहति केन्द्र",
+    "seenCount": 2
+  },
+  {
+    "english": "distance travelled",
+    "hindi": "चली गयी दूरी",
+    "seenCount": 2
+  },
+  {
+    "english": "principal axis",
+    "hindi": "मुख्य अक्ष",
+    "seenCount": 2
+  },
+  {
+    "english": "phase difference",
+    "hindi": "कवान्तर",
+    "alternates": [
+      "कलान्तर"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "metre bridge",
+    "hindi": "मीटर सेतु",
+    "seenCount": 2
+  },
+  {
+    "english": "galvanometer",
+    "hindi": "गैल्वेनोमीटर",
+    "alternates": [
+      "धारामापी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "cell",
+    "hindi": "सेल",
+    "seenCount": 2
+  },
+  {
+    "english": "crystallisation",
+    "hindi": "क्रिस्टलीकरण",
+    "seenCount": 2
+  },
+  {
+    "english": "minerals",
+    "hindi": "खनिज",
+    "alternates": [
+      "खनिजों"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "isolation",
+    "hindi": "पृथक्कन",
+    "alternates": [
+      "पृथक्करण"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "neutral",
+    "hindi": "उदासीन",
+    "seenCount": 2
+  },
+  {
+    "english": "molality",
+    "hindi": "मोललता",
+    "seenCount": 2
+  },
+  {
+    "english": "water vapour",
+    "hindi": "जलवाष्प",
+    "seenCount": 2
+  },
+  {
+    "english": "constant pressure",
+    "hindi": "स्थिर दाब",
+    "seenCount": 2
+  },
+  {
+    "english": "work done",
+    "hindi": "किया गया कार्य",
+    "seenCount": 2
+  },
+  {
+    "english": "ethyne",
+    "hindi": "एथाइन",
+    "seenCount": 2
+  },
+  {
+    "english": "carbocation",
+    "hindi": "कार्बोकैटायन",
+    "alternates": [
+      "कार्बधनायन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "alkane",
+    "hindi": "एल्केन",
+    "alternates": [
+      "ऐल्केन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "red hot iron tube",
+    "hindi": "लाल तप्त आयरन नलिका",
+    "alternates": [
+      "लाल तप्त लौह नलिका"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "alkene",
+    "hindi": "एल्कीन",
+    "alternates": [
+      "ऐल्कीन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Formula",
+    "hindi": "सूत्र",
+    "seenCount": 2
+  },
+  {
+    "english": "time required",
+    "hindi": "लगने वाला समय",
+    "alternates": [
+      "आवश्यक समय"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "amine",
+    "hindi": "एमीन",
+    "alternates": [
+      "ऐमीन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Hinsberg's reagent",
+    "hindi": "हिसंबर्ग अभिकर्मक",
+    "alternates": [
+      "हिन्सबर्ग अभिकर्मक"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "calories",
+    "hindi": "कैलोरी",
+    "seenCount": 2
+  },
+  {
+    "english": "Response",
+    "hindi": "Response",
+    "alternates": [
+      "प्रतिक्रिया"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Steroid Hormone",
+    "hindi": "स्टेरॉयड हार्मोन",
+    "seenCount": 2
+  },
+  {
+    "english": "passive immunity",
+    "hindi": "निष्क्रिय प्रतिरक्षा",
+    "seenCount": 2
+  },
+  {
+    "english": "symbiotic",
+    "hindi": "सहजीवी",
+    "seenCount": 2
+  },
+  {
+    "english": "free living",
+    "hindi": "मुक्त जीवी",
+    "alternates": [
+      "मुक्तजीवी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Cholesterol",
+    "hindi": "कोलेस्टेरॉल",
+    "alternates": [
+      "कोलेस्ट्रॉल"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Arachidonic acid",
+    "hindi": "ऐरेकिडोनिक अम्ल",
+    "seenCount": 2
+  },
+  {
+    "english": "Phospholipid",
+    "hindi": "फॉस्फोलिपिड",
+    "seenCount": 2
+  },
+  {
+    "english": "cell membrane",
+    "hindi": "कोशिका झिल्ली",
+    "seenCount": 2
+  },
+  {
+    "english": "passive transport",
+    "hindi": "निष्क्रिय परिवहन",
+    "seenCount": 2
+  },
+  {
+    "english": "non-selective",
+    "hindi": "अचयनिक",
+    "alternates": [
+      "चयन रहित"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "solutes",
+    "hindi": "विलेय",
+    "alternates": [
+      "विलेयों"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Enterokinase",
+    "hindi": "ऐंट्रोकाइनेज",
+    "alternates": [
+      "ऐंटेरोकाइनेज"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Oxyntic cells",
+    "hindi": "अम्लजन कोशिकाएँ",
+    "alternates": [
+      "आक्सिन्टिक कोशिकाएं"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Trypsinogen",
+    "hindi": "ट्रिप्सिनोजन",
+    "seenCount": 2
+  },
+  {
+    "english": "carbohydrates",
+    "hindi": "कार्बोहाइड्रेट",
+    "seenCount": 2
+  },
+  {
+    "english": "Inspiration",
+    "hindi": "अंत:श्वसन",
+    "alternates": [
+      "अंतःश्वसन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "atmospheric pressure",
+    "hindi": "वायुमंडलीय दाब",
+    "alternates": [
+      "वायुमण्डलीय दाब"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Inspiratory Capacity",
+    "hindi": "अंत:श्वसन क्षमता",
+    "alternates": [
+      "अंतःश्वसन क्षमता"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Expiratory Capacity",
+    "hindi": "नि:श्वसन क्षमता",
+    "alternates": [
+      "निःश्वसन क्षमता"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Vital Capacity",
+    "hindi": "जैव क्षमता",
+    "seenCount": 2
+  },
+  {
+    "english": "nodal tissue",
+    "hindi": "नोडल उत्तक",
+    "alternates": [
+      "नोडल ऊतक"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "SA node",
+    "hindi": "SA नोड",
+    "alternates": [
+      "एसए पर्व"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "aorta",
+    "hindi": "महाधमनी",
+    "seenCount": 2
+  },
+  {
+    "english": "Resource partitioning",
+    "hindi": "संसाधन विभाजन",
+    "seenCount": 2
+  },
+  {
+    "english": "Alien species invasion",
+    "hindi": "ऐलियन स्पीशीज इनवेजन",
+    "alternates": [
+      "विदेशी जातियों का आक्रमण"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Mollusca",
+    "hindi": "मोलस्का",
+    "seenCount": 2
+  },
+  {
+    "english": "Echinodermata",
+    "hindi": "एकाइनोडर्मेटा",
+    "alternates": [
+      "इकाइनोडर्मेटा"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "true coelomates",
+    "hindi": "पूर्ण प्रगुहीय",
+    "alternates": [
+      "सत्य गुहीय"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "bilateral symmetry",
+    "hindi": "द्विपार्श्व सममिति",
+    "seenCount": 2
+  },
+  {
+    "english": "Tight junctions",
+    "hindi": "दृढ़ संधि",
+    "seenCount": 2
+  },
+  {
+    "english": "Adhering junctions",
+    "hindi": "आसंजी संधि",
+    "seenCount": 2
+  },
+  {
+    "english": "Gap junctions",
+    "hindi": "अंतराली संधि",
+    "seenCount": 2
+  },
+  {
+    "english": "resolution",
+    "hindi": "विभेदन क्षमता",
+    "alternates": [
+      "विभेदन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Lysosomes",
+    "hindi": "लयनकाय",
+    "seenCount": 2
+  },
+  {
+    "english": "protein synthesis",
+    "hindi": "प्रोटीन संश्लेषण",
+    "seenCount": 2
+  },
+  {
+    "english": "phagocytosis",
+    "hindi": "भक्षण",
+    "alternates": [
+      "भक्षण करना"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Syphilis",
+    "hindi": "सिफिलिस",
+    "seenCount": 2
+  },
+  {
+    "english": "Cleavage",
+    "hindi": "विदलन",
+    "seenCount": 2
+  },
+  {
+    "english": "menstrual cycle",
+    "hindi": "आर्तव चक्र",
+    "alternates": [
+      "ऋतुस्राव चक्र"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Turner's syndrome",
+    "hindi": "टर्नर सिंड्रोम",
+    "seenCount": 2
+  },
+  {
+    "english": "Reabsorption",
+    "hindi": "पुनरावशोषण",
+    "seenCount": 2
+  },
+  {
+    "english": "Nephridia",
+    "hindi": "वृक्कक",
+    "seenCount": 2
+  },
+  {
+    "english": "Basilar membrane",
+    "hindi": "बेसिलर झिल्ली",
+    "seenCount": 2
+  },
+  {
+    "english": "Hair cells",
+    "hindi": "रोम कोशिकाएं",
+    "alternates": [
+      "रोम कोशिकाओं"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "organ of corti",
+    "hindi": "ऑर्गन आफ कॉर्टाई",
+    "alternates": [
+      "आर्गन ऑफ कॉर्टाई"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "cochlea",
+    "hindi": "कॉक्लिया",
+    "alternates": [
+      "कोक्लिया"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Saddle joint",
+    "hindi": "सैडल संधि",
+    "seenCount": 2
+  },
+  {
+    "english": "Arthritis",
+    "hindi": "संधिशोथ",
+    "seenCount": 2
+  },
+  {
+    "english": "Adrenal gland",
+    "hindi": "अधिवृक्क ग्रंथि",
+    "seenCount": 2
+  },
+  {
+    "english": "bone",
+    "hindi": "अस्थि",
+    "seenCount": 2
+  },
+  {
+    "english": "blood",
+    "hindi": "रक्त",
+    "seenCount": 2
+  },
+  {
+    "english": "chromatids",
+    "hindi": "अर्धगुणसूत्रों",
+    "alternates": [
+      "अर्धगुणसूत्र"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "RNA",
+    "hindi": "आर.एन.ए.",
+    "alternates": [
+      "आरएनए"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "nitrate",
+    "hindi": "नाइट्रेट",
+    "seenCount": 2
+  },
+  {
+    "english": "Oxaloacetic acid",
+    "hindi": "ऑक्जेलोएसिटिक अम्ल",
+    "alternates": [
+      "आक्जेलोएसिटिक अम्ल"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Phosphoglyceric acid",
+    "hindi": "फास्फोग्लिसरिक अम्ल",
+    "seenCount": 2
+  },
+  {
+    "english": "Auxins",
+    "hindi": "ऑक्सीन",
+    "alternates": [
+      "ऑक्सिन (ऑक्सिंस)"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "DNA fragments",
+    "hindi": "डी.एन.ए. के खण्डों",
+    "seenCount": 2
+  },
+  {
+    "english": "Protease",
+    "hindi": "प्रोटिएज",
+    "seenCount": 2
+  },
+  {
+    "english": "nucleotides",
+    "hindi": "न्यूक्लियोटाइडों",
+    "alternates": [
+      "न्यूक्लियोटाइडो"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "selectable marker",
+    "hindi": "चयनयोग्य मार्कर (सूचक)",
+    "alternates": [
+      "चयनयुक्त मार्कर"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "restriction enzyme",
+    "hindi": "प्रतिबन्धन एन्जाइम",
+    "alternates": [
+      "प्रतिबंधन एन्जाइम"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Western Ghats",
+    "hindi": "पश्चिमी घाटों",
+    "alternates": [
+      "पश्चिमी घाट"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Electrostatic precipitator",
+    "hindi": "वैद्युत अवक्षेपित्र",
+    "seenCount": 2
+  },
+  {
+    "english": "Acidity",
+    "hindi": "अम्लता",
+    "seenCount": 2
+  },
+  {
+    "english": "Methanogens",
+    "hindi": "मिथेनोजन",
+    "seenCount": 2
+  },
+  {
+    "english": "zygotes",
+    "hindi": "युग्मनज",
+    "alternates": [
+      "युग्मज"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Tissue culture",
+    "hindi": "ऊतक संवर्धन",
+    "seenCount": 2
+  },
+  {
+    "english": "Biofortification",
+    "hindi": "जैवपुष्टीकरण",
+    "alternates": [
+      "बायोफोर्टिफिकेशन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Papaver somniferum",
+    "hindi": "पैपेवर सोम्नीफेरम",
+    "seenCount": 2
+  },
+  {
+    "english": "wind",
+    "hindi": "वायु",
+    "seenCount": 2
+  },
+  {
+    "english": "insects",
+    "hindi": "कीटों",
+    "alternates": [
+      "कीट"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "autogamy",
+    "hindi": "स्वयुग्मन",
+    "alternates": [
+      "स्वकयुग्मन (ऑटोगेमी)"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "geitonogamy",
+    "hindi": "सजातपुष्पी परागण",
+    "seenCount": 2
+  },
+  {
+    "english": "Dianthus",
+    "hindi": "डाइएन्थस",
+    "alternates": [
+      "डायएंथस"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Sunflower",
+    "hindi": "सूरजमुखी",
+    "seenCount": 2
+  },
+  {
+    "english": "angiosperms",
+    "hindi": "आवृतबीजियों",
+    "alternates": [
+      "एंजियोस्पर्म्स (आवृतबीजियों)"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Precursor",
+    "hindi": "पूरोगामी",
+    "alternates": [
+      "पूर्णगामी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Senescence",
+    "hindi": "जीर्णता",
+    "alternates": [
+      "जरावस्था"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "sugar",
+    "hindi": "शर्करा",
+    "seenCount": 2
+  },
+  {
+    "english": "Sickle cell anaemia",
+    "hindi": "दात्र कोशिका अरक्तता",
+    "seenCount": 2
+  },
+  {
+    "english": "Thalassemia",
+    "hindi": "थैलेसीमिया",
+    "seenCount": 2
+  },
+  {
+    "english": "radial symmetry",
+    "hindi": "अरीय सममिति",
+    "seenCount": 2
+  },
+  {
+    "english": "glycosidic bond",
+    "hindi": "ग्लाइकोसाइडिक बंध",
+    "seenCount": 2
+  },
+  {
+    "english": "peptide bond",
+    "hindi": "पेप्टाइड बंध",
+    "seenCount": 2
+  },
+  {
+    "english": "Glycerol",
+    "hindi": "ग्लिसरॉल",
+    "seenCount": 2
+  },
+  {
+    "english": "trypsin",
+    "hindi": "ट्रिप्सिन",
+    "seenCount": 2
+  },
+  {
+    "english": "male gametes",
+    "hindi": "नर युग्मकों",
+    "alternates": [
+      "नर युग्मक"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Seed",
+    "hindi": "बीज",
+    "seenCount": 2
+  },
+  {
+    "english": "interphase",
+    "hindi": "अंतरावस्था",
+    "seenCount": 2
+  },
+  {
+    "english": "Nuclear Division",
+    "hindi": "केन्द्रक विभाजन",
+    "alternates": [
+      "केन्द्रकीय विभाजन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Cuboidal epithelium",
+    "hindi": "घनाकार उपकला",
+    "seenCount": 2
+  },
+  {
+    "english": "eustachian tube",
+    "hindi": "यूस्टेकियन नलिका",
+    "alternates": [
+      "यूस्टेकीयन नलिका"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "membrane",
+    "hindi": "झिल्ली",
+    "seenCount": 2
+  },
+  {
+    "english": "Peroxisomes",
+    "hindi": "पेरोक्सीसोम",
+    "alternates": [
+      "परॉक्सीसोम"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "haemoglobin",
+    "hindi": "हीमोग्लोबिन",
+    "seenCount": 2
+  },
+  {
+    "english": "Inferior ovary",
+    "hindi": "अधोवर्ती अंडाशय",
+    "alternates": [
+      "अधोवर्ती"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Superior ovary",
+    "hindi": "ऊर्ध्ववर्ती अंडाशय",
+    "alternates": [
+      "ऊर्ध्ववर्ती"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "palindromic sequence",
+    "hindi": "पैलिन्ड्रोमिक क्रम",
+    "alternates": [
+      "पैलींड्रोमिक अनुक्रम"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Restriction Enzymes",
+    "hindi": "प्रतिबंधन एंजाइमों",
+    "alternates": [
+      "प्रतिबंधन एंजाइम"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "embryonic period",
+    "hindi": "भ्रूणीय काल",
+    "alternates": [
+      "भ्रूणीय अवस्था"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Central nervous system",
+    "hindi": "केन्द्रीय तंत्रिका तंत्र",
+    "seenCount": 2
+  },
+  {
+    "english": "dorsal",
+    "hindi": "पृष्ठीय",
+    "seenCount": 2
+  },
+  {
+    "english": "Bacillus thuringiensis",
+    "hindi": "बैसिलस थुरिंजियनिसिस",
+    "alternates": [
+      "बैसिलस थुरिंज़िएंसिस"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Agrobacterium tumefaciens",
+    "hindi": "एग्रोबैक्टीरियम ट्युमिफेसियंस",
+    "alternates": [
+      "एग्रोबैक्टीरियम ट्युमेफैसियन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Photolysis of water",
+    "hindi": "जल का प्रकाश अपघटन",
+    "alternates": [
+      "जल के प्रकाश-अपघटन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Boron",
+    "hindi": "बोरॉन",
+    "seenCount": 2
+  },
+  {
+    "english": "Manganese",
+    "hindi": "मैंगनीज",
+    "alternates": [
+      "मैंगनीज़"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "conduction",
+    "hindi": "चालन",
+    "alternates": [
+      "संवहन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Ricin",
+    "hindi": "रिसिन",
+    "seenCount": 2
+  },
+  {
+    "english": "Malonate",
+    "hindi": "मैलोनेट",
+    "alternates": [
+      "मेलोनेट"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Collagen",
+    "hindi": "कोलैजन",
+    "alternates": [
+      "कोलेजन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Meiotic division",
+    "hindi": "अर्धसूत्री विभाजन",
+    "alternates": [
+      "सूत्री विभाजन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Phloem parenchyma",
+    "hindi": "पोषवाह मृदूतक",
+    "alternates": [
+      "फ्लोएम मृदूतक (पैरेंकाइमा)"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Air Bladder",
+    "hindi": "वायु कोष",
+    "seenCount": 2
+  },
+  {
+    "english": "Transpiration",
+    "hindi": "वाष्पोत्सर्जन",
+    "seenCount": 2
+  },
+  {
+    "english": "Secondary metabolites",
+    "hindi": "द्वितीयक उपापचयज",
+    "seenCount": 2
+  },
+  {
+    "english": "photorespiration",
+    "hindi": "प्रकाशश्वसन",
+    "seenCount": 2
+  },
+  {
+    "english": "Citric Acid",
+    "hindi": "सिट्रिक अम्ल",
+    "seenCount": 2
+  },
+  {
+    "english": "algin",
+    "hindi": "एल्जिन",
+    "seenCount": 2
+  },
+  {
+    "english": "Laminarin",
+    "hindi": "लैमिनेरिन",
+    "alternates": [
+      "लैमीनेरिन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Gonorrhoea",
+    "hindi": "सुजाक",
+    "seenCount": 2
+  },
+  {
+    "english": "Terminalization",
+    "hindi": "उपान्तीभवन",
+    "alternates": [
+      "उपांतीभवन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "FSH",
+    "hindi": "FSH",
+    "alternates": [
+      "एफएसएच"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Adenosine deaminase deficiency",
+    "hindi": "एडीनोसीन डिएमीनेज की कमी",
+    "alternates": [
+      "एडिनोसिन डीएमिनेज की कमी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "RNAi",
+    "hindi": "आर.एन.ए.आई",
+    "alternates": [
+      "आरएनए अन्तरक्षेप"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Gene therapy",
+    "hindi": "जीन चिकित्सा",
+    "seenCount": 2
+  },
+  {
+    "english": "Cellular defence",
+    "hindi": "कोशिकीय सुरक्षा",
+    "alternates": [
+      "कोशिका रक्षा"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "grassland ecosystem",
+    "hindi": "घास भूमि पारितन्त्र",
+    "alternates": [
+      "घास भूमि परितन्त्र"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "pharynx",
+    "hindi": "फेरिंक्स",
+    "alternates": [
+      "ग्रसनी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "water hyacinth",
+    "hindi": "जलकुम्भी",
+    "alternates": [
+      "जल कुंभी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "ATP synthase",
+    "hindi": "ATP सिन्थेज",
+    "alternates": [
+      "ए.टी.पी. सिंथेस"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Gibberellic acid",
+    "hindi": "जिबरेलिक अम्ल",
+    "alternates": [
+      "जिब्बरेलिक अम्ल"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Atrial natriuretic factor",
+    "hindi": "एट्रियल नेट्रियूरेटिक कारक",
+    "alternates": [
+      "ऐट्रियल नेट्रियुरेटिक कारक"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "renin",
+    "hindi": "रेनिन",
+    "seenCount": 2
+  },
+  {
+    "english": "secretion",
+    "hindi": "स्रावण",
+    "alternates": [
+      "स्रवण"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Gross primary productivity",
+    "hindi": "सकल प्राथमिक उत्पादकता",
+    "alternates": [
+      "ग्रॉस प्राथमिक उत्पादकता"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Net primary productivity",
+    "hindi": "नेट प्राथमिक उत्पादकता",
+    "seenCount": 2
+  },
+  {
+    "english": "Androgens",
+    "hindi": "एंड्रोजन",
+    "seenCount": 2
+  },
+  {
+    "english": "Zona pellucida",
+    "hindi": "ज़ोना पेल्युसिडा",
+    "alternates": [
+      "जोना पेल्युसिडा"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Flippers",
+    "hindi": "पक्ष",
+    "alternates": [
+      "फ्लिपर्स"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "QRS complex",
+    "hindi": "क्यू.आर.एस. सम्मिश्र",
+    "alternates": [
+      "QRS सम्मिश्र"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Eosinophils",
+    "hindi": "इओसिनोफिल",
+    "alternates": [
+      "इओसिनोफिलों"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Immune response",
+    "hindi": "प्रतिरक्षा प्रतिक्रिया",
+    "alternates": [
+      "प्रतिरक्षी अनुक्रिया"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "thymine",
+    "hindi": "थायमीन",
+    "seenCount": 2
+  },
+  {
+    "english": "copy number",
+    "hindi": "प्रति की संख्या",
+    "alternates": [
+      "कॉपी संख्या"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "linked DNA",
+    "hindi": "सहलग्नी डी.एन.ए.",
+    "alternates": [
+      "बंधित डीएनए"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "basic amino acid",
+    "hindi": "क्षारीय एमीनो अम्ल",
+    "alternates": [
+      "क्षारीय ऐमीनो अम्ल"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Tyrosine",
+    "hindi": "टायरोसीन",
+    "alternates": [
+      "टाइरोसीन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Addison's disease",
+    "hindi": "एडीसन रोग",
+    "seenCount": 2
+  },
+  {
+    "english": "Glucagon",
+    "hindi": "ग्लूकागॉन",
+    "seenCount": 2
+  },
+  {
+    "english": "hyperglycemia",
+    "hindi": "हाइपरग्लाइसीमिया",
+    "alternates": [
+      "अतिग्लूकोज रकतता"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Scapula",
+    "hindi": "स्कैपुला",
+    "seenCount": 2
+  },
+  {
+    "english": "Dissolution",
+    "hindi": "विघटन",
+    "alternates": [
+      "वियोजन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "synaptonemal complex",
+    "hindi": "सिनेप्टोनीमल सम्मिश्र",
+    "alternates": [
+      "सिनेप्टोनीमल कॉम्प्लेक्स"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "acoelomate",
+    "hindi": "अगुहीय",
+    "seenCount": 2
+  },
+  {
+    "english": "Annelida",
+    "hindi": "ऐनेलिडा",
+    "seenCount": 2
+  },
+  {
+    "english": "structure",
+    "hindi": "संरचना",
+    "seenCount": 2
+  },
+  {
+    "english": "atomic radius",
+    "hindi": "परमाणु त्रिज्या",
+    "seenCount": 2
+  },
+  {
+    "english": "water",
+    "hindi": "जल",
+    "seenCount": 2
+  },
+  {
+    "english": "electrolysis",
+    "hindi": "वैद्युत अपघटन",
+    "alternates": [
+      "विद्युत अपघटन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "anode",
+    "hindi": "ऐनोड",
+    "seenCount": 2
+  },
+  {
+    "english": "acetone",
+    "hindi": "ऐसीटोन",
+    "seenCount": 2
+  },
+  {
+    "english": "sulphurous acid",
+    "hindi": "सल्फीयूरस अम्ल",
+    "alternates": [
+      "सल्फ्यूरस अम्ल"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "sulphuric acid",
+    "hindi": "सल्फ्यूरिक अम्ल",
+    "seenCount": 2
+  },
+  {
+    "english": "peroxodisulphuric acid",
+    "hindi": "परऑक्सोडाइसल्फ्यूरिक अम्ल",
+    "alternates": [
+      "परॉक्सोडाइ-सल्फ्यूरिक अम्ल"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "pyrosulphuric acid",
+    "hindi": "पाइरोसल्फ्यूरिक अम्ल",
+    "seenCount": 2
+  },
+  {
+    "english": "molten",
+    "hindi": "गलित",
+    "seenCount": 2
+  },
+  {
+    "english": "dilute",
+    "hindi": "तनु",
+    "alternates": [
+      "तनु करने"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "atomic masses",
+    "hindi": "परमाणु द्रव्यमानों",
+    "alternates": [
+      "आणविक द्रव्यमान"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Dehydrohalogenation reaction",
+    "hindi": "विहाइड्रोहैलोजनीकरण अभिक्रिया",
+    "alternates": [
+      "विहाइड्रोहैलोजेनीकरण अभिक्रिया"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Ethanol",
+    "hindi": "एथेनॉल",
+    "seenCount": 2
+  },
+  {
+    "english": "ligands",
+    "hindi": "संलग्नियों",
+    "alternates": [
+      "लिगन्ड"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Alanine",
+    "hindi": "ऐलानिन",
+    "alternates": [
+      "ऐलानीन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Potassium",
+    "hindi": "पोटैशियम",
+    "seenCount": 2
+  },
+  {
+    "english": "protons",
+    "hindi": "प्रोटॉनों",
+    "seenCount": 2
+  },
+  {
+    "english": "respectively",
+    "hindi": "क्रमशः",
+    "seenCount": 2
+  },
+  {
+    "english": "oxidation number",
+    "hindi": "ऑक्सीकरण संख्या",
+    "seenCount": 2
+  },
+  {
+    "english": "reducing agent",
+    "hindi": "अपचायक",
+    "seenCount": 2
+  },
+  {
+    "english": "transition metals",
+    "hindi": "संक्रमण धातुएँ",
+    "seenCount": 2
+  },
+  {
+    "english": "2,3-Dimethylbutane",
+    "hindi": "2,3-डाइमेथिलब्यूटेन",
+    "seenCount": 2
+  },
+  {
+    "english": "Bohr model",
+    "hindi": "बोर मॉडल",
+    "seenCount": 2
+  },
+  {
+    "english": "intensity",
+    "hindi": "तीव्रता",
+    "seenCount": 2
+  },
+  {
+    "english": "thermally insulated",
+    "hindi": "ऊष्मीयरोधित",
+    "alternates": [
+      "तापरुद्ध"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "radius of the earth",
+    "hindi": "पृथ्वी की त्रिज्या",
+    "alternates": [
+      "पृथ्वी के कारण"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "gravitational force",
+    "hindi": "गुरुत्वाकर्षण बल",
+    "seenCount": 2
+  },
+  {
+    "english": "divisions",
+    "hindi": "भाग",
+    "alternates": [
+      "खाने"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "tension",
+    "hindi": "तनाव",
+    "seenCount": 2
+  },
+  {
+    "english": "origin",
+    "hindi": "मूल बिंदु",
+    "alternates": [
+      "मूल-बिन्दु"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "electric potential",
+    "hindi": "विद्युत विभव",
+    "seenCount": 2
+  },
+  {
+    "english": "reverse bias",
+    "hindi": "पश्चदिशिक बायस",
+    "alternates": [
+      "उत्क्रम अभिनति"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "forward biased",
+    "hindi": "अग्रदिशिक बायसित",
+    "seenCount": 2
+  },
+  {
+    "english": "photoelectric current",
+    "hindi": "प्रकाश विद्युत धारा",
+    "alternates": [
+      "प्रकाश-वैद्युत धारा"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "neutron",
+    "hindi": "न्यूट्रॉन",
+    "seenCount": 2
+  },
+  {
+    "english": "free end",
+    "hindi": "मुक्त सिरे",
+    "seenCount": 2
+  },
+  {
+    "english": "Young's modulus",
+    "hindi": "यंग-गुणनांक",
+    "alternates": [
+      "प्रत्यास्थता गुणांक"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "variation",
+    "hindi": "विचरण",
+    "alternates": [
+      "परिवर्तन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Gold",
+    "hindi": "सुनहरा",
+    "alternates": [
+      "स्वर्ण"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "susceptibility",
+    "hindi": "धारणशीलता",
+    "alternates": [
+      "चुम्बकीय प्रवृत्ति"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "solenoid",
+    "hindi": "परिनालिका",
+    "seenCount": 2
+  },
+  {
+    "english": "turns",
+    "hindi": "फेरे",
+    "alternates": [
+      "फेरों"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "drift velocity",
+    "hindi": "अपवाह वेग",
+    "alternates": [
+      "अनुगमन वेग"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "radii",
+    "hindi": "त्रिज्याओं",
+    "seenCount": 2
+  },
+  {
+    "english": "atomic number",
+    "hindi": "परमाणु संख्या",
+    "alternates": [
+      "परमाणु क्रमांक"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "cross-section",
+    "hindi": "अनुप्रस्थ काट",
+    "seenCount": 2
+  },
+  {
+    "english": "in series",
+    "hindi": "श्रेणी क्रम",
+    "alternates": [
+      "श्रेणी-क्रम में"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "equivalent capacitance",
+    "hindi": "तुल्य धारिता",
+    "seenCount": 2
+  },
+  {
+    "english": "escape velocity",
+    "hindi": "पलायन वेग",
+    "seenCount": 2
+  },
+  {
+    "english": "convex lens",
+    "hindi": "उत्तल लेन्स",
+    "seenCount": 2
+  },
+  {
+    "english": "wire",
+    "hindi": "तार",
+    "seenCount": 2
+  },
+  {
+    "english": "arc",
+    "hindi": "चाप (आर्क)",
+    "alternates": [
+      "चाप"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "axis",
+    "hindi": "अक्ष",
+    "seenCount": 2
+  },
+  {
+    "english": "series LCR circuit",
+    "hindi": "श्रेणी LCR परिपथ",
+    "alternates": [
+      "श्रेणीबद्ध LCR परिपथ"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "conducting wire",
+    "hindi": "चालकीय तार",
+    "alternates": [
+      "चालक तार"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "step down transformer",
+    "hindi": "अपचायी ट्रान्सफार्मर",
+    "alternates": [
+      "अपचयी ट्रांसफॉर्मर"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "charged",
+    "hindi": "आवेशित",
+    "seenCount": 2
+  },
+  {
+    "english": "projected",
+    "hindi": "प्रक्षेपित",
+    "seenCount": 2
+  },
+  {
+    "english": "uniform rod",
+    "hindi": "समान छड़",
+    "alternates": [
+      "एकसमान छड़"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "equilibrium",
+    "hindi": "संतुलन अवस्था",
+    "alternates": [
+      "साम्य"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "circle",
+    "hindi": "वृत्त",
+    "seenCount": 2
+  },
+  {
+    "english": "terminal",
+    "hindi": "सिरे",
+    "alternates": [
+      "टर्मिनल"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "resistors",
+    "hindi": "प्रतिरोधों",
+    "seenCount": 2
+  },
+  {
+    "english": "metamerism",
+    "hindi": "मध्यावयवता",
+    "alternates": [
+      "विखंडावस्था"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "beryllium chloride",
+    "hindi": "बेरिलियम क्लोराइड",
+    "seenCount": 2
+  },
+  {
+    "english": "solid state",
+    "hindi": "ठोस अवस्था",
+    "seenCount": 2
+  },
+  {
+    "english": "Linear",
+    "hindi": "रेखीय",
+    "alternates": [
+      "रैखिक"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "lanthanoid contraction",
+    "hindi": "लैन्थेनॉयड आकुंचन",
+    "seenCount": 2
+  },
+  {
+    "english": "chemical properties",
+    "hindi": "रासायनिक गुणधर्म",
+    "seenCount": 2
+  },
+  {
+    "english": "electromagnetic radiation",
+    "hindi": "विद्युत चुम्बकीय विकिरण",
+    "alternates": [
+      "वैद्युतचुंबकीय विकिरण"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "empirical formula",
+    "hindi": "मूलानुपाती सूत्र",
+    "seenCount": 2
+  },
+  {
+    "english": "ethane",
+    "hindi": "ऐथेन",
+    "alternates": [
+      "एथेन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Boyle's law",
+    "hindi": "बॉयल के नियम",
+    "seenCount": 2
+  },
+  {
+    "english": "temperatures",
+    "hindi": "तापों",
+    "seenCount": 2
+  },
+  {
+    "english": "graphical representation",
+    "hindi": "ग्राफीय निरूपण",
+    "alternates": [
+      "ग्राफ़ीय निरूपण"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "bond enthalpy",
+    "hindi": "बंध एन्थैल्पी",
+    "alternates": [
+      "आबंध एन्थैल्पी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Gamma",
+    "hindi": "गामा",
+    "seenCount": 2
+  },
+  {
+    "english": "Alpha",
+    "hindi": "अल्फा",
+    "seenCount": 2
+  },
+  {
+    "english": "blast furnace",
+    "hindi": "वात्या भट्टी",
+    "seenCount": 2
+  },
+  {
+    "english": "Reaction Progress",
+    "hindi": "Reaction Progress",
+    "alternates": [
+      "अभिक्रिया की प्रगति"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Distillation",
+    "hindi": "आसवन",
+    "seenCount": 2
+  },
+  {
+    "english": "Chromatography",
+    "hindi": "वर्णलेखिकी",
+    "seenCount": 2
+  },
+  {
+    "english": "deficiency disease",
+    "hindi": "हीनता जनित रोग",
+    "seenCount": 2
+  },
+  {
+    "english": "dispersion forces",
+    "hindi": "परिक्षेपण बल",
+    "alternates": [
+      "प्रकीर्णन बल"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Huckel's Rule",
+    "hindi": "हकल नियम",
+    "seenCount": 2
+  },
+  {
+    "english": "osmotic pressure",
+    "hindi": "परासरण दाबों",
+    "alternates": [
+      "परासरण दाब"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Anhyd.",
+    "hindi": "निर्जल",
+    "seenCount": 2
+  },
+  {
+    "english": "vapour pressure",
+    "hindi": "वाष्प दाब",
+    "seenCount": 2
+  },
+  {
+    "english": "reagent",
+    "hindi": "अभिकर्मक",
+    "seenCount": 2
+  },
+  {
+    "english": "molar conductivity",
+    "hindi": "मोलर चालकता",
+    "seenCount": 2
+  },
+  {
+    "english": "slope",
+    "hindi": "ढाल",
+    "seenCount": 2
+  },
+  {
+    "english": "recombinant DNA technology",
+    "hindi": "पुनर्योजन डी.एन.ए. प्रौद्योगिकी",
+    "alternates": [
+      "पुनर्योगज डीएनए प्रौद्योगिकी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Polysaccharides",
+    "hindi": "पॉलीसैकेराइड",
+    "alternates": [
+      "पोलीसैकेराइड्स"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Molecular diagnosis",
+    "hindi": "आणविक निदान",
+    "seenCount": 2
+  },
+  {
+    "english": "Zeatin",
+    "hindi": "जिएटिन",
+    "seenCount": 2
+  },
+  {
+    "english": "Kinetin",
+    "hindi": "काइनेटिन",
+    "seenCount": 2
+  },
+  {
+    "english": "algae",
+    "hindi": "शैवाल",
+    "seenCount": 2
+  },
+  {
+    "english": "codeine",
+    "hindi": "कोडीन",
+    "seenCount": 2
+  },
+  {
+    "english": "Gemmae",
+    "hindi": "जेमी",
+    "alternates": [
+      "जेमा (मुकुल)"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Pteridophytes",
+    "hindi": "टेरिडोफाइट",
+    "seenCount": 2
+  },
+  {
+    "english": "Mutation",
+    "hindi": "उत्परिवर्तन",
+    "seenCount": 2
+  },
+  {
+    "english": "Genetic drift",
+    "hindi": "आनुवंशिक विचलन",
+    "seenCount": 2
+  },
+  {
+    "english": "Genetic recombination",
+    "hindi": "आनुवंशिक पुनर्योजन",
+    "alternates": [
+      "आनुवंशिक पुनर्योग"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "nutrients",
+    "hindi": "पोषकों",
+    "seenCount": 2
+  },
+  {
+    "english": "Lenticels",
+    "hindi": "वातरंध्र",
+    "alternates": [
+      "वातरन्ध्र"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Exchange of gases",
+    "hindi": "गैसों का आदान-प्रदान",
+    "alternates": [
+      "गैसों का आदान प्रदान"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "gel",
+    "hindi": "जेल",
+    "seenCount": 2
+  },
+  {
+    "english": "Totipotency",
+    "hindi": "पूर्णशक्तता",
+    "alternates": [
+      "पूर्णशक्तता (टोटीपोटेन्सी)"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Micropropagation",
+    "hindi": "सूक्ष्मप्रवर्धन",
+    "alternates": [
+      "सूक्ष्मप्रवर्धन (माइक्रोप्रोपेगेशन)"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Predation",
+    "hindi": "भक्षण",
+    "alternates": [
+      "परभक्षण (प्रीडेशन)"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Cohesion",
+    "hindi": "समंजन",
+    "alternates": [
+      "संसंजन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Adhesion",
+    "hindi": "आसंजन",
+    "seenCount": 2
+  },
+  {
+    "english": "Guttation",
+    "hindi": "बिन्दु स्राव",
+    "seenCount": 2
+  },
+  {
+    "english": "Interfascicular cambium",
+    "hindi": "अंतरापूलीय कैंबियम",
+    "alternates": [
+      "अंतरापूलीय कैम्बियम"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "bark",
+    "hindi": "छाल",
+    "seenCount": 2
+  },
+  {
+    "english": "transcription unit",
+    "hindi": "अनुलेखन इकाई",
+    "alternates": [
+      "अनुलेखन (ट्रांसक्रिप्शन) इकाई"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "hnRNA",
+    "hindi": "hnRNA",
+    "seenCount": 2
+  },
+  {
+    "english": "Rho factor",
+    "hindi": "Rho कारक",
+    "alternates": [
+      "रो कारक"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Quiescent stage",
+    "hindi": "शांत अवस्था",
+    "seenCount": 2
+  },
+  {
+    "english": "Inactive phase",
+    "hindi": "निष्क्रिय अवस्था",
+    "alternates": [
+      "अक्रिय अवस्था"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "proton gradient",
+    "hindi": "प्रोटॉन प्रवणता",
+    "alternates": [
+      "प्रोटोन प्रवणता"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "host cell",
+    "hindi": "पोषी कोशिका",
+    "alternates": [
+      "परपोषी कोशिका"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Echinoderms",
+    "hindi": "एकआइनोडर्म",
+    "alternates": [
+      "इकाइनोडर्म"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "triploblastic",
+    "hindi": "त्रिकोरक",
+    "alternates": [
+      "त्रिकोरिक"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "digestion",
+    "hindi": "पाचन",
+    "seenCount": 2
+  },
+  {
+    "english": "Water vascular system",
+    "hindi": "जल संवहन",
+    "alternates": [
+      "जल संवहन-तंत्र"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "duplication",
+    "hindi": "द्विगुणित",
+    "alternates": [
+      "द्विगुण"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Vaults",
+    "hindi": "वॉल्ट",
+    "alternates": [
+      "वाल्ट"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Cervix",
+    "hindi": "गर्भाशय ग्रीवा",
+    "alternates": [
+      "सर्विक्स"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Vas deferens",
+    "hindi": "शुक्रवाहक",
+    "alternates": [
+      "शुक्रवाहका"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Vasectomy",
+    "hindi": "शुक्रवाहक उच्छेदन",
+    "seenCount": 2
+  },
+  {
+    "english": "fallopian tube",
+    "hindi": "डिम्ब्वाहिनी नलिका",
+    "alternates": [
+      "फेलोपियन नली"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Muscular dystrophy",
+    "hindi": "पेशीय दुष्पोषण",
+    "seenCount": 2
+  },
+  {
+    "english": "endomembrane system",
+    "hindi": "अंतःझिल्लिका तंत्र",
+    "alternates": [
+      "अंतःझिल्लीका तंत्र"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Hormone releasing IUD",
+    "hindi": "हार्मोन मोचक आई यू डी",
+    "alternates": [
+      "हार्मोन मोचक आईयूडी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Elongation",
+    "hindi": "दीर्घीकरण",
+    "alternates": [
+      "लम्बाई में वृद्धि"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "DNA dependent DNA polymerase",
+    "hindi": "डी एन ए पर निर्भर डी एन ए पॉलीमरेज",
+    "alternates": [
+      "डीएनए (DNA) निर्भर डीएनए पोलीमरेस"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "terminalisation of chiasmata",
+    "hindi": "काइऐज्मेटा का उपांतीभवन",
+    "alternates": [
+      "काएज्मेटा का उपांतीभवन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Dobson units",
+    "hindi": "डॉबसन इकाई",
+    "alternates": [
+      "डॉबसन युनिट"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Sphincter of oddi",
+    "hindi": "ओडी अवरोधिनी",
+    "alternates": [
+      "ओडी अवरोधनी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "antigens",
+    "hindi": "प्रतिजन",
+    "alternates": [
+      "प्रतिजनों"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "gastric caeca",
+    "hindi": "जठरीय अंधनाल",
+    "alternates": [
+      "जठर अंधनाल"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "midgut",
+    "hindi": "मध्यांत्र",
+    "seenCount": 2
+  },
+  {
+    "english": "mammals",
+    "hindi": "स्तनधारियों",
+    "alternates": [
+      "स्तनधारी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "early diagnosis",
+    "hindi": "आरंभिक निदान",
+    "alternates": [
+      "प्रारंभिक निदान"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "phenylalanine",
+    "hindi": "फेनिल-ऐलानिन",
+    "alternates": [
+      "फेनाइलएलानीन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Cartilaginous joints",
+    "hindi": "उपास्थि युक्त जोड़",
+    "alternates": [
+      "उपास्थि युक्त संधियाँ"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Fibrous joints",
+    "hindi": "रेशीय जोड़",
+    "alternates": [
+      "रेशीय संधियाँ"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Vertebral column",
+    "hindi": "कशेरुक दंड",
+    "alternates": [
+      "कशेरुकदंड"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Arginine",
+    "hindi": "आर्जिनिन",
+    "alternates": [
+      "आरजीनीन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "positive charge",
+    "hindi": "धनात्मक आवेश",
+    "seenCount": 2
+  },
+  {
+    "english": "tissue",
+    "hindi": "ऊतक",
+    "alternates": [
+      "ऊतकों"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "ions",
+    "hindi": "आयनों",
+    "seenCount": 2
+  },
+  {
+    "english": "source",
+    "hindi": "स्रोत",
+    "seenCount": 2
+  },
+  {
+    "english": "full wave rectifier circuit",
+    "hindi": "पूर्णतरंग दिष्टकारी परिपथ",
+    "alternates": [
+      "पूर्ण तरंग दिष्टकारी परिपथ"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "surface",
+    "hindi": "पृष्ठ",
+    "seenCount": 2
+  },
+  {
+    "english": "charges",
+    "hindi": "आवेश",
+    "alternates": [
+      "आवेशों"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "equivalent focal length",
+    "hindi": "तुल्य फोकस दूरी",
+    "seenCount": 2
+  },
+  {
+    "english": "Assertion",
+    "hindi": "अभिकथन",
+    "alternates": [
+      "निश्चयात्मक कथन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Reason",
+    "hindi": "कारण",
+    "seenCount": 2
+  },
+  {
+    "english": "Dalton's atomic theory",
+    "hindi": "डॉल्टन के परमाणु सिद्धांत",
+    "alternates": [
+      "डॉल्टन का परमाणु सिद्धांत"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "nucleoside",
+    "hindi": "न्यूक्लिओसाइड",
+    "seenCount": 2
+  },
+  {
+    "english": "nucleotide",
+    "hindi": "न्यूक्लिओटाइड",
+    "seenCount": 2
+  },
+  {
+    "english": "polymerization",
+    "hindi": "बहुलकन",
+    "alternates": [
+      "बहुलकीकरण"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Intermolecular forces",
+    "hindi": "अंतराआण्विक बल",
+    "alternates": [
+      "अंतराअणुक बल"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Homoleptic complex",
+    "hindi": "होमोलेप्टिक संकुल",
+    "seenCount": 2
+  },
+  {
+    "english": "sodium hydroxide",
+    "hindi": "सोडियम हाइड्रॉक्साइड",
+    "seenCount": 2
+  },
+  {
+    "english": "products",
+    "hindi": "उत्पाद",
+    "seenCount": 2
+  },
+  {
+    "english": "eutrophication",
+    "hindi": "सुपोषण",
+    "seenCount": 2
+  },
+  {
+    "english": "The Evil Quartet",
+    "hindi": "एविल क्वार्टेट (अनिष्ट चतुष्क)",
+    "alternates": [
+      "द इविल क्वार्टेट"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Habitat loss and fragmentation",
+    "hindi": "आवासायी क्षति और विखंडन",
+    "alternates": [
+      "पर्यावास हानि और खंडीभवन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "M phase",
+    "hindi": "एम अवस्था",
+    "alternates": [
+      "M प्रावस्था"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Calvin cycle",
+    "hindi": "केल्विन चक्र",
+    "seenCount": 2
+  },
+  {
+    "english": "molybdenum",
+    "hindi": "मॉलिब्डेनम",
+    "alternates": [
+      "मोलिब्डेनम"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "diploid",
+    "hindi": "द्विगुणित",
+    "seenCount": 2
+  },
+  {
+    "english": "Polar nuclei",
+    "hindi": "ध्रुवीय केन्द्रक",
+    "alternates": [
+      "ध्रुवीय केंद्रक"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "mesophyll cells",
+    "hindi": "पर्ण मध्योतक कोशिकाओं",
+    "alternates": [
+      "पर्णमध्योतक कोशिकाएं"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "callus",
+    "hindi": "कैलस",
+    "seenCount": 2
+  },
+  {
+    "english": "Development",
+    "hindi": "परिवर्धन",
+    "alternates": [
+      "विकास"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Differentiation",
+    "hindi": "विभेदन",
+    "seenCount": 2
+  },
+  {
+    "english": "Competitive Exclusion Principle",
+    "hindi": "स्पर्धी अपवर्जन नियम",
+    "alternates": [
+      "स्पर्धी अपवर्जन सिद्धांत"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "resources",
+    "hindi": "स्रोत",
+    "alternates": [
+      "संसाधन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Recombinant DNA",
+    "hindi": "पुनर्योगज डी.एन.ए.",
+    "alternates": [
+      "पुनर्योगज डीएनए"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "catalase",
+    "hindi": "कैटेलेज",
+    "alternates": [
+      "कैटालेस"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "archegonia",
+    "hindi": "स्त्रीधानी",
+    "seenCount": 2
+  },
+  {
+    "english": "Amylase",
+    "hindi": "एमाइलेज",
+    "seenCount": 2
+  },
+  {
+    "english": "Lipase",
+    "hindi": "लाइपेज",
+    "seenCount": 2
+  },
+  {
+    "english": "menopause",
+    "hindi": "रजोनिवृत्ति",
+    "seenCount": 2
+  },
+  {
+    "english": "menstruation",
+    "hindi": "ऋतुस्राव",
+    "alternates": [
+      "रजोधर्म"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "menarche",
+    "hindi": "रजोदर्शन",
+    "seenCount": 2
+  },
+  {
+    "english": "Cortical nephrons",
+    "hindi": "वल्कुटीय वृक्काणु",
+    "seenCount": 2
+  },
+  {
+    "english": "medulla",
+    "hindi": "मध्यांश",
+    "alternates": [
+      "मेड्यूला"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "loop of Henle",
+    "hindi": "हेनले पाश",
+    "seenCount": 2
+  },
+  {
+    "english": "Chloroplasts",
+    "hindi": "क्लोरोप्लास्ट",
+    "seenCount": 2
+  },
+  {
+    "english": "Klinefelter's syndrome",
+    "hindi": "क्लाइनफेल्टर सिंड्रोम",
+    "seenCount": 2
+  },
+  {
+    "english": "Down's syndrome",
+    "hindi": "डाउन सिंड्रोम",
+    "seenCount": 2
+  },
+  {
+    "english": "Cells",
+    "hindi": "कोशिकाएं",
+    "alternates": [
+      "कोशिकाओं"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Endometrium",
+    "hindi": "गर्भाशय अंतःस्तर",
+    "alternates": [
+      "गर्भाशय के अन्तःस्तर"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Urecose gland",
+    "hindi": "यूरीकोज ग्रंथि",
+    "alternates": [
+      "यूरेकोस ग्रंथि"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Permease",
+    "hindi": "परमीएज",
+    "alternates": [
+      "परमिएस"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Marijuana",
+    "hindi": "मैरिजुआना",
+    "seenCount": 2
+  },
+  {
+    "english": "Coitus interruptus",
+    "hindi": "बाह्य स्खलन",
+    "alternates": [
+      "कोइटस इन्ट्रप्टस"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "excretion",
+    "hindi": "उत्सर्जन",
+    "alternates": [
+      "मलोत्सर्जन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "chordates",
+    "hindi": "कॉर्डेटों",
+    "alternates": [
+      "रज्जुकी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "pseudocoelomate",
+    "hindi": "कूट गुहीय",
+    "alternates": [
+      "कूटगुहिक"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Logistic growth",
+    "hindi": "संभार-तंत्र वृद्धि",
+    "alternates": [
+      "वृद्धिघात वृद्धि (लॉजिस्टिक ग्रोथ)"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Brain stem",
+    "hindi": "मस्तिष्क स्तंभ",
+    "seenCount": 2
+  },
+  {
+    "english": "body fluid",
+    "hindi": "शारीरिक द्रव",
+    "alternates": [
+      "शारीरिक तरल"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "thyroid hormone",
+    "hindi": "थाइरॉयड हार्मोन",
+    "alternates": [
+      "थाइरॉइड हार्मोन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "immune system",
+    "hindi": "प्रतिरक्षा तंत्र",
+    "alternates": [
+      "प्रतिरक्षी तंत्र"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "SI units",
+    "hindi": "SI मात्रक",
+    "alternates": [
+      "SI मात्रक में"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Non-magnetic",
+    "hindi": "अचुम्बकीय",
+    "alternates": [
+      "अचुम्बक"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "uniform magnetic field",
+    "hindi": "एकसमान चुम्बकीय क्षेत्र",
+    "seenCount": 2
+  },
+  {
+    "english": "photon",
+    "hindi": "फोटान",
+    "alternates": [
+      "फोटॉन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "transitions",
+    "hindi": "संक्रमणों",
+    "alternates": [
+      "संक्रमण"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "reverse biased",
+    "hindi": "उत्क्रम अभिनत",
+    "alternates": [
+      "पश्चदिशिक बायसित"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Brewster's angle",
+    "hindi": "ब्रूस्टर कोण",
+    "alternates": [
+      "बूस्टर कोण"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "reflected light",
+    "hindi": "परावर्तित प्रकाश",
+    "seenCount": 2
+  },
+  {
+    "english": "pressures",
+    "hindi": "दाबों",
+    "seenCount": 2
+  },
+  {
+    "english": "voltage",
+    "hindi": "वोल्टेज",
+    "seenCount": 2
+  },
+  {
+    "english": "reagents",
+    "hindi": "अभिकर्मकों",
+    "alternates": [
+      "अभिकर्मक"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Conversion",
+    "hindi": "रूपांतरण",
+    "seenCount": 2
+  },
+  {
+    "english": "electronegativity",
+    "hindi": "विद्युत ऋणात्मकता",
+    "alternates": [
+      "विद्युत्-ऋणात्मकताओं"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "molecular formula",
+    "hindi": "अणु सूत्र",
+    "alternates": [
+      "अणुसूत्र"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Streptokinase",
+    "hindi": "स्ट्रेप्टोकाइनेस",
+    "alternates": [
+      "स्ट्रैप्टोकाइनेज"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Auxin",
+    "hindi": "ऑक्सिन",
+    "seenCount": 2
+  },
+  {
+    "english": "apical dominance",
+    "hindi": "शीर्ष प्रभाविता",
+    "alternates": [
+      "शिखाग्र प्रधानता"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "dominant",
+    "hindi": "प्रभावी",
+    "seenCount": 2
+  },
+  {
+    "english": "Promotor",
+    "hindi": "प्रमोटर",
+    "alternates": [
+      "उन्नायक"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Golgi apparatus",
+    "hindi": "गॉल्जी उपकरण",
+    "alternates": [
+      "गाँल्जी उपकरण"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "nectar",
+    "hindi": "मकरंद",
+    "seenCount": 2
+  },
+  {
+    "english": "pollinated",
+    "hindi": "परागित",
+    "seenCount": 2
+  },
+  {
+    "english": "Somatic hybridization",
+    "hindi": "कायिक संकरण",
+    "seenCount": 2
+  },
+  {
+    "english": "Allele",
+    "hindi": "एलील",
+    "alternates": [
+      "युग्मविकल्पी"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Asexual reproduction",
+    "hindi": "अलैंगिक जनन",
+    "seenCount": 2
+  },
+  {
+    "english": "Sexual reproduction",
+    "hindi": "लैंगिक जनन",
+    "seenCount": 2
+  },
+  {
+    "english": "carotenoids",
+    "hindi": "कैरोटिनाॅइड",
+    "alternates": [
+      "कैरोटिनॉइड्स"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Net Primary Productivity (NPP)",
+    "hindi": "नेट प्राथमिक उत्पादन (NPP)",
+    "alternates": [
+      "नेट प्राथमिक उत्पादकता (एनपीपी)"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Cortisol",
+    "hindi": "कोर्टीसोल",
+    "alternates": [
+      "कोर्टिसोल"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Pons",
+    "hindi": "पोंस",
+    "seenCount": 2
+  },
+  {
+    "english": "interstitial cells",
+    "hindi": "अंतराली कोशिकाएँ",
+    "seenCount": 2
+  },
+  {
+    "english": "Smooth",
+    "hindi": "चिकनी",
+    "alternates": [
+      "चिकना"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Intestine",
+    "hindi": "आंत्र",
+    "seenCount": 2
+  },
+  {
+    "english": "bio-reactor",
+    "hindi": "बायोरिएक्टर",
+    "alternates": [
+      "बायो-रिएक्टर"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "nephron",
+    "hindi": "वृक्काणु",
+    "alternates": [
+      "वृक्काणु (नेफ्रोन)"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "permeable",
+    "hindi": "पारगम्य",
+    "seenCount": 2
+  },
+  {
+    "english": "thymus",
+    "hindi": "थाइमस",
+    "seenCount": 2
+  },
+  {
+    "english": "moles",
+    "hindi": "moles",
+    "alternates": [
+      "मोल"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "magnification",
+    "hindi": "आवर्धन",
+    "seenCount": 2
+  },
+  {
+    "english": "stereoisomers",
+    "hindi": "त्रिविमीय",
+    "alternates": [
+      "त्रिविम समावयवों"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "bond length",
+    "hindi": "आबंध लंबाई",
+    "seenCount": 2
+  },
+  {
+    "english": "recombinant colonies",
+    "hindi": "पुनर्योगजी कॉलोनियों (निवहों)",
+    "alternates": [
+      "पुनर्योगज निवहों (कॉलोनीज)"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Prosthetic group",
+    "hindi": "प्रोस्थेटिक समूह",
+    "seenCount": 2
+  },
+  {
+    "english": "bryophytes",
+    "hindi": "ब्रायोफाइट",
+    "seenCount": 2
+  },
+  {
+    "english": "Luteinizing Hormone (LH)",
+    "hindi": "पीतपिंडकर (ल्यूटिनाइजिंग हार्मोन)",
+    "alternates": [
+      "ल्यूटीनाइजिंग हार्मोन (LH)"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "adrenal medullary hormones",
+    "hindi": "अधिवृक्क मध्यांश हार्मोनों",
+    "alternates": [
+      "अधिवृक्क मध्यांशीय हॉर्मोन"
+    ],
+    "seenCount": 2
+  },
+  {
+    "english": "Yeast",
+    "hindi": "यीस्ट",
+    "seenCount": 2
+  },
+  {
+    "english": "Succinate dehydrogenase",
+    "hindi": "सक्सीनेट डिहाइड्रोजिनेस",
+    "seenCount": 2
+  }
+]

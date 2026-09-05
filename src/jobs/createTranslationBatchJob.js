@@ -10,6 +10,13 @@ const { sleep } = require("../utils/sleep");
 const AI_CALL_DELAY_MS = Number(process.env.TRANSLATION_CALL_DELAY_MS) || 3000;
 const TRANSLATION_CONCURRENCY = Number(process.env.TRANSLATION_CONCURRENCY) || 3;
 
+// Bump whenever translationPrompt.js's actual output changes meaningfully
+// — lets a future pass selectively regenerate only rows still on an older
+// version (schema's own doc comment on this column). 2 = the reference-
+// aware Hindi prompt (hindiReferenceMatcher.js, 2026-08-31); 1 = the
+// original generic prompt.
+const PROMPT_VERSION = 2;
+
 // Identical helper to createDictionaryBatchJob.js's runWithConcurrency —
 // duplicated rather than extracted to a shared util, since these two job
 // files are otherwise independent and a shared dependency between them
@@ -73,6 +80,16 @@ const createTranslationBatchJob = ({ jobType, fetchQuestionBatch, source, langua
         );
       }
 
+      // Not a defect — just flags questions the current reference data
+      // (past-paper extraction only, NCERT not yet processed) doesn't
+      // cover, so they only got the always-on fixed templates, not
+      // syllabus-term grounding. Grep for this line to audit coverage.
+      if (result.matchedTermCount === 0) {
+        logger.info(
+          `[createTranslationBatchJob:${jobType}] question ${question.id}: 0 terminology matches (fixed templates only)`
+        );
+      }
+
       await prisma.ai_question_translation.upsert({
         where: { questionId_languageId_source: { questionId: question.id, languageId: language.id, source } },
         update: {
@@ -87,6 +104,7 @@ const createTranslationBatchJob = ({ jobType, fetchQuestionBatch, source, langua
           generatedByProvider: result.provider,
           generatedByModel: result.model,
           sourceHash: result.sourceHash,
+          promptVersion: PROMPT_VERSION,
         },
         create: {
           questionId: question.id,
@@ -102,6 +120,7 @@ const createTranslationBatchJob = ({ jobType, fetchQuestionBatch, source, langua
           generatedByProvider: result.provider,
           generatedByModel: result.model,
           sourceHash: result.sourceHash,
+          promptVersion: PROMPT_VERSION,
         },
       });
 

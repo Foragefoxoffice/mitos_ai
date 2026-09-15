@@ -51,6 +51,7 @@ if (LOCAL_ONLY) {
     wordExplain: localRoute,
     explainAndChat: { simple: localRoute, complex: localRoute },
     performanceAnalysis: localRoute,
+    salesConversation: localRoute,
     studyPlan: localRoute,
     translateContent: localRoute,
   };
@@ -62,6 +63,7 @@ if (LOCAL_ONLY) {
     wordExplain: openaiRoute,
     explainAndChat: { simple: openaiRoute, complex: openaiRoute },
     performanceAnalysis: openaiRoute,
+    salesConversation: openaiRoute,
     studyPlan: openaiRoute,
     translateContent: openaiRoute,
   };
@@ -73,6 +75,7 @@ if (LOCAL_ONLY) {
     wordExplain: deepseekRoute,
     explainAndChat: { simple: deepseekRoute, complex: deepseekRoute },
     performanceAnalysis: deepseekRoute,
+    salesConversation: deepseekRoute,
     studyPlan: deepseekRoute,
     translateContent: deepseekRoute,
   };
@@ -111,6 +114,7 @@ if (LOCAL_ONLY) {
       complex: [deepseekFlash, geminiPro, geminiFlash, openaiMini],
     },
     performanceAnalysis: [geminiPro, geminiFlash, claudeFallback, openaiMini],
+    salesConversation: [geminiPro, geminiFlash, openaiMini, claudeFallback],
     studyPlan: [geminiPro, geminiFlash, openaiMini, claudeFallback],
     // Regional Language Translation (2026-08-30) — same structured-JSON,
     // no-deep-reasoning shape as keywordExtraction/wordExplain above, so

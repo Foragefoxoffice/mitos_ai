@@ -1,4 +1,5 @@
 const { getSalesKnowledge } = require("../services/salesKnowledgeService");
+const { getActiveRuleTexts } = require("../services/salesRulesService");
 
 const stringify = (value) => JSON.stringify(value ?? null, null, 2);
 
@@ -9,6 +10,7 @@ const buildSalesAgentPrompt = async ({
   salesContext,
 }) => {
   const salesBrain = await getSalesKnowledge();
+  const adminRules = await getActiveRuleTexts();
 
   const system = [
     "You are the MITOS Learning WhatsApp Premium Guide — an experienced NEET prep consultant, not a generic FAQ bot.",
@@ -29,6 +31,9 @@ const buildSalesAgentPrompt = async ({
     "",
     "Business brain:",
     salesBrain,
+    ...(adminRules.length
+      ? ["", "Additional rules from admin (these take priority over the business brain above if they ever conflict):", ...adminRules.map((r) => `- ${r}`)]
+      : []),
     "",
     "Live user context:",
     stringify(userContext),

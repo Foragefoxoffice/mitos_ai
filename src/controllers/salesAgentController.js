@@ -1,5 +1,6 @@
 const { generateSalesReply } = require("../services/salesAgentService");
 const { getSalesKnowledge, updateSalesKnowledge } = require("../services/salesKnowledgeService");
+const { listRules, addRule, deleteRule } = require("../services/salesRulesService");
 
 const postReply = async (req, res) => {
   const {
@@ -51,4 +52,38 @@ const updateKnowledge = async (req, res) => {
   }
 };
 
-module.exports = { postReply, getKnowledge, updateKnowledge };
+const getRules = async (req, res) => {
+  try {
+    const rules = await listRules();
+    res.json({ rules });
+  } catch (error) {
+    console.error("[salesAgentController] getRules failed:", error);
+    res.status(500).json({ message: "Failed to load rules" });
+  }
+};
+
+const createRule = async (req, res) => {
+  const { text } = req.body || {};
+  if (typeof text !== "string" || !text.trim()) {
+    return res.status(400).json({ message: "text is required" });
+  }
+  try {
+    const rule = await addRule(text.trim());
+    res.json({ rule });
+  } catch (error) {
+    console.error("[salesAgentController] createRule failed:", error);
+    res.status(500).json({ message: "Failed to create rule" });
+  }
+};
+
+const removeRule = async (req, res) => {
+  try {
+    await deleteRule(req.params.id);
+    res.json({ deleted: true });
+  } catch (error) {
+    console.error("[salesAgentController] removeRule failed:", error);
+    res.status(500).json({ message: "Failed to delete rule" });
+  }
+};
+
+module.exports = { postReply, getKnowledge, updateKnowledge, getRules, createRule, removeRule };

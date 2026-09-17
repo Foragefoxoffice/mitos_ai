@@ -276,3 +276,14 @@ model ai_dictionary_translation {
   @@unique([dictionaryId, languageId])
   @@index([languageId, status])
 }
+
+// WhatsApp sales agent's "business brain" knowledge base — admin-editable at
+// runtime instead of a static file (src/knowledge/whatsappSalesBrain.md)
+// loaded once at process start. Single-row table (id=1); a missing row
+// falls back to that static file (see salesKnowledgeService.js).
+model saleknowledge {
+  id        Int      @id @default(autoincrement())
+  content   String   @db.LongText
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

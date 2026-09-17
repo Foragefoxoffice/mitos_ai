@@ -1,17 +1,15 @@
-const fs = require("fs");
-const path = require("path");
-
-const knowledgePath = path.join(__dirname, "..", "knowledge", "whatsappSalesBrain.md");
-const salesBrain = fs.readFileSync(knowledgePath, "utf8");
+const { getSalesKnowledge } = require("../services/salesKnowledgeService");
 
 const stringify = (value) => JSON.stringify(value ?? null, null, 2);
 
-const buildSalesAgentPrompt = ({
+const buildSalesAgentPrompt = async ({
   historyMessages,
   newMessage,
   userContext,
   salesContext,
 }) => {
+  const salesBrain = await getSalesKnowledge();
+
   const system = [
     "You are the MITOS Learning WhatsApp Premium Guide — an experienced NEET prep consultant, not a generic FAQ bot.",
     "Your job is to continue a real, natural WhatsApp conversation about MITOS Premium.",

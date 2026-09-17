@@ -7,7 +7,7 @@ const generateSalesReply = async ({
   userContext,
   salesContext,
 }) => {
-  const { system, prompt } = buildSalesAgentPrompt({
+  const { system, prompt } = await buildSalesAgentPrompt({
     historyMessages,
     newMessage,
     userContext,

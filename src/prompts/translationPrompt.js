@@ -34,7 +34,12 @@
 // until similar reference material exists for them) — this is real
 // extracted data, not something to fake for a language it wasn't built
 // from.
-const buildTranslationPrompt = ({ language, questionType, fields, fixedTemplates, matchedTerms }) => {
+//
+// `tokensByField` (optional): {field: ["§MATH0§", ...]} — the exact tokens
+// each field was given. Listed explicitly because the model otherwise
+// sometimes invents a token for a plain number ("3C" -> "§MATH0§") or
+// moves one into a field with no math (found live 2026-09-25).
+const buildTranslationPrompt = ({ language, questionType, fields, fixedTemplates, matchedTerms, tokensByField }) => {
   const { question, optionA, optionB, optionC, optionD, hint } = fields;
 
   const fieldLines = [
@@ -54,11 +59,18 @@ const buildTranslationPrompt = ({ language, questionType, fields, fixedTemplates
     .map((t) => `"${t.english}" -> "${t.hindi}"${t.alternates?.length ? ` (also acceptable: ${t.alternates.join(", ")})` : ""}`)
     .join("\n");
 
+  const tokenEntries = Object.entries(tokensByField || {}).filter(([, tokens]) => tokens.length > 0);
+  const tokenManifest = tokensByField
+    ? tokenEntries.length > 0
+      ? `\n\nPlaceholder tokens each field must contain (each exactly once, no others; fields not listed must contain none):\n${tokenEntries.map(([key, tokens]) => `${key}: ${tokens.join(" ")}`).join("\n")}`
+      : "\n\nThis question has no §MATHn§ tokens — your output must not contain any."
+    : "";
+
   return {
     system: [
       `You translate NEET (Indian medical entrance exam) exam-prep question content from English into ${language.name} (${language.nativeName}), for students preparing in that regional language.`,
       "Translate naturally and clearly, the way an actual NEET regional-language question paper would phrase it — not a stiff word-for-word translation. Keep the scientific register (this is a Physics/Chemistry/Biology exam question, not casual conversation).",
-      `Some text is replaced with placeholder tokens that look like §MATH0§, §MATH1§, etc. — these stand in for formulas, numbers, units, and equations. NEVER translate, alter, remove, or reorder these tokens. Copy each one through completely unchanged, in the same position relative to the surrounding ${language.name} text (adjust word order around a token as needed for natural ${language.name} grammar, but the token itself must appear verbatim, exactly once, wherever it belongs in the translated sentence).`,
+      `Some text is replaced with placeholder tokens that look like §MATH0§, §MATH1§, etc. — these stand in for formulas, numbers, units, and equations. NEVER translate, alter, remove, or reorder these tokens. Copy each one through completely unchanged, in the same position relative to the surrounding ${language.name} text (adjust word order around a token as needed for natural ${language.name} grammar, but the token itself must appear verbatim, exactly once, wherever it belongs in the translated sentence). Only the tokens already present in the input exist — NEVER create a new §MATHn§ token yourself, and never move a token to a different field. Plain numbers, units and symbols that are not already tokens must just be copied as normal text.`,
       "Proper nouns, standard scientific terms with no common regional equivalent, and chemical formulas/element symbols embedded in prose (outside the §MATHn§ tokens) may stay in their standard form if that's how they'd actually appear in a real regional-language NEET paper — don't force an awkward translation where the original notation is already standard practice.",
       templateLines
         ? `The following instructional/boilerplate phrases have one well-established standard translation, extracted from real past NEET papers — use these EXACT translations whenever this exact (or near-exact, allowing for punctuation/capitalization differences) English phrase appears, do not paraphrase them:\n${templateLines}`
@@ -68,7 +80,7 @@ const buildTranslationPrompt = ({ language, questionType, fields, fixedTemplates
         : null,
       "Return ONLY a JSON object — no markdown, no commentary — with exactly the same keys you were given (only translate keys that were provided; never invent extra keys or omit given ones).",
     ].filter(Boolean).join(" "),
-    prompt: `${questionType ? `Question type: ${questionType}\n` : ""}Translate the following fields:\n{\n  ${fieldLines.join(",\n  ")}\n}`,
+    prompt: `${questionType ? `Question type: ${questionType}\n` : ""}Translate the following fields:\n{\n  ${fieldLines.join(",\n  ")}\n}${tokenManifest}`,
   };
 };
 

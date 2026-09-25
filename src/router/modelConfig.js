@@ -122,6 +122,15 @@ if (LOCAL_ONLY) {
     // independently validated on real translation traffic yet (unlike
     // those two, which had a 150+ question audit) — first real runs
     // should watch quality/failure rate before trusting this at scale.
-    translateContent: [deepseekFlash, geminiFlash, geminiPro, openaiMini],
+    //
+    // `complex` is used only for the LAST validation retry in
+    // questionTranslator.js (2026-09-25): on a few questions DeepSeek
+    // repeatedly turns plain numbers-with-units ("5rad") into invented
+    // §MATHn§ tokens no matter how the prompt is phrased, so the final
+    // attempt goes to a different model family instead of repeating it.
+    translateContent: {
+      simple: [deepseekFlash, geminiFlash, geminiPro, openaiMini],
+      complex: [geminiFlash, geminiPro, deepseekFlash, openaiMini],
+    },
   };
 }

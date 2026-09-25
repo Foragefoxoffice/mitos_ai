@@ -14,8 +14,10 @@ const TRANSLATION_CONCURRENCY = Number(process.env.TRANSLATION_CONCURRENCY) || 3
 // — lets a future pass selectively regenerate only rows still on an older
 // version (schema's own doc comment on this column). 2 = the reference-
 // aware Hindi prompt (hindiReferenceMatcher.js, 2026-08-31); 1 = the
-// original generic prompt.
-const PROMPT_VERSION = 2;
+// original generic prompt; 3 = same prompt plus math validation/retry and
+// global §MATHn§ numbering (questionTranslator.js, 2026-09-25) — rows
+// below 3 were saved unvalidated and may contain broken math.
+const PROMPT_VERSION = 3;
 
 // Identical helper to createDictionaryBatchJob.js's runWithConcurrency —
 // duplicated rather than extracted to a shared util, since these two job
@@ -74,10 +76,8 @@ const createTranslationBatchJob = ({ jobType, fetchQuestionBatch, source, langua
         },
       });
 
-      if (result.mathWarnings) {
-        logger.warn(
-          `[createTranslationBatchJob:${jobType}] question ${question.id}: math placeholder mismatch — ${JSON.stringify(result.mathWarnings)}`
-        );
+      if (result.attempts > 1) {
+        logger.info(`[createTranslationBatchJob:${jobType}] question ${question.id}: passed math validation on attempt ${result.attempts}`);
       }
 
       // Not a defect — just flags questions the current reference data
@@ -146,7 +146,7 @@ const createTranslationBatchJob = ({ jobType, fetchQuestionBatch, source, langua
         data: { totalFailed: { increment: 1 }, lastRunAt: new Date() },
       });
 
-      return { question, failed: true };
+      return { question, failed: true, nonBlocking: !!error.nonBlocking };
     }
   };
 
@@ -204,13 +204,20 @@ const createTranslationBatchJob = ({ jobType, fetchQuestionBatch, source, langua
     let processedCount = 0;
     let failedCount = 0;
 
+    // A nonBlocking failure (questionTranslator.js's
+    // TranslationValidationError — the model kept breaking this question's
+    // math across every retry) is saved as "failed" and skipped past: a
+    // re-run would just hit the same content problem again, and halting
+    // here would stall the whole bank on one question. Only transient
+    // failures (network, provider errors) stop the cursor.
     for (const result of results) {
       if (result.failed) {
         failedCount++;
-        break;
+        if (!result.nonBlocking) break;
+      } else {
+        processedCount++;
       }
       cursorAdvanceTo = result.question.id;
-      processedCount++;
     }
 
     const finalJob = await prisma.ai_job.update({
@@ -252,4 +259,4 @@ const createTranslationBatchJob = ({ jobType, fetchQuestionBatch, source, langua
   };
 };
 
-module.exports = { createTranslationBatchJob };
+module.exports = { createTranslationBatchJob, PROMPT_VERSION };
